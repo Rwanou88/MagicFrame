@@ -268,7 +268,7 @@ sensor:
   - platform: homeassistant
     entity_id: sensor.weather_templow_6
     id: weather_templow_6
-  #Home sensors / Capteurs domestiques
+  # Home sensors / Capteurs domestiques
   - platform: homeassistant
     entity_id: sensor.salle_a_manger_temperature # Entity ID of your temperature sensor / ID d'entité de votre capteur de température
     id: salle_a_manger_temperature
@@ -307,9 +307,9 @@ text_sensor:
   - platform: homeassistant
     entity_id: sensor.date_time_iso
     id: date_time_iso
-  # Weather sensors
+  # Weather sensors / Capteurs météo
   - platform: homeassistant
-    entity_id: weather.forecast_YourCity # Entity ID of your weather forecast app.
+    entity_id: weather.forecast_YourCity # Entity ID of your weather forecast app. / ID d'entité de votre application de prévisions météo
     id: weather_name
   - platform: homeassistant
     entity_id: sensor.weather_day_1
@@ -348,7 +348,7 @@ text_sensor:
     entity_id: sensor.weather_condition_6
     id: weather_condition_6
     
-  # Calendar events sensors
+  # Calendar events sensors / Capteurs d'événements de calendrier
   - platform: homeassistant
     entity_id: sensor.event_start_1
     id: event_start_1
@@ -380,12 +380,12 @@ text_sensor:
     entity_id: sensor.event_summary_5
     id: event_summary_5
 
-# Pins for Waveshare ePaper ESP Board
+# PINS FOR WAVESHARE EPAPER ESP BOARD / BROCHES POUR CARTE ESP EPAPER WAVESHARE
 spi:
   clk_pin: 13
   mosi_pin: 14
 
-# Render on ePaper screen
+# RENDER ON E-PAPER SCREEN / AFFICHAGE SUR ÉCRAN E-PAPER
 display:
   - platform: waveshare_epaper
     id: eink_display
@@ -402,7 +402,7 @@ display:
     lambda: |-
     
      std::map<std::string, std::string> icon_map
-        { // Weather --> https://www.home-assistant.io/integrations/weather/#condition-mapping
+        { // Weather conditions / Conditions météo --> https://www.home-assistant.io/integrations/weather/#condition-mapping
           {"clear-night", "\U000F0594"},
           {"cloudy", "\U000F0590"},
           {"fog", "\U000F0591"},
@@ -419,7 +419,7 @@ display:
           {"windy-variant", "\U000F059E"},
           {"exceptional", "\U000F0F2F"},
 
-          // Others
+          // Others / Autres
           {"salle à manger", "\U000F0A70"},  //Dining room
           {"salon", "\U000F04B9"},           //Living room
           {"bureau 1", "\U000F02B4"},        //Office 1
@@ -429,7 +429,7 @@ display:
         };
 
      std::map<std::string, std::string> traduction
-        { // Weather FR
+        { // Weather conditions translation EN to FR / Traduction des conditions météo EN -> FR
           {"clear-night", "Nuit claire"},
           {"cloudy", "Nuageux"},
           {"fog", "Brouillard"},
@@ -446,7 +446,7 @@ display:
           {"windy-variant", "Venteux"},
           {"exceptional", "Alerte"}
 
-          //Days of week FR
+          //Days of week translation EN to FR / Traduction des jours de la semaine EN -> FR
           {"Mon", "Lun"},{"Tue", "Mar"},{"Wed", "Mer"},{"Thu", "Jeu"},{"Fri", "Ven"},{"Sat", "Sam"},{"Sun", "Dim"},
         };
 
