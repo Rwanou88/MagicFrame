@@ -149,8 +149,13 @@ font:
     size: 15
     glyphs: *font-glyphs
     extras: # Enables emoji support / Active la prise en charge des emojis
-      - file: "fonts/NotoEmoji-VariableFont_wght.ttf" # --> https://fonts.google.com/noto/specimen/Noto+Emoji?noto.query=emoji
-        glyphs: [                                     # --> https://www.unicode.org/emoji/charts/full-emoji-list.html
+      - file:
+          # --> https://fonts.google.com/noto/specimen/Noto+Emoji/tester
+          type: gfonts
+          family: Noto+Emoji
+          weight: 400
+        glyphs: [
+          # --> https://www.unicode.org/emoji/charts/full-emoji-list.html
           "\u2665", #heart suit
           "\u2764", #red heart
           "\U0001F60D", #smiling face with heart-eyes
