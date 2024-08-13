@@ -84,14 +84,20 @@ qr_code:
     value: !secret MF_qr_value
 
 # INCLUDE CUSTOM FONTS / INCLURE DES POLICES PERSONNALISÉES
-font:
+font: # --> https://fonts.google.com/noto/specimen/Noto+Sans/tester
   ################# REGULAR #################
-  - file: "fonts/GothamRnd-Book.ttf"
-    id: book25
+  - file:
+      type: gfonts
+      family: Noto+Sans
+      weight: 400
+    id: NotoReg_25
     size: 25
     glyphs: *font-glyphs
-  - file: "fonts/GothamRnd-Book.ttf"
-    id: book20
+  - file:
+      type: gfonts
+      family: Noto+Sans
+      weight: 400
+    id: NotoReg_20
     size: 20
     glyphs: &font-glyphs [ # --> https://codepoints.net/
       0,1,2,3,4,5,6,7,8,9,
@@ -120,39 +126,60 @@ font:
       ]
     
   ################## BOLD ##################
-  - file: "fonts/GothamRoundedBold.ttf"
-    id: bold55
+  - file:
+      type: gfonts
+      family: Noto+Sans
+      weight: 700
+    id: NotoBold_55
     size: 55
     glyphs: *font-glyphs
-  - file: "fonts/GothamRoundedBold.ttf"
-    id: bold40
+  - file:
+      type: gfonts
+      family: Noto+Sans
+      weight: 700
+    id: NotoBold_40
     size: 40
     glyphs: *font-glyphs
-  - file: "fonts/GothamRoundedBold.ttf"
-    id: bold35
+  - file:
+      type: gfonts
+      family: Noto+Sans
+      weight: 700
+    id: NotoBold_35
     size: 35
     glyphs: *font-glyphs
-  - file: "fonts/GothamRoundedBold.ttf"
-    id: bold30
+  - file:
+      type: gfonts
+      family: Noto+Sans
+      weight: 700
+    id: NotoBold_30
     size: 30
     glyphs: *font-glyphs
-  - file: "fonts/GothamRoundedBold.ttf"
-    id: bold25
+  - file:
+      type: gfonts
+      family: Noto+Sans
+      weight: 700
+    id: NotoBold_25
     size: 25
     glyphs: *font-glyphs
-  - file: "fonts/GothamRoundedBold.ttf"
-    id: bold20
+  - file:
+      type: gfonts
+      family: Noto+Sans
+      weight: 700
+    id: NotoBold_20
     size: 20
     glyphs: *font-glyphs
-  - file: "fonts/GothamRoundedBold.ttf"
-    id: bold15
+  - file:
+      type: gfonts
+      family: Noto+Sans
+      weight: 700
+    id: NotoBold_15
     size: 15
     glyphs: *font-glyphs
     extras: # Enables emoji support / Active la prise en charge des emojis
       - file: # --> https://fonts.google.com/noto/specimen/Noto+Emoji/tester
           type: gfonts
           family: Noto+Emoji
-          weight: 400
+          weight: 700
         glyphs: [ # --> https://www.unicode.org/emoji/charts/full-emoji-list.html
           "\u2665", #heart suit
           "\u2764", #red heart
@@ -170,15 +197,15 @@ font:
   
   # Include Material Design Icons font / Inclure la police des icônes Material Design
   - file: "https://github.com/Pictogrammers/pictogrammers.github.io/blob/main/%40mdi/font/7.4.47/fonts/materialdesignicons-webfont.ttf"
-    id: mdi120
+    id: MDI_120
     size: 120
     glyphs: *mdi-glyphs
   - file: "https://github.com/Pictogrammers/pictogrammers.github.io/blob/main/%40mdi/font/7.4.47/fonts/materialdesignicons-webfont.ttf"
-    id: mdi36
+    id: MDI_36
     size: 36
     glyphs: *mdi-glyphs
   - file: "https://github.com/Pictogrammers/pictogrammers.github.io/blob/main/%40mdi/font/7.4.47/fonts/materialdesignicons-webfont.ttf"
-    id: mdi20
+    id: MDI_20
     size: 20
     glyphs: &mdi-glyphs # --> https://pictogrammers.com/library/mdi/
       # All weather pictograms / Tous les pictogrammes météo
@@ -457,92 +484,92 @@ display:
           {"Mon", "Lun"},{"Tue", "Mar"},{"Wed", "Mer"},{"Thu", "Jeu"},{"Fri", "Ven"},{"Sat", "Sam"},{"Sun", "Dim"},
         };
 
-     it.printf(240, 40, id(bold35), TextAlign::TOP_CENTER, "%s", id(date_fr).state.c_str());
+     it.printf(240, 40, id(NotoBold_35), TextAlign::TOP_CENTER, "%s", id(date_fr).state.c_str());
 
 
      it.filled_rectangle(50, 85, 380, 2);
 
 
-     it.printf(140, 100, id(mdi120), TextAlign::TOP_CENTER, "%s", icon_map[id(weather_name).state].c_str());
-     it.printf(220, 110, id(bold35), TextAlign::TOP_LEFT, "%s", traduction[id(weather_name).state].c_str());
-     it.printf(220, 150, id(bold55), TextAlign::TOP_LEFT, "%2.1f°C", id(weather_temperature).state);
+     it.printf(140, 100, id(MDI_120), TextAlign::TOP_CENTER, "%s", icon_map[id(weather_name).state].c_str());
+     it.printf(220, 110, id(NotoBold_35), TextAlign::TOP_LEFT, "%s", traduction[id(weather_name).state].c_str());
+     it.printf(220, 150, id(NotoBold_55), TextAlign::TOP_LEFT, "%2.1f°C", id(weather_temperature).state);
 
-     it.printf(85, 235, id(bold25), TextAlign::TOP_CENTER, "%s", traduction[id(weather_day_1).state].c_str());
-     it.printf(85, 265, id(mdi36), TextAlign::TOP_CENTER, "%s", icon_map[id(weather_condition_1).state].c_str());
-     it.printf(85, 305, id(bold20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_temperature_1).state);
-     it.printf(85, 325, id(book20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_templow_1).state);
+     it.printf(85, 235, id(NotoBold_25), TextAlign::TOP_CENTER, "%s", traduction[id(weather_day_1).state].c_str());
+     it.printf(85, 265, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map[id(weather_condition_1).state].c_str());
+     it.printf(85, 305, id(NotoBold_20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_temperature_1).state);
+     it.printf(85, 325, id(NotoReg_20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_templow_1).state);
 
-     it.printf(162, 235, id(bold25), TextAlign::TOP_CENTER, "%s", traduction[id(weather_day_2).state].c_str());
-     it.printf(162, 265, id(mdi36), TextAlign::TOP_CENTER, "%s", icon_map[id(weather_condition_2).state].c_str());
-     it.printf(162, 305, id(bold20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_temperature_2).state);
-     it.printf(162, 325, id(book20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_templow_2).state);
+     it.printf(162, 235, id(NotoBold_25), TextAlign::TOP_CENTER, "%s", traduction[id(weather_day_2).state].c_str());
+     it.printf(162, 265, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map[id(weather_condition_2).state].c_str());
+     it.printf(162, 305, id(NotoBold_20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_temperature_2).state);
+     it.printf(162, 325, id(NotoReg_20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_templow_2).state);
 
-     it.printf(240, 235, id(bold25), TextAlign::TOP_CENTER, "%s", traduction[id(weather_day_3).state].c_str());
-     it.printf(240, 265, id(mdi36), TextAlign::TOP_CENTER, "%s", icon_map[id(weather_condition_3).state].c_str());
-     it.printf(240, 305, id(bold20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_temperature_3).state);
-     it.printf(240, 325, id(book20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_templow_3).state);
+     it.printf(240, 235, id(NotoBold_25), TextAlign::TOP_CENTER, "%s", traduction[id(weather_day_3).state].c_str());
+     it.printf(240, 265, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map[id(weather_condition_3).state].c_str());
+     it.printf(240, 305, id(NotoBold_20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_temperature_3).state);
+     it.printf(240, 325, id(NotoReg_20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_templow_3).state);
 
-     it.printf(318, 235, id(bold25), TextAlign::TOP_CENTER, "%s", traduction[id(weather_day_4).state].c_str());
-     it.printf(318, 265, id(mdi36), TextAlign::TOP_CENTER, "%s", icon_map[id(weather_condition_4).state].c_str());
-     it.printf(318, 305, id(bold20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_temperature_4).state);
-     it.printf(318, 325, id(book20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_templow_4).state);
+     it.printf(318, 235, id(NotoBold_25), TextAlign::TOP_CENTER, "%s", traduction[id(weather_day_4).state].c_str());
+     it.printf(318, 265, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map[id(weather_condition_4).state].c_str());
+     it.printf(318, 305, id(NotoBold_20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_temperature_4).state);
+     it.printf(318, 325, id(NotoReg_20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_templow_4).state);
 
-     it.printf(395, 235, id(bold25), TextAlign::TOP_CENTER, "%s", traduction[id(weather_day_5).state].c_str());
-     it.printf(395, 265, id(mdi36), TextAlign::TOP_CENTER, "%s", icon_map[id(weather_condition_5).state].c_str());
-     it.printf(395, 305, id(bold20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_temperature_5).state);
-     it.printf(395, 325, id(book20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_templow_5).state);
+     it.printf(395, 235, id(NotoBold_25), TextAlign::TOP_CENTER, "%s", traduction[id(weather_day_5).state].c_str());
+     it.printf(395, 265, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map[id(weather_condition_5).state].c_str());
+     it.printf(395, 305, id(NotoBold_20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_temperature_5).state);
+     it.printf(395, 325, id(NotoReg_20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_templow_5).state);
 
 
      it.filled_rectangle(50, 360, 380, 2);
 
 
-     it.printf(85, 370, id(mdi36), TextAlign::TOP_CENTER, "%s", icon_map["salle à manger"].c_str());
-     it.printf(85, 410, id(bold20), TextAlign::TOP_CENTER, "%2.1f°C", id(salle_a_manger_temperature).state);
-     it.printf(85, 430, id(book20), TextAlign::TOP_CENTER, "%2.1f%%", id(salle_a_manger_humidity).state);
+     it.printf(85, 370, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map["salle à manger"].c_str());
+     it.printf(85, 410, id(NotoBold_20), TextAlign::TOP_CENTER, "%2.1f°C", id(salle_a_manger_temperature).state);
+     it.printf(85, 430, id(NotoReg_20), TextAlign::TOP_CENTER, "%2.1f%%", id(salle_a_manger_humidity).state);
 
-     it.printf(162, 370, id(mdi36), TextAlign::TOP_CENTER, "%s", icon_map["salon"].c_str());
-     it.printf(162, 410, id(bold20), TextAlign::TOP_CENTER, "%2.1f°C", id(salon_temperature).state);
-     it.printf(162, 430, id(book20), TextAlign::TOP_CENTER, "%2.1f%%", id(salon_humidity).state);
+     it.printf(162, 370, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map["salon"].c_str());
+     it.printf(162, 410, id(NotoBold_20), TextAlign::TOP_CENTER, "%2.1f°C", id(salon_temperature).state);
+     it.printf(162, 430, id(NotoReg_20), TextAlign::TOP_CENTER, "%2.1f%%", id(salon_humidity).state);
      
-     it.printf(240, 370, id(mdi36), TextAlign::TOP_CENTER, "%s", icon_map["bureau 1"].c_str());
-     it.printf(240, 410, id(bold20), TextAlign::TOP_CENTER, "%2.1f°C", id(bureau_1_temperature).state);
-     it.printf(240, 430, id(book20), TextAlign::TOP_CENTER, "%2.1f%%", id(bureau_1_humidity).state);
+     it.printf(240, 370, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map["bureau 1"].c_str());
+     it.printf(240, 410, id(NotoBold_20), TextAlign::TOP_CENTER, "%2.1f°C", id(bureau_1_temperature).state);
+     it.printf(240, 430, id(NotoReg_20), TextAlign::TOP_CENTER, "%2.1f%%", id(bureau_1_humidity).state);
 
-     it.printf(318, 370, id(mdi36), TextAlign::TOP_CENTER, "%s", icon_map["bureau 2"].c_str());
-     it.printf(318, 410, id(bold20), TextAlign::TOP_CENTER, "%2.1f°C", id(bureau_2_temperature).state);
-     it.printf(318, 430, id(book20), TextAlign::TOP_CENTER, "%2.1f%%", id(bureau_2_humidity).state);
+     it.printf(318, 370, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map["bureau 2"].c_str());
+     it.printf(318, 410, id(NotoBold_20), TextAlign::TOP_CENTER, "%2.1f°C", id(bureau_2_temperature).state);
+     it.printf(318, 430, id(NotoReg_20), TextAlign::TOP_CENTER, "%2.1f%%", id(bureau_2_humidity).state);
 
-     it.printf(395, 370, id(mdi36), TextAlign::TOP_CENTER, "%s", icon_map["chambre"].c_str());
-     it.printf(395, 410, id(bold20), TextAlign::TOP_CENTER, "%2.1f°C", id(chambre_temperature).state);
-     it.printf(395, 430, id(book20), TextAlign::TOP_CENTER, "%2.1f%%", id(chambre_humidity).state);
+     it.printf(395, 370, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map["chambre"].c_str());
+     it.printf(395, 410, id(NotoBold_20), TextAlign::TOP_CENTER, "%2.1f°C", id(chambre_temperature).state);
+     it.printf(395, 430, id(NotoReg_20), TextAlign::TOP_CENTER, "%2.1f%%", id(chambre_humidity).state);
 
 
      it.filled_rectangle(50, 460, 380, 2);
 
    
-     it.printf(55, 470, id(bold20), TextAlign::TOP_LEFT, "%s", id(event_start_1).state.c_str());
-     it.printf(55, 490, id(bold15), TextAlign::TOP_LEFT, "%s", id(event_summary_1).state.c_str());
+     it.printf(55, 470, id(NotoBold_20), TextAlign::TOP_LEFT, "%s", id(event_start_1).state.c_str());
+     it.printf(55, 490, id(NotoBold_15), TextAlign::TOP_LEFT, "%s", id(event_summary_1).state.c_str());
 
-     it.printf(55, 510, id(bold20), TextAlign::TOP_LEFT, "%s", id(event_start_2).state.c_str());
-     it.printf(55, 530, id(bold15), TextAlign::TOP_LEFT, "%s", id(event_summary_2).state.c_str());
+     it.printf(55, 510, id(NotoBold_20), TextAlign::TOP_LEFT, "%s", id(event_start_2).state.c_str());
+     it.printf(55, 530, id(NotoBold_15), TextAlign::TOP_LEFT, "%s", id(event_summary_2).state.c_str());
 
-     it.printf(55, 550, id(bold20), TextAlign::TOP_LEFT, "%s", id(event_start_3).state.c_str());
-     it.printf(55, 570, id(bold15), TextAlign::TOP_LEFT, "%s", id(event_summary_3).state.c_str());
+     it.printf(55, 550, id(NotoBold_20), TextAlign::TOP_LEFT, "%s", id(event_start_3).state.c_str());
+     it.printf(55, 570, id(NotoBold_15), TextAlign::TOP_LEFT, "%s", id(event_summary_3).state.c_str());
 
-     it.printf(55, 590, id(bold20), TextAlign::TOP_LEFT, "%s", id(event_start_4).state.c_str());
-     it.printf(55, 610, id(bold15), TextAlign::TOP_LEFT, "%s", id(event_summary_4).state.c_str());
+     it.printf(55, 590, id(NotoBold_20), TextAlign::TOP_LEFT, "%s", id(event_start_4).state.c_str());
+     it.printf(55, 610, id(NotoBold_15), TextAlign::TOP_LEFT, "%s", id(event_summary_4).state.c_str());
 
-     it.printf(55, 630, id(bold20), TextAlign::TOP_LEFT, "%s", id(event_start_5).state.c_str());
-     it.printf(55, 650, id(bold15), TextAlign::TOP_LEFT, "%s", id(event_summary_5).state.c_str());
+     it.printf(55, 630, id(NotoBold_20), TextAlign::TOP_LEFT, "%s", id(event_start_5).state.c_str());
+     it.printf(55, 650, id(NotoBold_15), TextAlign::TOP_LEFT, "%s", id(event_summary_5).state.c_str());
 
 
      it.filled_rectangle(50, 680, 380, 2);
 
 
      it.qr_code(55, 700, id(homepage_qr), Color(255,255,255), 2);
-     it.printf(125, 700, id(bold15), TextAlign::TOP_LEFT, "Connexion auto à YourGuestWIFI_SSID");               //Wifi connection YourGuestWifi_SSID
-     it.printf(125, 724, id(mdi36), TextAlign::TOP_LEFT, "%s", icon_map["wifi-signal"].c_str());
-     it.printf(265, 740, id(bold15), TextAlign::TOP_RIGHT, "MàJ le :");                                         //Updated on
-     it.strftime(270, 740, id(bold15), TextAlign::TOP_LEFT, "%d-%m-%Y à %H:%M", id(homeassistant_time).now());
+     it.printf(125, 700, id(NotoBold_15), TextAlign::TOP_LEFT, "Connexion auto à YourGuestWIFI_SSID");               //Wifi connection YourGuestWifi_SSID
+     it.printf(125, 724, id(MDI_36), TextAlign::TOP_LEFT, "%s", icon_map["wifi-signal"].c_str());
+     it.printf(265, 740, id(NotoBold_15), TextAlign::TOP_RIGHT, "MàJ le :");                                         //Updated on
+     it.strftime(270, 740, id(NotoBold_15), TextAlign::TOP_LEFT, "%d-%m-%Y à %H:%M", id(homeassistant_time).now());
 
 captive_portal:
