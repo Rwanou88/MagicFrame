@@ -216,11 +216,11 @@ font:
       - "\U000F0FD2" # mdi-bed-king
       - "\U000F16BF" # mdi-wifi-lock
 
-  - file: 'fonts/materialdesignicons-webfont.ttf'
+  - file: "https://github.com/Pictogrammers/pictogrammers.github.io/blob/main/%40mdi/font/7.4.47/fonts/materialdesignicons-webfont.ttf"
     id: mdi36
     size: 36
     glyphs: *mdi-glyphs
-  - file: 'fonts/materialdesignicons-webfont.ttf'
+  - file: "https://github.com/Pictogrammers/pictogrammers.github.io/blob/main/%40mdi/font/7.4.47/fonts/materialdesignicons-webfont.ttf"
     id: mdi20
     size: 20
     glyphs: *mdi-glyphs
