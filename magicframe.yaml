@@ -121,7 +121,7 @@ font:
     id: bold15
     size: 15
     glyphs: *font-glyphs
-    extras:
+    extras: #Enables emoji support
       - file: "fonts/NotoEmoji-VariableFont_wght.ttf" # --> https://fonts.google.com/noto/specimen/Noto+Emoji?noto.query=emoji
         glyphs: [                                     # --> https://www.unicode.org/emoji/charts/full-emoji-list.html
           "\u2665", #heart suit
