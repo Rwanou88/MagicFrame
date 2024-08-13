@@ -167,6 +167,7 @@ font:
     id: mdi120
     size: 120
     glyphs: &mdi-glyphs # --> https://pictogrammers.com/library/mdi/
+      #All weather pictograms
       - "\U000F0590" # mdi-weather-cloudy
       - "\U000F0F2F" # mdi-weather-cloudy-alert
       - "\U000F0E6E" # mdi-weather-cloudy-arrow-right
@@ -203,13 +204,13 @@ font:
       - "\U000F0F38" # mdi-weather-tornado
       - "\U000F059D" # mdi-weather-windy
       - "\U000F059E" # mdi-weather-windy-variant
-
+      
+      #Other pictograms
       - "\U000F0A70" # mdi-silverware-fork-knife
       - "\U000F04B9" # mdi-sofa
       - "\U000F02B4" # mdi-controller
       - "\U000F1239" # mdi-desk
       - "\U000F0FD2" # mdi-bed-king
-
       - "\U000F16BF" # mdi-wifi-lock
 
   - file: 'fonts/materialdesignicons-webfont.ttf'
