@@ -1,4 +1,5 @@
 ####### MagicFrame #######
+
 # Forcast & Events / Prévisions météo et événements
 - trigger:
     - platform: time_pattern
