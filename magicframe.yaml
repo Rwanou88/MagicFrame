@@ -21,7 +21,7 @@ ota:
 wifi:
   ssid: !secret MF_wifi_ssid
   password: !secret MF_wifi_password
-  manual_ip: # If you want a static IP (recommended - You will need to make the first installation via USB)
+  manual_ip: # If you want a static IP (recommended - You will need to perform the first installation via USB)
     static_ip: 192.168.1.100
     gateway: 192.168.1.1
     subnet: 255.255.255.0
