@@ -460,7 +460,7 @@ display:
         };
         
      // Date
-     it.printf(240, 40, id(NotoBold_35), TextAlign::TOP_CENTER, "%s", id(date_fr).state.c_str());
+     it.printf(240, 35, id(NotoBold_35), TextAlign::TOP_CENTER, "%s", id(date_fr).state.c_str());
 
 
      it.filled_rectangle(50, 85, 380, 2);
