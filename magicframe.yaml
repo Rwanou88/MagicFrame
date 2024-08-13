@@ -428,11 +428,11 @@ display:
           {"exceptional", "\U000F0F2F"},
 
           // Others / Autres
-          {"salle à manger", "\U000F0A70"},  //Dining room
-          {"salon", "\U000F04B9"},           //Living room
-          {"bureau", "\U000F02B4"},          //Office 1
-          {"chambre enfant", "\U000F198B"},  //Baby bedroom
-          {"chambre parents", "\U000F0FD2"}, //Master bedroom
+          {"room_1", "\U000F0A70"},  //Dining room / Salle à manger
+          {"room_2", "\U000F04B9"},  //Living room / Salon
+          {"room_3", "\U000F02B4"},  //Office / Bureau
+          {"room_4", "\U000F198B"},  //Baby bedroom / Chambre enfant
+          {"room_5", "\U000F0FD2"},  //Master bedroom / Chambre parents
           {"wifi-signal", "\U000F16BF"},
         };
 
@@ -502,23 +502,23 @@ display:
 
 
      // Temperature and humidity at home / Température et humidité à la maison
-     it.printf(85, 370, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map["salle à manger"].c_str());
+     it.printf(85, 370, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map["room_1"].c_str());
      it.printf(85, 410, id(Noto_5), TextAlign::TOP_CENTER, "%2.1f°C", id(room_temperature_1).state);
      it.printf(85, 430, id(Noto_1), TextAlign::TOP_CENTER, "%2.1f%%", id(room_humidity_1).state);
 
-     it.printf(162, 370, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map["salon"].c_str());
+     it.printf(162, 370, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map["room_2"].c_str());
      it.printf(162, 410, id(Noto_5), TextAlign::TOP_CENTER, "%2.1f°C", id(room_temperature_2).state);
      it.printf(162, 430, id(Noto_1), TextAlign::TOP_CENTER, "%2.1f%%", id(room_humidity_2).state);
      
-     it.printf(240, 370, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map["bureau"].c_str());
+     it.printf(240, 370, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map["room_3"].c_str());
      it.printf(240, 410, id(Noto_5), TextAlign::TOP_CENTER, "%2.1f°C", id(room_temperature_3).state);
      it.printf(240, 430, id(Noto_1), TextAlign::TOP_CENTER, "%2.1f%%", id(room_humidity_3).state);
 
-     it.printf(318, 370, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map["chambre enfant"].c_str());
+     it.printf(318, 370, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map["room_4"].c_str());
      it.printf(318, 410, id(Noto_5), TextAlign::TOP_CENTER, "%2.1f°C", id(room_temperature_4).state);
      it.printf(318, 430, id(Noto_1), TextAlign::TOP_CENTER, "%2.1f%%", id(room_humidity_4).state);
 
-     it.printf(395, 370, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map["chambre parents"].c_str());
+     it.printf(395, 370, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map["room_5"].c_str());
      it.printf(395, 410, id(Noto_5), TextAlign::TOP_CENTER, "%2.1f°C", id(room_temperature_5).state);
      it.printf(395, 430, id(Noto_1), TextAlign::TOP_CENTER, "%2.1f%%", id(room_humidity_5).state);
 
