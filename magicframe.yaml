@@ -1,4 +1,4 @@
-# ESPHOME SETTINGS
+# ESPHOME SETTINGS / PARAMÈTRES ESPHOME
 esphome:
   name: magicframe
   friendly_name: MagicFrame
@@ -8,10 +8,10 @@ esphome:
   - delay: 20s
   - script.execute: update_screen
 
-# Enable logging
+# ENABLE LOGGING / ACTIVER LA JOURNALISATION
 logger:
 
-# Enable Home Assistant API
+# ENABLE HOME ASSISTANT API - ACTIVER L'API HOME ASSISTANT
 api:
   encryption:
     key: !secret MF_api_key
@@ -19,26 +19,28 @@ api:
 ota:
   platform: esphome
 
-# Wifi setting
+# WIFI SETTINGS / PARAMÈTRES WIFI
 wifi:
   ssid: !secret MF_wifi_ssid
   password: !secret MF_wifi_password
-  manual_ip: # If you want a static IP (recommended - You will need to perform the first installation from Esphome via USB)
+  # If you want a static IP (recommended - You will need to perform the first installation from Esphome via USB)
+  # Si vous souhaitez une IP statique (recommandé - Vous devrez effectuer la première installation depuis Esphome via USB)
+  manual_ip:
     static_ip: 192.168.1.100
     gateway: 192.168.1.1
     subnet: 255.255.255.0
-  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  # Enable fallback hotspot (captive portal) in case wifi connection fails / Activer le point d'accès de secours (portail captif) en cas d'échec de la connexion Wi-Fi
   ap:
     ssid: !secret MF_ap_ssid
     password: !secret MF_ap_password
 
-# Script to update screen
+# SCRIPT TO UPDATE SCREEN / SCRIPT POUR METTRE À JOUR L'ÉCRAN
 script:
   - id: update_screen
     then:
       - component.update: eink_display
 
-#  Time to update screen
+# SCREEN UPDATE TIMES / HEURES DE MISE À JOUR DE L'ÉCRAN
 time:
   - platform: homeassistant
     id: homeassistant_time
@@ -76,12 +78,12 @@ time:
         then:
           - script.execute: update_screen
 
-# QR code for Guests Wifi access
+# QR CODE FOR GUEST WIFI ACCESS / CODE QR POUR L'ACCÈS WIFI INVITÉ
 qr_code:
   - id: homepage_qr
     value: !secret MF_qr_value
 
-# Include custom fonts
+# INCLUDE CUSTOM FONTS / INCLURE DES POLICES PERSONNALISÉES
 font:
   ################# REGULAR #################
   - file: "fonts/GothamRnd-Book.ttf"
@@ -122,7 +124,7 @@ font:
     id: bold15
     size: 15
     glyphs: *font-glyphs
-    extras: #Enables emoji support
+    extras: # Enables emoji support / Active la prise en charge des emojis
       - file: "fonts/NotoEmoji-VariableFont_wght.ttf" # --> https://fonts.google.com/noto/specimen/Noto+Emoji?noto.query=emoji
         glyphs: [                                     # --> https://www.unicode.org/emoji/charts/full-emoji-list.html
           "\u2665", #heart suit
@@ -163,12 +165,12 @@ font:
     size: 55
     glyphs: *font-glyphs
 
-  # Include Material Design Icons font (v7.4.47 --> https://github.com/Pictogrammers/pictogrammers.github.io/tree/main/%40mdi/font/)
+  # Include Material Design Icons font / Inclure la police des icônes Material Design (v7.4.47 --> https://github.com/Pictogrammers/pictogrammers.github.io/tree/main/%40mdi/font/)
   - file: 'fonts/materialdesignicons-webfont.ttf'
     id: mdi120
     size: 120
     glyphs: &mdi-glyphs # --> https://pictogrammers.com/library/mdi/
-      # All weather pictograms
+      # All weather pictograms / Tous les pictogrammes météo
       - "\U000F0590" # mdi-weather-cloudy
       - "\U000F0F2F" # mdi-weather-cloudy-alert
       - "\U000F0E6E" # mdi-weather-cloudy-arrow-right
@@ -206,7 +208,7 @@ font:
       - "\U000F059D" # mdi-weather-windy
       - "\U000F059E" # mdi-weather-windy-variant
       
-      # Other pictograms
+      # Other pictograms / Autres pictogrammes
       - "\U000F0A70" # mdi-silverware-fork-knife
       - "\U000F04B9" # mdi-sofa
       - "\U000F02B4" # mdi-controller
@@ -223,13 +225,13 @@ font:
     size: 20
     glyphs: *mdi-glyphs
 
-# List of sensors
+# LIST OF SENSORS / LISTE DES CAPTEURS
 sensor:
   - platform: homeassistant
-    entity_id: weather.forecast_YourCity # Entity ID of your weather forecast app.
+    entity_id: weather.forecast_YourCity # Entity ID of your weather forecast app. / ID d'entité de votre application de prévisions météo
     attribute: temperature
     id: weather_temperature
-  # Weather sensors
+  # Weather sensors / Capteurs météo
   - platform: homeassistant
     entity_id: sensor.weather_temperature_1
     id: weather_temperature_1
@@ -266,36 +268,36 @@ sensor:
   - platform: homeassistant
     entity_id: sensor.weather_templow_6
     id: weather_templow_6
-  #Home sensors
+  #Home sensors / Capteurs domestiques
   - platform: homeassistant
-    entity_id: sensor.salle_a_manger_temperature # Entity ID of your temperature sensor
+    entity_id: sensor.salle_a_manger_temperature # Entity ID of your temperature sensor / ID d'entité de votre capteur de température
     id: salle_a_manger_temperature
   - platform: homeassistant
-    entity_id: sensor.salle_a_manger_humidite # Entity ID of your humidity sensor
+    entity_id: sensor.salle_a_manger_humidite # Entity ID of your humidity sensor / ID d'entité de votre capteur d'humidité
     id: salle_a_manger_humidity
   - platform: homeassistant
-    entity_id: sensor.salon_temperature # Entity ID of your temperature sensor
+    entity_id: sensor.salon_temperature # Entity ID of your temperature sensor / ID d'entité de votre capteur de température
     id: salon_temperature
   - platform: homeassistant
-    entity_id: sensor.salon_humidite # Entity ID of your humidity sensor
+    entity_id: sensor.salon_humidite # Entity ID of your humidity sensor / ID d'entité de votre capteur d'humidité
     id: salon_humidity
   - platform: homeassistant
-    entity_id: sensor.bureau_1_temperature # Entity ID of your temperature sensor
+    entity_id: sensor.bureau_1_temperature # Entity ID of your temperature sensor / ID d'entité de votre capteur de température
     id: bureau_1_temperature
   - platform: homeassistant
-    entity_id: sensor.bureau_1_humidite # Entity ID of your humidity sensor
+    entity_id: sensor.bureau_1_humidite # Entity ID of your humidity sensor / ID d'entité de votre capteur d'humidité
     id: bureau_1_humidity
   - platform: homeassistant
-    entity_id: sensor.bureau_2_temperature # Entity ID of your temperature sensor
+    entity_id: sensor.bureau_2_temperature # Entity ID of your temperature sensor / ID d'entité de votre capteur de température
     id: bureau_2_temperature
   - platform: homeassistant
-    entity_id: sensor.bureau_2_humidite # Entity ID of your humidity sensor
+    entity_id: sensor.bureau_2_humidite # Entity ID of your humidity sensor / ID d'entité de votre capteur d'humidité
     id: bureau_2_humidity
   - platform: homeassistant
-    entity_id: sensor.chambre_temperature # Entity ID of your temperature sensor
+    entity_id: sensor.chambre_temperature # Entity ID of your temperature sensor / ID d'entité de votre capteur de température
     id: chambre_temperature
   - platform: homeassistant
-    entity_id: sensor.chambre_humidite # Entity ID of your humidity sensor
+    entity_id: sensor.chambre_humidite # Entity ID of your humidity sensor / ID d'entité de votre capteur d'humidité
     id: chambre_humidity
 
 text_sensor: 
