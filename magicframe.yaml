@@ -212,8 +212,6 @@ font:
 
       - "\U000F16BF" # mdi-wifi-lock
 
-      - "\U000F02D1" # mdi-heart
-
   - file: 'fonts/materialdesignicons-webfont.ttf'
     id: mdi36
     size: 36
