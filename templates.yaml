@@ -9,7 +9,8 @@
     #Forcast
     - service: weather.get_forecasts
       target:
-        entity_id: weather.forecast_nantes
+        # Entity ID of your weather forecast app.
+        entity_id: weather.forecast_nantes   
       data:
         type: daily
       response_variable: daily
