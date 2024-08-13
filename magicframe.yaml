@@ -227,12 +227,11 @@ font:
 
 # LIST OF SENSORS / LISTE DES CAPTEURS
 sensor:
+  # Weather forecast / Prévisions météo
   - platform: homeassistant
     entity_id: weather.forecast_YourCity # Entity ID of your weather forecast app. / ID d'entité de votre application de prévisions météo
     attribute: temperature
     id: weather_temperature
-    
-  # Weather sensors / Capteurs météo
   - platform: homeassistant
     entity_id: sensor.weather_temperature_1
     id: weather_temperature_1
@@ -303,6 +302,7 @@ sensor:
     id: chambre_humidity
 
 text_sensor: 
+  # Time and date / Heure et date
   - platform: homeassistant
     entity_id: sensor.date_fr
     id: date_fr
@@ -310,7 +310,7 @@ text_sensor:
     entity_id: sensor.date_time_iso
     id: date_time_iso
     
-  # Weather sensors / Capteurs météo
+  # Weather forecast / Prévisions météo
   - platform: homeassistant
     entity_id: weather.forecast_YourCity # Entity ID of your weather forecast app. / ID d'entité de votre application de prévisions météo
     id: weather_name
@@ -351,7 +351,7 @@ text_sensor:
     entity_id: sensor.weather_condition_6
     id: weather_condition_6
     
-  # Calendar events sensors / Capteurs d'événements de calendrier
+  # Calendar events / Calendrier des événements
   - platform: homeassistant
     entity_id: sensor.event_start_1
     id: event_start_1
