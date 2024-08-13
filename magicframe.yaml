@@ -277,17 +277,17 @@ sensor:
     entity_id: sensor.salon_humidite # Entity ID of your humidity sensor
     id: salon_humidity
   - platform: homeassistant
-    entity_id: sensor.bureau_de_rwanou_temperature # Entity ID of your temperature sensor
-    id: bureau_de_rwanou_temperature
+    entity_id: sensor.bureau_1_temperature # Entity ID of your temperature sensor
+    id: bureau_1_temperature
   - platform: homeassistant
-    entity_id: sensor.bureau_de_rwanou_humidite # Entity ID of your humidity sensor
-    id: bureau_de_rwanou_humidity
+    entity_id: sensor.bureau_1_humidite # Entity ID of your humidity sensor
+    id: bureau_1_humidity
   - platform: homeassistant
-    entity_id: sensor.bureau_de_camou_temperature # Entity ID of your temperature sensor
-    id: bureau_de_camou_temperature
+    entity_id: sensor.bureau_2_temperature # Entity ID of your temperature sensor
+    id: bureau_2_temperature
   - platform: homeassistant
-    entity_id: sensor.bureau_de_camou_humidite # Entity ID of your humidity sensor
-    id: bureau_de_camou_humidity
+    entity_id: sensor.bureau_2_humidite # Entity ID of your humidity sensor
+    id: bureau_2_humidity
   - platform: homeassistant
     entity_id: sensor.chambre_temperature # Entity ID of your temperature sensor
     id: chambre_temperature
@@ -418,8 +418,8 @@ display:
           //Others
           {"salle à manger", "\U000F0A70"},  //Dining room
           {"salon", "\U000F04B9"},           //Living room
-          {"bureau rwanou", "\U000F02B4"},   //Desk 1
-          {"bureau camou", "\U000F1239"},    //Desk 2
+          {"bureau 1", "\U000F02B4"},   //Desk 1
+          {"bureau 2", "\U000F1239"},    //Desk 2
           {"chambre", "\U000F0FD2"},         //Bedroom
           {"wifi-signal", "\U000F16BF"},
         };
@@ -440,7 +440,7 @@ display:
           {"sunny", "Ensoleillé"},
           {"windy", "Venteux"},
           {"windy-variant", "Venteux"},
-          {"exceptional", "Alerte"},
+          {"exceptional", "Alerte"}
 
           //Days of week FR
           {"Mon", "Lun"},{"Tue", "Mar"},{"Wed", "Mer"},{"Thu", "Jeu"},{"Fri", "Ven"},{"Sat", "Sam"},{"Sun", "Dim"},
@@ -493,13 +493,13 @@ display:
      it.printf(162, 410, id(bold20), TextAlign::TOP_CENTER, "%2.1f°C", id(salon_temperature).state);
      it.printf(162, 430, id(book20), TextAlign::TOP_CENTER, "%2.1f%%", id(salon_humidity).state);
      
-     it.printf(240, 370, id(mdi36), TextAlign::TOP_CENTER, "%s", icon_map["bureau rwanou"].c_str());
-     it.printf(240, 410, id(bold20), TextAlign::TOP_CENTER, "%2.1f°C", id(bureau_de_rwanou_temperature).state);
-     it.printf(240, 430, id(book20), TextAlign::TOP_CENTER, "%2.1f%%", id(bureau_de_rwanou_humidity).state);
+     it.printf(240, 370, id(mdi36), TextAlign::TOP_CENTER, "%s", icon_map["bureau 1"].c_str());
+     it.printf(240, 410, id(bold20), TextAlign::TOP_CENTER, "%2.1f°C", id(bureau_1_temperature).state);
+     it.printf(240, 430, id(book20), TextAlign::TOP_CENTER, "%2.1f%%", id(bureau_1_humidity).state);
 
-     it.printf(318, 370, id(mdi36), TextAlign::TOP_CENTER, "%s", icon_map["bureau camou"].c_str());
-     it.printf(318, 410, id(bold20), TextAlign::TOP_CENTER, "%2.1f°C", id(bureau_de_camou_temperature).state);
-     it.printf(318, 430, id(book20), TextAlign::TOP_CENTER, "%2.1f%%", id(bureau_de_camou_humidity).state);
+     it.printf(318, 370, id(mdi36), TextAlign::TOP_CENTER, "%s", icon_map["bureau 2"].c_str());
+     it.printf(318, 410, id(bold20), TextAlign::TOP_CENTER, "%2.1f°C", id(bureau_2_temperature).state);
+     it.printf(318, 430, id(book20), TextAlign::TOP_CENTER, "%2.1f%%", id(bureau_2_humidity).state);
 
      it.printf(395, 370, id(mdi36), TextAlign::TOP_CENTER, "%s", icon_map["chambre"].c_str());
      it.printf(395, 410, id(bold20), TextAlign::TOP_CENTER, "%2.1f°C", id(chambre_temperature).state);
@@ -529,9 +529,9 @@ display:
 
 
      it.qr_code(55, 700, id(homepage_qr), Color(255,255,255), 2);
-     it.printf(125, 700, id(bold15), TextAlign::TOP_LEFT, "Connexion auto à CE_WIFI");
+     it.printf(125, 700, id(bold15), TextAlign::TOP_LEFT, "Connexion auto à YourGuestWIFISSID"); //Wifi connection YourGuestWifiSSID
      it.printf(125, 724, id(mdi36), TextAlign::TOP_LEFT, "%s", icon_map["wifi-signal"].c_str());
-     it.printf(265, 740, id(bold15), TextAlign::TOP_RIGHT, "MàJ le :");
+     it.printf(265, 740, id(bold15), TextAlign::TOP_RIGHT, "MàJ le :"); //Updated on
      it.strftime(270, 740, id(bold15), TextAlign::TOP_LEFT, "%d-%m-%Y à %H:%M", id(homeassistant_time).now());
 
 captive_portal:
