@@ -556,7 +556,7 @@ display:
      it.printf(125, 724, id(MDI_36), TextAlign::TOP_LEFT, "%s", icon_map["wifi-signal"].c_str());
 
      // Last screen update date / Date de la dernière mise à jour à l'écran
-     it.printf(265, 740, id(NotoBold_15), TextAlign::TOP_RIGHT, "MàJ le :");                                         //Updated on
-     it.strftime(270, 740, id(NotoBold_15), TextAlign::TOP_LEFT, "%d-%m-%Y à %H:%M", id(homeassistant_time).now());
+     it.printf(320, 740, id(NotoBold_15), TextAlign::TOP_RIGHT, "Mis à jour le :");                                         //Updated on
+     it.strftime(320, 740, id(NotoBold_15), TextAlign::TOP_LEFT, " %d-%m à %H:%M", id(homeassistant_time).now());
 
 captive_portal:
