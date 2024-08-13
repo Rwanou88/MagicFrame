@@ -1,0 +1,538 @@
+esphome:
+  name: magicframe
+  friendly_name: MagicFrame
+  platform: ESP32
+  board: esp32dev
+  on_boot:
+  - delay: 20s
+  - script.execute: update_screen
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: !secret MF_api_key
+
+ota:
+  platform: esphome
+
+wifi:
+  ssid: !secret MF_wifi_ssid
+  password: !secret MF_wifi_password
+  manual_ip: # If you want a static IP (recommended - You will need to make the first installation via USB)
+    static_ip: 192.168.1.100
+    gateway: 192.168.1.1
+    subnet: 255.255.255.0
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: !secret MF_ap_ssid
+    password: !secret MF_ap_password
+
+# Script to update screen
+script:
+  - id: update_screen
+    then:
+      - component.update: eink_display
+
+#  Time to update screen
+time:
+  - platform: homeassistant
+    id: homeassistant_time
+    timezone: Europe/Paris
+
+    on_time:
+      # 08:00
+      - seconds: 0
+        minutes: 0
+        hours: 8
+        then:
+          - script.execute: update_screen
+      # 12:00
+      - seconds: 0
+        minutes: 0
+        hours: 12
+        then:
+          - script.execute: update_screen
+      # 16:00
+      - seconds: 0
+        minutes: 0
+        hours: 16
+        then:
+          - script.execute: update_screen
+      # 20:00
+      - seconds: 0
+        minutes: 0
+        hours: 20
+        then:
+          - script.execute: update_screen
+      # 00:00
+      - seconds: 0
+        minutes: 0
+        hours: 0
+        then:
+          - script.execute: update_screen
+
+# QR code for Guests Wifi access
+qr_code:
+  - id: homepage_qr
+    value: !secret MF_qr_value
+
+# Include custom fonts
+font:
+  ################# REGULAR #################
+  - file: "fonts/GothamRnd-Book.ttf"
+    id: book20
+    size: 20
+    glyphs: &font-glyphs [ # --> https://codepoints.net/
+      0,1,2,3,4,5,6,7,8,9,
+      A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,
+      a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,
+      à,â,ç,é,è,ê,ù,û,À,Â,Ç,É,È,Ê,Ù,Û,
+      "\u0020", #space
+      "\u0021", #!
+      "\u0022", #"
+      "\u0025", #%
+      "\u0026", #&
+      "\u0027", #'
+      "\u0028", #(
+      "\u0029", #)
+      "\u002B", #+
+      "\u002D", #-
+      "\u002E", #.
+      "\u003A", #:
+      "\u003D", #=
+      "\u003F", #?
+      "\u0040", #@
+      "\u005B", #[
+      "\u005D", #]
+      "\u005F", #_
+      "\u00B0", #°
+      ]
+  - file: "fonts/GothamRnd-Book.ttf"
+    id: book25
+    size: 25
+    glyphs: *font-glyphs
+    
+  ################## BOLD ################## 
+  - file: "fonts/GothamRoundedBold.ttf"
+    id: bold15
+    size: 15
+    glyphs: *font-glyphs
+    extras:
+      - file: "fonts/NotoEmoji-VariableFont_wght.ttf" # --> https://fonts.google.com/noto/specimen/Noto+Emoji?noto.query=emoji
+        glyphs: [                                     # --> https://www.unicode.org/emoji/charts/full-emoji-list.html
+          "\u2665", #heart suit
+          "\u2764", #red heart
+          "\U0001F60D", #smiling face with heart-eyes
+          "\U0001F356", #meat on bone
+          "\U0001F357", #poultry leg
+          "\U0001F467", #girl
+          "\U0001F476", #baby
+          "\U0001F618", #face blowing a kiss
+          "\U0001F63B", #smiling cat with heart-eyes
+          "\U0001F969", #cut of meat
+          "\U0001F970", #smiling face with hearts
+          "\U0001F973", #partying face
+        ]
+  - file: "fonts/GothamRoundedBold.ttf"
+    id: bold20
+    size: 20
+    glyphs: *font-glyphs
+  - file: "fonts/GothamRoundedBold.ttf"
+    id: bold25
+    size: 25
+    glyphs: *font-glyphs
+  - file: "fonts/GothamRoundedBold.ttf"
+    id: bold30
+    size: 30
+    glyphs: *font-glyphs
+  - file: "fonts/GothamRoundedBold.ttf"
+    id: bold35
+    size: 35
+    glyphs: *font-glyphs
+  - file: "fonts/GothamRoundedBold.ttf"
+    id: bold40
+    size: 40
+    glyphs: *font-glyphs
+  - file: "fonts/GothamRoundedBold.ttf"
+    id: bold55
+    size: 55
+    glyphs: *font-glyphs
+
+  # Include Material Design Icons font (v7.4.47 --> https://github.com/Pictogrammers/pictogrammers.github.io/tree/main/%40mdi/font/)
+  - file: 'fonts/materialdesignicons-webfont.ttf'
+    id: mdi120
+    size: 120
+    glyphs: &mdi-glyphs # --> https://pictogrammers.com/library/mdi/
+      - "\U000F0590" # mdi-weather-cloudy
+      - "\U000F0F2F" # mdi-weather-cloudy-alert
+      - "\U000F0E6E" # mdi-weather-cloudy-arrow-right
+      - "\U000F18F6" # mdi-weather-cloudy-clock
+      - "\U000F1B5A" # mdi-weather-dust
+      - "\U000F0591" # mdi-weather-fog
+      - "\U000F0592" # mdi-weather-hail
+      - "\U000F0F30" # mdi-weather-hazy
+      - "\U000F0898" # mdi-weather-hurricane
+      - "\U000F1C78" # mdi-weather-hurricane-outline
+      - "\U000F0593" # mdi-weather-lightning
+      - "\U000F067E" # mdi-weather-lightning-rainy
+      - "\U000F1D15" # mdi-weather-moonset
+      - "\U000F1D16" # mdi-weather-moonset-down
+      - "\U000F1D17" # mdi-weather-moonset-up
+      - "\U000F0594" # mdi-weather-night
+      - "\U000F0F31" # mdi-weather-night-partly-cloudy
+      - "\U000F0595" # mdi-weather-partly-cloudy
+      - "\U000F0F32" # mdi-weather-partly-lightning
+      - "\U000F0F33" # mdi-weather-partly-rainy
+      - "\U000F0F34" # mdi-weather-partly-snowy
+      - "\U000F0F35" # mdi-weather-partly-snowy-rainy
+      - "\U000F0596" # mdi-weather-pouring
+      - "\U000F0597" # mdi-weather-rainy
+      - "\U000F0598" # mdi-weather-snowy
+      - "\U000F0F36" # mdi-weather-snowy-heavy
+      - "\U000F067F" # mdi-weather-snowy-rainy
+      - "\U000F0599" # mdi-weather-sunny
+      - "\U000F0F37" # mdi-weather-sunny-alert
+      - "\U000F14E4" # mdi-weather-sunny-off
+      - "\U000F059A" # mdi-weather-sunset
+      - "\U000F059B" # mdi-weather-sunset-down
+      - "\U000F059C" # mdi-weather-sunset-up
+      - "\U000F0F38" # mdi-weather-tornado
+      - "\U000F059D" # mdi-weather-windy
+      - "\U000F059E" # mdi-weather-windy-variant
+
+      - "\U000F0A70" # mdi-silverware-fork-knife
+      - "\U000F04B9" # mdi-sofa
+      - "\U000F02B4" # mdi-controller
+      - "\U000F1239" # mdi-desk
+      - "\U000F0FD2" # mdi-bed-king
+
+      - "\U000F16BF" # mdi-wifi-lock
+
+      - "\U000F02D1" # mdi-heart
+
+  - file: 'fonts/materialdesignicons-webfont.ttf'
+    id: mdi36
+    size: 36
+    glyphs: *mdi-glyphs
+  - file: 'fonts/materialdesignicons-webfont.ttf'
+    id: mdi20
+    size: 20
+    glyphs: *mdi-glyphs
+
+#  List of sensors
+sensor:
+  - platform: homeassistant
+    entity_id: weather.forecast_nantes
+    attribute: temperature
+    id: weather_temperature
+  - platform: homeassistant
+    entity_id: sensor.weather_temperature_1
+    id: weather_temperature_1
+  - platform: homeassistant
+    entity_id: sensor.weather_templow_1
+    id: weather_templow_1
+  - platform: homeassistant
+    entity_id: sensor.weather_temperature_2
+    id: weather_temperature_2
+  - platform: homeassistant
+    entity_id: sensor.weather_templow_2
+    id: weather_templow_2
+  - platform: homeassistant
+    entity_id: sensor.weather_temperature_3
+    id: weather_temperature_3
+  - platform: homeassistant
+    entity_id: sensor.weather_templow_3
+    id: weather_templow_3
+  - platform: homeassistant
+    entity_id: sensor.weather_temperature_4
+    id: weather_temperature_4
+  - platform: homeassistant
+    entity_id: sensor.weather_templow_4
+    id: weather_templow_4
+  - platform: homeassistant
+    entity_id: sensor.weather_temperature_5
+    id: weather_temperature_5
+  - platform: homeassistant
+    entity_id: sensor.weather_templow_5
+    id: weather_templow_5
+  - platform: homeassistant
+    entity_id: sensor.weather_temperature_6
+    id: weather_temperature_6
+  - platform: homeassistant
+    entity_id: sensor.weather_templow_6
+    id: weather_templow_6
+  - platform: homeassistant
+    entity_id: sensor.salle_a_manger_temperature
+    id: salle_a_manger_temperature
+  - platform: homeassistant
+    entity_id: sensor.salle_a_manger_humidite
+    id: salle_a_manger_humidity
+  - platform: homeassistant
+    entity_id: sensor.salon_temperature
+    id: salon_temperature
+  - platform: homeassistant
+    entity_id: sensor.salon_humidite
+    id: salon_humidity
+  - platform: homeassistant
+    entity_id: sensor.bureau_de_rwanou_temperature
+    id: bureau_de_rwanou_temperature
+  - platform: homeassistant
+    entity_id: sensor.bureau_de_rwanou_humidite
+    id: bureau_de_rwanou_humidity
+  - platform: homeassistant
+    entity_id: sensor.bureau_de_camou_temperature
+    id: bureau_de_camou_temperature
+  - platform: homeassistant
+    entity_id: sensor.bureau_de_camou_humidite
+    id: bureau_de_camou_humidity
+  - platform: homeassistant
+    entity_id: sensor.chambre_temperature
+    id: chambre_temperature
+  - platform: homeassistant
+    entity_id: sensor.chambre_humidite
+    id: chambre_humidity
+
+text_sensor: 
+  - platform: homeassistant
+    entity_id: sensor.date_fr
+    id: date_fr
+  - platform: homeassistant
+    entity_id: sensor.date_time_iso
+    id: date_time_iso
+  - platform: homeassistant
+    entity_id: weather.forecast_nantes
+    id: weather_name
+  - platform: homeassistant
+    entity_id: sensor.weather_day_1
+    id: weather_day_1
+  - platform: homeassistant
+    entity_id: sensor.weather_condition_1
+    id: weather_condition_1
+  - platform: homeassistant
+    entity_id: sensor.weather_day_2
+    id: weather_day_2
+  - platform: homeassistant
+    entity_id: sensor.weather_condition_2
+    id: weather_condition_2
+  - platform: homeassistant
+    entity_id: sensor.weather_day_3
+    id: weather_day_3
+  - platform: homeassistant
+    entity_id: sensor.weather_condition_3
+    id: weather_condition_3
+  - platform: homeassistant
+    entity_id: sensor.weather_day_4
+    id: weather_day_4
+  - platform: homeassistant
+    entity_id: sensor.weather_condition_4
+    id: weather_condition_4
+  - platform: homeassistant
+    entity_id: sensor.weather_day_5
+    id: weather_day_5
+  - platform: homeassistant
+    entity_id: sensor.weather_condition_5
+    id: weather_condition_5
+  - platform: homeassistant
+    entity_id: sensor.weather_day_6
+    id: weather_day_6
+  - platform: homeassistant
+    entity_id: sensor.weather_condition_6
+    id: weather_condition_6
+  - platform: homeassistant
+    entity_id: sensor.event_start_1
+    id: event_start_1
+  - platform: homeassistant
+    entity_id: sensor.event_summary_1
+    id: event_summary_1
+  - platform: homeassistant
+    entity_id: sensor.event_start_2
+    id: event_start_2
+  - platform: homeassistant
+    entity_id: sensor.event_summary_2
+    id: event_summary_2
+  - platform: homeassistant
+    entity_id: sensor.event_start_3
+    id: event_start_3
+  - platform: homeassistant
+    entity_id: sensor.event_summary_3
+    id: event_summary_3
+  - platform: homeassistant
+    entity_id: sensor.event_start_4
+    id: event_start_4
+  - platform: homeassistant
+    entity_id: sensor.event_summary_4
+    id: event_summary_4
+  - platform: homeassistant
+    entity_id: sensor.event_start_5
+    id: event_start_5
+  - platform: homeassistant
+    entity_id: sensor.event_summary_5
+    id: event_summary_5
+
+  - platform: homeassistant
+    entity_id: sensor.event_start_1_fr
+    id: event_start_1_fr
+
+# Pins for Waveshare ePaper ESP Board
+spi:
+  clk_pin: 13
+  mosi_pin: 14
+
+# Render on ePaper screen
+display:
+  - platform: waveshare_epaper
+    id: eink_display
+    cs_pin: 15
+    dc_pin: 27
+    busy_pin:
+      number: 25
+      inverted: true
+    reset_pin: 26
+    reset_duration: 2ms
+    model: 7.50inv2
+    rotation: 270°
+    update_interval: never
+    lambda: |-
+    
+     std::map<std::string, std::string> icon_map
+        { //Weather --> https://www.home-assistant.io/integrations/weather/#condition-mapping
+          {"clear-night", "\U000F0594"},
+          {"cloudy", "\U000F0590"},
+          {"fog", "\U000F0591"},
+          {"hail", "\U000F0592"},
+          {"lightning", "\U000F0593"},
+          {"lightning-rainy", "\U000F067E"},
+          {"partlycloudy", "\U000F0595"},
+          {"pouring", "\U000F0596"},
+          {"rainy", "\U000F0597"},
+          {"snowy", "\U000F0598"},
+          {"snowy-rainy", "\U000F067F"},
+          {"sunny", "\U000F0599"},
+          {"windy", "\U000F059D"},
+          {"windy-variant", "\U000F059E"},
+          {"exceptional", "\U000F0F2F"},
+
+          //Others
+          {"salle à manger", "\U000F0A70"},
+          {"salon", "\U000F04B9"},
+          {"bureau rwanou", "\U000F02B4"},
+          {"bureau camou", "\U000F1239"},
+          {"chambre", "\U000F0FD2"},
+          {"wifi-signal", "\U000F16BF"},
+        };
+
+     std::map<std::string, std::string> traduction
+        { //Weather FR
+          {"clear-night", "Nuit claire"},
+          {"cloudy", "Nuageux"},
+          {"fog", "Brouillard"},
+          {"hail", "Grêle"},
+          {"lightning", "Orage"},
+          {"lightning-rainy", "Orageux"},
+          {"partlycloudy", "Nuageux"},
+          {"pouring", "À verse"},
+          {"rainy", "Pluvieux"},
+          {"snowy", "Neigeux"},
+          {"snowy-rainy", "Neigeux"},
+          {"sunny", "Ensoleillé"},
+          {"windy", "Venteux"},
+          {"windy-variant", "Venteux"},
+          {"exceptional", "Alerte"},
+
+          //Days of week FR
+          {"Mon", "Lun"},{"Tue", "Mar"},{"Wed", "Mer"},{"Thu", "Jeu"},{"Fri", "Ven"},{"Sat", "Sam"},{"Sun", "Dim"},
+        };
+
+     it.printf(240, 40, id(bold35), TextAlign::TOP_CENTER, "%s", id(date_fr).state.c_str());
+
+
+     it.filled_rectangle(50, 85, 380, 2);
+
+
+     it.printf(140, 100, id(mdi120), TextAlign::TOP_CENTER, "%s", icon_map[id(weather_name).state].c_str());
+     it.printf(220, 110, id(bold35), TextAlign::TOP_LEFT, "%s", traduction[id(weather_name).state].c_str());
+     it.printf(220, 150, id(bold55), TextAlign::TOP_LEFT, "%2.1f°C", id(weather_temperature).state);
+
+     it.printf(85, 235, id(bold25), TextAlign::TOP_CENTER, "%s", traduction[id(weather_day_1).state].c_str());
+     it.printf(85, 265, id(mdi36), TextAlign::TOP_CENTER, "%s", icon_map[id(weather_condition_1).state].c_str());
+     it.printf(85, 305, id(bold20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_temperature_1).state);
+     it.printf(85, 325, id(book20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_templow_1).state);
+
+     it.printf(162, 235, id(bold25), TextAlign::TOP_CENTER, "%s", traduction[id(weather_day_2).state].c_str());
+     it.printf(162, 265, id(mdi36), TextAlign::TOP_CENTER, "%s", icon_map[id(weather_condition_2).state].c_str());
+     it.printf(162, 305, id(bold20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_temperature_2).state);
+     it.printf(162, 325, id(book20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_templow_2).state);
+
+     it.printf(240, 235, id(bold25), TextAlign::TOP_CENTER, "%s", traduction[id(weather_day_3).state].c_str());
+     it.printf(240, 265, id(mdi36), TextAlign::TOP_CENTER, "%s", icon_map[id(weather_condition_3).state].c_str());
+     it.printf(240, 305, id(bold20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_temperature_3).state);
+     it.printf(240, 325, id(book20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_templow_3).state);
+
+     it.printf(318, 235, id(bold25), TextAlign::TOP_CENTER, "%s", traduction[id(weather_day_4).state].c_str());
+     it.printf(318, 265, id(mdi36), TextAlign::TOP_CENTER, "%s", icon_map[id(weather_condition_4).state].c_str());
+     it.printf(318, 305, id(bold20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_temperature_4).state);
+     it.printf(318, 325, id(book20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_templow_4).state);
+
+     it.printf(395, 235, id(bold25), TextAlign::TOP_CENTER, "%s", traduction[id(weather_day_5).state].c_str());
+     it.printf(395, 265, id(mdi36), TextAlign::TOP_CENTER, "%s", icon_map[id(weather_condition_5).state].c_str());
+     it.printf(395, 305, id(bold20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_temperature_5).state);
+     it.printf(395, 325, id(book20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_templow_5).state);
+
+
+     it.filled_rectangle(50, 360, 380, 2);
+
+
+     it.printf(85, 370, id(mdi36), TextAlign::TOP_CENTER, "%s", icon_map["salle à manger"].c_str());
+     it.printf(85, 410, id(bold20), TextAlign::TOP_CENTER, "%2.1f°C", id(salle_a_manger_temperature).state);
+     it.printf(85, 430, id(book20), TextAlign::TOP_CENTER, "%2.1f%%", id(salle_a_manger_humidity).state);
+
+     it.printf(162, 370, id(mdi36), TextAlign::TOP_CENTER, "%s", icon_map["salon"].c_str());
+     it.printf(162, 410, id(bold20), TextAlign::TOP_CENTER, "%2.1f°C", id(salon_temperature).state);
+     it.printf(162, 430, id(book20), TextAlign::TOP_CENTER, "%2.1f%%", id(salon_humidity).state);
+     
+     it.printf(240, 370, id(mdi36), TextAlign::TOP_CENTER, "%s", icon_map["bureau rwanou"].c_str());
+     it.printf(240, 410, id(bold20), TextAlign::TOP_CENTER, "%2.1f°C", id(bureau_de_rwanou_temperature).state);
+     it.printf(240, 430, id(book20), TextAlign::TOP_CENTER, "%2.1f%%", id(bureau_de_rwanou_humidity).state);
+
+     it.printf(318, 370, id(mdi36), TextAlign::TOP_CENTER, "%s", icon_map["bureau camou"].c_str());
+     it.printf(318, 410, id(bold20), TextAlign::TOP_CENTER, "%2.1f°C", id(bureau_de_camou_temperature).state);
+     it.printf(318, 430, id(book20), TextAlign::TOP_CENTER, "%2.1f%%", id(bureau_de_camou_humidity).state);
+
+     it.printf(395, 370, id(mdi36), TextAlign::TOP_CENTER, "%s", icon_map["chambre"].c_str());
+     it.printf(395, 410, id(bold20), TextAlign::TOP_CENTER, "%2.1f°C", id(chambre_temperature).state);
+     it.printf(395, 430, id(book20), TextAlign::TOP_CENTER, "%2.1f%%", id(chambre_humidity).state);
+
+
+     it.filled_rectangle(50, 460, 380, 2);
+
+   
+     it.printf(55, 470, id(bold20), TextAlign::TOP_LEFT, "%s", id(event_start_1).state.c_str());
+     it.printf(55, 490, id(bold15), TextAlign::TOP_LEFT, "%s", id(event_summary_1).state.c_str());
+
+     it.printf(55, 510, id(bold20), TextAlign::TOP_LEFT, "%s", id(event_start_2).state.c_str());
+     it.printf(55, 530, id(bold15), TextAlign::TOP_LEFT, "%s", id(event_summary_2).state.c_str());
+
+     it.printf(55, 550, id(bold20), TextAlign::TOP_LEFT, "%s", id(event_start_3).state.c_str());
+     it.printf(55, 570, id(bold15), TextAlign::TOP_LEFT, "%s", id(event_summary_3).state.c_str());
+
+     it.printf(55, 590, id(bold20), TextAlign::TOP_LEFT, "%s", id(event_start_4).state.c_str());
+     it.printf(55, 610, id(bold15), TextAlign::TOP_LEFT, "%s", id(event_summary_4).state.c_str());
+
+     it.printf(55, 630, id(bold20), TextAlign::TOP_LEFT, "%s", id(event_start_5).state.c_str());
+     it.printf(55, 650, id(bold15), TextAlign::TOP_LEFT, "%s", id(event_summary_5).state.c_str());
+
+
+     it.filled_rectangle(50, 680, 380, 2);
+
+
+     it.qr_code(55, 700, id(homepage_qr), Color(255,255,255), 2);
+     it.printf(125, 700, id(bold15), TextAlign::TOP_LEFT, "Connexion auto à CE_WIFI");
+     it.printf(125, 724, id(mdi36), TextAlign::TOP_LEFT, "%s", icon_map["wifi-signal"].c_str());
+     it.printf(265, 740, id(bold15), TextAlign::TOP_RIGHT, "MàJ le :");
+     it.strftime(270, 740, id(bold15), TextAlign::TOP_LEFT, "%d-%m-%Y à %H:%M", id(homeassistant_time).now());
+
+captive_portal:
