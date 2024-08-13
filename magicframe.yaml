@@ -165,11 +165,11 @@ font:
     size: 55
     glyphs: *font-glyphs
 
-  # Include Material Design Icons font / Inclure la police des icônes Material Design (v7.4.47 --> https://github.com/Pictogrammers/pictogrammers.github.io/tree/main/%40mdi/font/)
-  - file: 'fonts/materialdesignicons-webfont.ttf'
+  # Include Material Design Icons font / Inclure la police des icônes Material Design --> https://pictogrammers.com/library/mdi/
+  - file: "https://github.com/Pictogrammers/pictogrammers.github.io/blob/main/%40mdi/font/7.4.47/fonts/materialdesignicons-webfont.ttf"
     id: mdi120
     size: 120
-    glyphs: &mdi-glyphs # --> https://pictogrammers.com/library/mdi/
+    glyphs: &mdi-glyphs
       # All weather pictograms / Tous les pictogrammes météo
       - "\U000F0590" # mdi-weather-cloudy
       - "\U000F0F2F" # mdi-weather-cloudy-alert
