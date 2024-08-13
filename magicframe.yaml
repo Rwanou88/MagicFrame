@@ -276,34 +276,34 @@ sensor:
   # Home sensors / Capteurs domestiques
   - platform: homeassistant
     entity_id: sensor.salle_a_manger_temperature # Entity ID of your temperature sensor / ID d'entité de votre capteur de température
-    id: salle_a_manger_temperature
+    id: room_temperature_1
   - platform: homeassistant
     entity_id: sensor.salle_a_manger_humidite # Entity ID of your humidity sensor / ID d'entité de votre capteur d'humidité
-    id: salle_a_manger_humidity
+    id: room_humidity_1
   - platform: homeassistant
     entity_id: sensor.salon_temperature # Entity ID of your temperature sensor / ID d'entité de votre capteur de température
-    id: salon_temperature
+    id: room_temperature_2
   - platform: homeassistant
     entity_id: sensor.salon_humidite # Entity ID of your humidity sensor / ID d'entité de votre capteur d'humidité
-    id: salon_humidity
+    id: room_humidity_2
   - platform: homeassistant
     entity_id: sensor.bureau_1_temperature # Entity ID of your temperature sensor / ID d'entité de votre capteur de température
-    id: bureau_1_temperature
+    id: room_temperature_3
   - platform: homeassistant
     entity_id: sensor.bureau_1_humidite # Entity ID of your humidity sensor / ID d'entité de votre capteur d'humidité
-    id: bureau_1_humidity
+    id: room_humidity_3
   - platform: homeassistant
     entity_id: sensor.bureau_2_temperature # Entity ID of your temperature sensor / ID d'entité de votre capteur de température
-    id: bureau_2_temperature
+    id: room_temperature_4
   - platform: homeassistant
     entity_id: sensor.bureau_2_humidite # Entity ID of your humidity sensor / ID d'entité de votre capteur d'humidité
-    id: bureau_2_humidity
+    id: room_humidity_4
   - platform: homeassistant
     entity_id: sensor.chambre_temperature # Entity ID of your temperature sensor / ID d'entité de votre capteur de température
-    id: chambre_temperature
+    id: room_temperature_5
   - platform: homeassistant
     entity_id: sensor.chambre_humidite # Entity ID of your humidity sensor / ID d'entité de votre capteur d'humidité
-    id: chambre_humidity
+    id: room_humidity_5
 
 text_sensor: 
   # Time and date / Heure et date
@@ -430,9 +430,9 @@ display:
           // Others / Autres
           {"salle à manger", "\U000F0A70"},  //Dining room
           {"salon", "\U000F04B9"},           //Living room
-          {"bureau 1", "\U000F02B4"},        //Office 1
-          {"bureau 2", "\U000F1239"},        //Office 2
-          {"chambre", "\U000F0FD2"},         //Bedroom
+          {"bureau", "\U000F02B4"},          //Office 1
+          {"chambre enfant", "\U000F198B"},  //Baby bedroom
+          {"chambre parents", "\U000F0FD2"}, //Master bedroom
           {"wifi-signal", "\U000F16BF"},
         };
 
@@ -503,24 +503,24 @@ display:
 
      // Temperature and humidity at home / Température et humidité à la maison
      it.printf(85, 370, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map["salle à manger"].c_str());
-     it.printf(85, 410, id(NotoBold_20), TextAlign::TOP_CENTER, "%2.1f°C", id(salle_a_manger_temperature).state);
-     it.printf(85, 430, id(NotoReg_20), TextAlign::TOP_CENTER, "%2.1f%%", id(salle_a_manger_humidity).state);
+     it.printf(85, 410, id(Noto_5), TextAlign::TOP_CENTER, "%2.1f°C", id(room_temperature_1).state);
+     it.printf(85, 430, id(Noto_1), TextAlign::TOP_CENTER, "%2.1f%%", id(room_humidity_1).state);
 
      it.printf(162, 370, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map["salon"].c_str());
-     it.printf(162, 410, id(NotoBold_20), TextAlign::TOP_CENTER, "%2.1f°C", id(salon_temperature).state);
-     it.printf(162, 430, id(NotoReg_20), TextAlign::TOP_CENTER, "%2.1f%%", id(salon_humidity).state);
+     it.printf(162, 410, id(Noto_5), TextAlign::TOP_CENTER, "%2.1f°C", id(room_temperature_2).state);
+     it.printf(162, 430, id(Noto_1), TextAlign::TOP_CENTER, "%2.1f%%", id(room_humidity_2).state);
      
-     it.printf(240, 370, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map["bureau 1"].c_str());
-     it.printf(240, 410, id(NotoBold_20), TextAlign::TOP_CENTER, "%2.1f°C", id(bureau_1_temperature).state);
-     it.printf(240, 430, id(NotoReg_20), TextAlign::TOP_CENTER, "%2.1f%%", id(bureau_1_humidity).state);
+     it.printf(240, 370, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map["bureau"].c_str());
+     it.printf(240, 410, id(Noto_5), TextAlign::TOP_CENTER, "%2.1f°C", id(room_temperature_3).state);
+     it.printf(240, 430, id(Noto_1), TextAlign::TOP_CENTER, "%2.1f%%", id(room_humidity_3).state);
 
-     it.printf(318, 370, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map["bureau 2"].c_str());
-     it.printf(318, 410, id(NotoBold_20), TextAlign::TOP_CENTER, "%2.1f°C", id(bureau_2_temperature).state);
-     it.printf(318, 430, id(NotoReg_20), TextAlign::TOP_CENTER, "%2.1f%%", id(bureau_2_humidity).state);
+     it.printf(318, 370, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map["chambre enfant"].c_str());
+     it.printf(318, 410, id(Noto_5), TextAlign::TOP_CENTER, "%2.1f°C", id(room_temperature_4).state);
+     it.printf(318, 430, id(Noto_1), TextAlign::TOP_CENTER, "%2.1f%%", id(room_humidity_4).state);
 
-     it.printf(395, 370, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map["chambre"].c_str());
-     it.printf(395, 410, id(NotoBold_20), TextAlign::TOP_CENTER, "%2.1f°C", id(chambre_temperature).state);
-     it.printf(395, 430, id(NotoReg_20), TextAlign::TOP_CENTER, "%2.1f%%", id(chambre_humidity).state);
+     it.printf(395, 370, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map["chambre parents"].c_str());
+     it.printf(395, 410, id(Noto_5), TextAlign::TOP_CENTER, "%2.1f°C", id(room_temperature_5).state);
+     it.printf(395, 430, id(Noto_1), TextAlign::TOP_CENTER, "%2.1f%%", id(room_humidity_5).state);
 
 
      it.filled_rectangle(50, 460, 380, 2);
