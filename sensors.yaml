@@ -1,4 +1,5 @@
 ####### MagicFrame #######
+
 # Time and date
 - platform: time_date
   display_options:
