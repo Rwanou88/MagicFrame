@@ -5,7 +5,7 @@
     - "date"
     - "date_time_iso"
 
-# Date - Translation FR
+# Translation FR
 - platform: template
   sensors:
     date_fr:
