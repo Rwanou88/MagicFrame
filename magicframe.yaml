@@ -193,8 +193,8 @@ font: # --> https://fonts.google.com/noto/specimen/Noto+Sans/tester
           "\U0001F970", #smiling face with hearts
           "\U0001F973", #partying face
         ]
-  # Include Material Design Icons font / Inclure la police des icônes Material Design
-  - file: "https://github.com/Pictogrammers/pictogrammers.github.io/blob/main/%40mdi/font/7.4.47/fonts/materialdesignicons-webfont.ttf"
+  # Include Material Design Icons font / Inclure la police des icônes Material Design (v.7.4.47 --> https://github.com/Pictogrammers/pictogrammers.github.io/tree/main/%40mdi/font)
+  - file: "fonts/materialdesignicons-webfont.ttf"
     id: MDI_120
     size: 120
     glyphs: &mdi-glyphs # --> https://pictogrammers.com/library/mdi/
@@ -244,11 +244,11 @@ font: # --> https://fonts.google.com/noto/specimen/Noto+Sans/tester
       - "\U000F0FD2" # mdi-bed-king
       - "\U000F16BF" # mdi-wifi-lock
 
-  - file: "https://github.com/Pictogrammers/pictogrammers.github.io/blob/main/%40mdi/font/7.4.47/fonts/materialdesignicons-webfont.ttf"
+  - file: "fonts/materialdesignicons-webfont.ttf"
     id: MDI_36
     size: 36
     glyphs: *mdi-glyphs
-  - file: "https://github.com/Pictogrammers/pictogrammers.github.io/blob/main/%40mdi/font/7.4.47/fonts/materialdesignicons-webfont.ttf"
+  - file: "fonts/materialdesignicons-webfont.ttf"
     id: MDI_20
     size: 20
     glyphs: *mdi-glyphs
@@ -482,17 +482,20 @@ display:
           //Days of week translation EN to FR / Traduction des jours de la semaine EN -> FR
           {"Mon", "Lun"},{"Tue", "Mar"},{"Wed", "Mer"},{"Thu", "Jeu"},{"Fri", "Ven"},{"Sat", "Sam"},{"Sun", "Dim"},
         };
-
+        
+     // Date
      it.printf(240, 40, id(NotoBold_35), TextAlign::TOP_CENTER, "%s", id(date_fr).state.c_str());
 
 
      it.filled_rectangle(50, 85, 380, 2);
 
-
+     
+     // Weather when the screen was last updated / Météo lors de la dernière mise à jour de l'écran
      it.printf(140, 100, id(MDI_120), TextAlign::TOP_CENTER, "%s", icon_map[id(weather_name).state].c_str());
      it.printf(220, 110, id(NotoBold_35), TextAlign::TOP_LEFT, "%s", traduction[id(weather_name).state].c_str());
      it.printf(220, 150, id(NotoBold_55), TextAlign::TOP_LEFT, "%2.1f°C", id(weather_temperature).state);
 
+     // 5-day weather forecast (including today) / Prévisions météo à 5 jours (y compris aujourd'hui)
      it.printf(85, 235, id(NotoBold_25), TextAlign::TOP_CENTER, "%s", traduction[id(weather_day_1).state].c_str());
      it.printf(85, 265, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map[id(weather_condition_1).state].c_str());
      it.printf(85, 305, id(NotoBold_20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_temperature_1).state);
@@ -522,6 +525,7 @@ display:
      it.filled_rectangle(50, 360, 380, 2);
 
 
+     // Temperature and humidity at home / Température et humidité à la maison
      it.printf(85, 370, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map["salle à manger"].c_str());
      it.printf(85, 410, id(NotoBold_20), TextAlign::TOP_CENTER, "%2.1f°C", id(salle_a_manger_temperature).state);
      it.printf(85, 430, id(NotoReg_20), TextAlign::TOP_CENTER, "%2.1f%%", id(salle_a_manger_humidity).state);
@@ -544,8 +548,9 @@ display:
 
 
      it.filled_rectangle(50, 460, 380, 2);
+     
 
-   
+     // Next 5 events on the calendar / 5 prochains événements du calendrier
      it.printf(55, 470, id(NotoBold_20), TextAlign::TOP_LEFT, "%s", id(event_start_1).state.c_str());
      it.printf(55, 490, id(NotoBold_15), TextAlign::TOP_LEFT, "%s", id(event_summary_1).state.c_str());
 
@@ -564,10 +569,13 @@ display:
 
      it.filled_rectangle(50, 680, 380, 2);
 
-
+     
+     // Guest wifi QR code / QR code wifi invité
      it.qr_code(55, 700, id(homepage_qr), Color(255,255,255), 2);
      it.printf(125, 700, id(NotoBold_15), TextAlign::TOP_LEFT, "Connexion auto à YourGuestWIFI_SSID");               //Wifi connection YourGuestWifi_SSID
      it.printf(125, 724, id(MDI_36), TextAlign::TOP_LEFT, "%s", icon_map["wifi-signal"].c_str());
+
+     // Last screen update date / Date de la dernière mise à jour à l'écran
      it.printf(265, 740, id(NotoBold_15), TextAlign::TOP_RIGHT, "MàJ le :");                                         //Updated on
      it.strftime(270, 740, id(NotoBold_15), TextAlign::TOP_LEFT, "%d-%m-%Y à %H:%M", id(homeassistant_time).now());
 
