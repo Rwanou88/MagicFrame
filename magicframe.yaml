@@ -224,7 +224,7 @@ font:
 #  List of sensors
 sensor:
   - platform: homeassistant
-    entity_id: weather.forecast_nantes
+    entity_id: weather.forecast_YourCity # Entity ID of your weather forecast app.
     attribute: temperature
     id: weather_temperature
   - platform: homeassistant
@@ -264,34 +264,34 @@ sensor:
     entity_id: sensor.weather_templow_6
     id: weather_templow_6
   - platform: homeassistant
-    entity_id: sensor.salle_a_manger_temperature
+    entity_id: sensor.salle_a_manger_temperature # Entity ID of your temperature sensor
     id: salle_a_manger_temperature
   - platform: homeassistant
-    entity_id: sensor.salle_a_manger_humidite
+    entity_id: sensor.salle_a_manger_humidite # Entity ID of your humidity sensor
     id: salle_a_manger_humidity
   - platform: homeassistant
-    entity_id: sensor.salon_temperature
+    entity_id: sensor.salon_temperature # Entity ID of your temperature sensor
     id: salon_temperature
   - platform: homeassistant
-    entity_id: sensor.salon_humidite
+    entity_id: sensor.salon_humidite # Entity ID of your humidity sensor
     id: salon_humidity
   - platform: homeassistant
-    entity_id: sensor.bureau_de_rwanou_temperature
+    entity_id: sensor.bureau_de_rwanou_temperature # Entity ID of your temperature sensor
     id: bureau_de_rwanou_temperature
   - platform: homeassistant
-    entity_id: sensor.bureau_de_rwanou_humidite
+    entity_id: sensor.bureau_de_rwanou_humidite # Entity ID of your humidity sensor
     id: bureau_de_rwanou_humidity
   - platform: homeassistant
-    entity_id: sensor.bureau_de_camou_temperature
+    entity_id: sensor.bureau_de_camou_temperature # Entity ID of your temperature sensor
     id: bureau_de_camou_temperature
   - platform: homeassistant
-    entity_id: sensor.bureau_de_camou_humidite
+    entity_id: sensor.bureau_de_camou_humidite # Entity ID of your humidity sensor
     id: bureau_de_camou_humidity
   - platform: homeassistant
-    entity_id: sensor.chambre_temperature
+    entity_id: sensor.chambre_temperature # Entity ID of your temperature sensor
     id: chambre_temperature
   - platform: homeassistant
-    entity_id: sensor.chambre_humidite
+    entity_id: sensor.chambre_humidite # Entity ID of your humidity sensor
     id: chambre_humidity
 
 text_sensor: 
@@ -302,7 +302,7 @@ text_sensor:
     entity_id: sensor.date_time_iso
     id: date_time_iso
   - platform: homeassistant
-    entity_id: weather.forecast_nantes
+    entity_id: weather.forecast_YourCity # Entity ID of your weather forecast app.
     id: weather_name
   - platform: homeassistant
     entity_id: sensor.weather_day_1
@@ -415,11 +415,11 @@ display:
           {"exceptional", "\U000F0F2F"},
 
           //Others
-          {"salle à manger", "\U000F0A70"},
-          {"salon", "\U000F04B9"},
-          {"bureau rwanou", "\U000F02B4"},
-          {"bureau camou", "\U000F1239"},
-          {"chambre", "\U000F0FD2"},
+          {"salle à manger", "\U000F0A70"},  //Dining room
+          {"salon", "\U000F04B9"},           //Living room
+          {"bureau rwanou", "\U000F02B4"},   //Desk 1
+          {"bureau camou", "\U000F1239"},    //Desk 2
+          {"chambre", "\U000F0FD2"},         //Bedroom
           {"wifi-signal", "\U000F16BF"},
         };
 
