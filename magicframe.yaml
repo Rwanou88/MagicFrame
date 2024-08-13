@@ -149,13 +149,11 @@ font:
     size: 15
     glyphs: *font-glyphs
     extras: # Enables emoji support / Active la prise en charge des emojis
-      - file:
-          # --> https://fonts.google.com/noto/specimen/Noto+Emoji/tester
+      - file: # --> https://fonts.google.com/noto/specimen/Noto+Emoji/tester
           type: gfonts
           family: Noto+Emoji
           weight: 400
-        glyphs: [
-          # --> https://www.unicode.org/emoji/charts/full-emoji-list.html
+        glyphs: [ # --> https://www.unicode.org/emoji/charts/full-emoji-list.html
           "\u2665", #heart suit
           "\u2764", #red heart
           "\U0001F60D", #smiling face with heart-eyes
@@ -170,7 +168,7 @@ font:
           "\U0001F973", #partying face
         ]
   
-  # Include Material Design Icons font / Inclure la police des icônes Material Design --> https://pictogrammers.com/library/mdi/
+  # Include Material Design Icons font / Inclure la police des icônes Material Design
   - file: "https://github.com/Pictogrammers/pictogrammers.github.io/blob/main/%40mdi/font/7.4.47/fonts/materialdesignicons-webfont.ttf"
     id: mdi120
     size: 120
@@ -182,7 +180,7 @@ font:
   - file: "https://github.com/Pictogrammers/pictogrammers.github.io/blob/main/%40mdi/font/7.4.47/fonts/materialdesignicons-webfont.ttf"
     id: mdi20
     size: 20
-    glyphs: &mdi-glyphs
+    glyphs: &mdi-glyphs # --> https://pictogrammers.com/library/mdi/
       # All weather pictograms / Tous les pictogrammes météo
       - "\U000F0590" # mdi-weather-cloudy
       - "\U000F0F2F" # mdi-weather-cloudy-alert
