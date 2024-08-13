@@ -475,7 +475,7 @@ display:
      it.printf(220, 110, id(NotoBold_35), TextAlign::TOP_LEFT, "%s", traduction[id(weather_name).state].c_str());
      it.printf(220, 150, id(NotoBold_55), TextAlign::TOP_LEFT, "%2.1f°C", id(weather_temperature).state);
 
-     // 5-day weather forecast (including today) / Prévisions météo à 5 jours (y compris aujourd'hui)
+     // 5-day weather forecast (day 1 = today) / Prévisions météo à 5 jours (day 1 = aujourd'hui)
      it.printf(85, 235, id(NotoBold_25), TextAlign::TOP_CENTER, "%s", traduction[id(weather_day_1).state].c_str());
      it.printf(85, 265, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map[id(weather_condition_1).state].c_str());
      it.printf(85, 305, id(NotoBold_20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_temperature_1).state);
