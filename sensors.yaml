@@ -1,13 +1,13 @@
 ####### MagicFrame #######
 
-# Time and date
+# Time and date / Heure et date
 - platform: time_date
   display_options:
     - "time"
     - "date"
     - "date_time_iso"
 
-# Translation FR
+# Translation FR / Traduction FR
 - platform: template
   sensors:
     date_fr:
