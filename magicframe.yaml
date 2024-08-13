@@ -87,6 +87,10 @@ qr_code:
 font:
   ################# REGULAR #################
   - file: "fonts/GothamRnd-Book.ttf"
+    id: book25
+    size: 25
+    glyphs: *font-glyphs
+  - file: "fonts/GothamRnd-Book.ttf"
     id: book20
     size: 20
     glyphs: &font-glyphs [ # --> https://codepoints.net/
@@ -114,12 +118,32 @@ font:
       "\u005F", #_
       "\u00B0", #°
       ]
-  - file: "fonts/GothamRnd-Book.ttf"
-    id: book25
+    
+  ################## BOLD ##################
+  - file: "fonts/GothamRoundedBold.ttf"
+    id: bold55
+    size: 55
+    glyphs: *font-glyphs
+  - file: "fonts/GothamRoundedBold.ttf"
+    id: bold40
+    size: 40
+    glyphs: *font-glyphs
+  - file: "fonts/GothamRoundedBold.ttf"
+    id: bold35
+    size: 35
+    glyphs: *font-glyphs
+  - file: "fonts/GothamRoundedBold.ttf"
+    id: bold30
+    size: 30
+    glyphs: *font-glyphs
+  - file: "fonts/GothamRoundedBold.ttf"
+    id: bold25
     size: 25
     glyphs: *font-glyphs
-    
-  ################## BOLD ################## 
+  - file: "fonts/GothamRoundedBold.ttf"
+    id: bold20
+    size: 20
+    glyphs: *font-glyphs
   - file: "fonts/GothamRoundedBold.ttf"
     id: bold15
     size: 15
@@ -140,35 +164,19 @@ font:
           "\U0001F970", #smiling face with hearts
           "\U0001F973", #partying face
         ]
-  - file: "fonts/GothamRoundedBold.ttf"
-    id: bold20
-    size: 20
-    glyphs: *font-glyphs
-  - file: "fonts/GothamRoundedBold.ttf"
-    id: bold25
-    size: 25
-    glyphs: *font-glyphs
-  - file: "fonts/GothamRoundedBold.ttf"
-    id: bold30
-    size: 30
-    glyphs: *font-glyphs
-  - file: "fonts/GothamRoundedBold.ttf"
-    id: bold35
-    size: 35
-    glyphs: *font-glyphs
-  - file: "fonts/GothamRoundedBold.ttf"
-    id: bold40
-    size: 40
-    glyphs: *font-glyphs
-  - file: "fonts/GothamRoundedBold.ttf"
-    id: bold55
-    size: 55
-    glyphs: *font-glyphs
-
+  
   # Include Material Design Icons font / Inclure la police des icônes Material Design --> https://pictogrammers.com/library/mdi/
   - file: "https://github.com/Pictogrammers/pictogrammers.github.io/blob/main/%40mdi/font/7.4.47/fonts/materialdesignicons-webfont.ttf"
     id: mdi120
     size: 120
+    glyphs: *mdi-glyphs
+  - file: "https://github.com/Pictogrammers/pictogrammers.github.io/blob/main/%40mdi/font/7.4.47/fonts/materialdesignicons-webfont.ttf"
+    id: mdi36
+    size: 36
+    glyphs: *mdi-glyphs
+  - file: "https://github.com/Pictogrammers/pictogrammers.github.io/blob/main/%40mdi/font/7.4.47/fonts/materialdesignicons-webfont.ttf"
+    id: mdi20
+    size: 20
     glyphs: &mdi-glyphs
       # All weather pictograms / Tous les pictogrammes météo
       - "\U000F0590" # mdi-weather-cloudy
@@ -215,15 +223,6 @@ font:
       - "\U000F1239" # mdi-desk
       - "\U000F0FD2" # mdi-bed-king
       - "\U000F16BF" # mdi-wifi-lock
-
-  - file: "https://github.com/Pictogrammers/pictogrammers.github.io/blob/main/%40mdi/font/7.4.47/fonts/materialdesignicons-webfont.ttf"
-    id: mdi36
-    size: 36
-    glyphs: *mdi-glyphs
-  - file: "https://github.com/Pictogrammers/pictogrammers.github.io/blob/main/%40mdi/font/7.4.47/fonts/materialdesignicons-webfont.ttf"
-    id: mdi20
-    size: 20
-    glyphs: *mdi-glyphs
 
 # LIST OF SENSORS / LISTE DES CAPTEURS
 sensor:
