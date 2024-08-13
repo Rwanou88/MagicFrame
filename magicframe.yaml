@@ -231,6 +231,7 @@ sensor:
     entity_id: weather.forecast_YourCity # Entity ID of your weather forecast app. / ID d'entité de votre application de prévisions météo
     attribute: temperature
     id: weather_temperature
+    
   # Weather sensors / Capteurs météo
   - platform: homeassistant
     entity_id: sensor.weather_temperature_1
@@ -268,6 +269,7 @@ sensor:
   - platform: homeassistant
     entity_id: sensor.weather_templow_6
     id: weather_templow_6
+    
   # Home sensors / Capteurs domestiques
   - platform: homeassistant
     entity_id: sensor.salle_a_manger_temperature # Entity ID of your temperature sensor / ID d'entité de votre capteur de température
@@ -307,6 +309,7 @@ text_sensor:
   - platform: homeassistant
     entity_id: sensor.date_time_iso
     id: date_time_iso
+    
   # Weather sensors / Capteurs météo
   - platform: homeassistant
     entity_id: weather.forecast_YourCity # Entity ID of your weather forecast app. / ID d'entité de votre application de prévisions météo
@@ -402,7 +405,8 @@ display:
     lambda: |-
     
      std::map<std::string, std::string> icon_map
-        { // Weather conditions / Conditions météo --> https://www.home-assistant.io/integrations/weather/#condition-mapping
+        {
+          // Weather conditions / Conditions météo --> https://www.home-assistant.io/integrations/weather/#condition-mapping
           {"clear-night", "\U000F0594"},
           {"cloudy", "\U000F0590"},
           {"fog", "\U000F0591"},
@@ -429,7 +433,8 @@ display:
         };
 
      std::map<std::string, std::string> traduction
-        { // Weather conditions translation EN to FR / Traduction des conditions météo EN -> FR
+        {
+          // Weather conditions translation EN to FR / Traduction des conditions météo EN -> FR
           {"clear-night", "Nuit claire"},
           {"cloudy", "Nuageux"},
           {"fog", "Brouillard"},
