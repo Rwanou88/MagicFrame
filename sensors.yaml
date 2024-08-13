@@ -1,0 +1,28 @@
+# Time and date
+- platform: time_date
+  display_options:
+    - "time"
+    - "date"
+    - "date_time_iso"
+
+- platform: template
+  sensors:
+    date_fr:
+      friendly_name: "Date FR"
+      icon_template: "mdi:calendar-today"
+      entity_id: sensor.date
+      value_template: >
+        {% set months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"] %}
+        {% set days = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"] %}
+        {{ days[now().weekday()] + ' ' + now().day | string + ' ' + months[now().month-1] }}
+
+#- platform: template
+#  sensors:
+#    event_start_1_fr:
+#      friendly_name: "Event Start 1 FR"
+#      entity_id: sensor.dateFR
+#      value_template: >
+#        {% set months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"] %}
+#        {% set weekdays = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"] %}
+#        {% set date = strptime (state.sensor.monthly_events.events.0.start, "%A %d %B") %}
+#        {{ weekdays[date.weekday()] + ' ' + date.day | string + ' ' + months[date.month-1] }}

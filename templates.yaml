@@ -1,0 +1,135 @@
+#MagicFrame - Forcast & Events
+- trigger:
+    - platform: time_pattern
+      minutes: /1
+    - platform: homeassistant
+      event: start
+
+  action:
+    #Forcast
+    - service: weather.get_forecasts
+      target:
+        entity_id: weather.forecast_nantes
+      data:
+        type: daily
+      response_variable: daily
+
+    #Events
+    - service: calendar.get_events
+      target:
+        entity_id: calendar.tous_les_deux_2
+      data:
+        duration:
+          days: 90
+      response_variable: monthly
+
+  sensor:
+    #Forcast
+    - name: Weather Forecast Daily
+      unique_id: weather_forecast_daily
+      state: "{{ now().isoformat() }}"
+      attributes:
+        forecast: "{{ daily['weather.forecast_nantes'].forecast }}"
+
+    #Events
+    - name: Monthly Events
+      unique_id: monthly_events
+      state: "{{ now().isoformat() }}"
+      attributes:
+        events: "{{ monthly['calendar.tous_les_deux_2'].events }}"
+
+    # Weather day 1
+    - name: "weather day 1"
+      state: "{{ as_timestamp(state_attr('sensor.weather_forecast_daily', 'forecast')[0].datetime) | timestamp_custom('%a') }}"
+    - name: "weather condition 1"
+      state: "{{ state_attr('sensor.weather_forecast_daily', 'forecast')[0].condition }}"
+    - name: "weather temperature 1"
+      state: "{{ state_attr('sensor.weather_forecast_daily', 'forecast')[0].temperature }}"
+      unit_of_measurement: °C
+    - name: "weather templow 1"
+      state: "{{ state_attr('sensor.weather_forecast_daily', 'forecast')[0].templow }}"
+      unit_of_measurement: °C
+
+    # Weather day 2
+    - name: "weather day 2"
+      state: "{{ as_timestamp(state_attr('sensor.weather_forecast_daily', 'forecast')[1].datetime) | timestamp_custom('%a') }}"
+    - name: "weather condition 2"
+      state: "{{ state_attr('sensor.weather_forecast_daily', 'forecast')[1].condition }}"
+    - name: "weather temperature 2"
+      state: "{{ state_attr('sensor.weather_forecast_daily', 'forecast')[1].temperature }}"
+      unit_of_measurement: °C
+    - name: "weather templow 2"
+      state: "{{ state_attr('sensor.weather_forecast_daily', 'forecast')[1].templow }}"
+      unit_of_measurement: °C
+
+    # Weather day 3
+    - name: "weather day 3"
+      state: "{{ as_timestamp(state_attr('sensor.weather_forecast_daily', 'forecast')[2].datetime) | timestamp_custom('%a') }}"
+    - name: "weather condition 3"
+      state: "{{ state_attr('sensor.weather_forecast_daily', 'forecast')[2].condition }}"
+    - name: "weather temperature 3"
+      state: "{{ state_attr('sensor.weather_forecast_daily', 'forecast')[2].temperature }}"
+      unit_of_measurement: °C
+    - name: "weather templow 3"
+      state: "{{ state_attr('sensor.weather_forecast_daily', 'forecast')[2].templow }}"
+      unit_of_measurement: °C
+
+    # Weather day 4
+    - name: "weather day 4"
+      state: "{{ as_timestamp(state_attr('sensor.weather_forecast_daily', 'forecast')[3].datetime) | timestamp_custom('%a') }}"
+    - name: "weather condition 4"
+      state: "{{ state_attr('sensor.weather_forecast_daily', 'forecast')[3].condition }}"
+    - name: "weather temperature 4"
+      state: "{{ state_attr('sensor.weather_forecast_daily', 'forecast')[3].temperature }}"
+      unit_of_measurement: °C
+    - name: "weather templow 4"
+      state: "{{ state_attr('sensor.weather_forecast_daily', 'forecast')[3].templow }}"
+      unit_of_measurement: °C
+
+    # Weather day 5
+    - name: "weather day 5"
+      state: "{{ as_timestamp(state_attr('sensor.weather_forecast_daily', 'forecast')[4].datetime) | timestamp_custom('%a') }}"
+    - name: "weather condition 5"
+      state: "{{ state_attr('sensor.weather_forecast_daily', 'forecast')[4].condition }}"
+    - name: "weather temperature 5"
+      state: "{{ state_attr('sensor.weather_forecast_daily', 'forecast')[4].temperature }}"
+      unit_of_measurement: °C
+    - name: "weather templow 5"
+      state: "{{ state_attr('sensor.weather_forecast_daily', 'forecast')[4].templow }}"
+      unit_of_measurement: °C
+
+    # Event 1
+    - name: "event start 1"
+      state: "{{ as_timestamp(state_attr('sensor.monthly_events', 'events')[0].start) | timestamp_custom('%A %d %B') }}"
+    - name: "event summary 1"
+      state: "{{ state_attr('sensor.monthly_events', 'events')[0].summary }}"
+
+    # Event 2
+    - name: "event start 2"
+      state: "{{ as_timestamp(state_attr('sensor.monthly_events', 'events')[1].start) | timestamp_custom('%A %d %B') }}"
+    - name: "event summary 2"
+      state: "{{ state_attr('sensor.monthly_events', 'events')[1].summary }}"
+
+    # Event 3
+    - name: "event start 3"
+      state: "{{ as_timestamp(state_attr('sensor.monthly_events', 'events')[2].start) | timestamp_custom('%A %d %B') }}"
+    - name: "event summary 3"
+      state: "{{ state_attr('sensor.monthly_events', 'events')[2].summary }}"
+
+    # Event 4
+    - name: "event start 4"
+      state: "{{ as_timestamp(state_attr('sensor.monthly_events', 'events')[3].start) | timestamp_custom('%A %d %B') }}"
+    - name: "event summary 4"
+      state: "{{ state_attr('sensor.monthly_events', 'events')[3].summary }}"
+
+    # Event 5
+    - name: "event start 5"
+      state: "{{ as_timestamp(state_attr('sensor.monthly_events', 'events')[4].start) | timestamp_custom('%A %d %B') }}"
+    - name: "event summary 5"
+      state: "{{ state_attr('sensor.monthly_events', 'events')[4].summary }}"
+
+# Date & time
+- sensor:
+    - name: "Date and time"
+      state: "{{ as_timestamp(states('sensor.date_time_iso')) | timestamp_custom('%A %-d %B at %I:%M %p') }}"
+      icon: "mdi:calendar-clock"
