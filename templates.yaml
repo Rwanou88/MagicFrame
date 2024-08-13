@@ -9,8 +9,7 @@
     #Forcast
     - service: weather.get_forecasts
       target:
-        # Entity ID of your weather forecast app.
-        entity_id: weather.forecast_nantes   
+        entity_id: weather.forecast_YourCity # Entity ID of your weather forecast app.
       data:
         type: daily
       response_variable: daily
@@ -18,7 +17,7 @@
     #Events
     - service: calendar.get_events
       target:
-        entity_id: calendar.tous_les_deux_2
+        entity_id: calendar.YourCalendarName #Your calendar entity ID
       data:
         duration:
           days: 90
@@ -30,14 +29,14 @@
       unique_id: weather_forecast_daily
       state: "{{ now().isoformat() }}"
       attributes:
-        forecast: "{{ daily['weather.forecast_nantes'].forecast }}"
+        forecast: "{{ daily['weather.forecast_YourCity'].forecast }}" # Entity ID of your weather forecast app.
 
     #Events
     - name: Monthly Events
       unique_id: monthly_events
       state: "{{ now().isoformat() }}"
       attributes:
-        events: "{{ monthly['calendar.tous_les_deux_2'].events }}"
+        events: "{{ monthly['calendar.YourCalendarName'].events }}" #Your calendar entity ID
 
     # Weather day 1
     - name: "weather day 1"
