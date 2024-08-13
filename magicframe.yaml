@@ -193,7 +193,6 @@ font: # --> https://fonts.google.com/noto/specimen/Noto+Sans/tester
           "\U0001F970", #smiling face with hearts
           "\U0001F973", #partying face
         ]
-  
   # Include Material Design Icons font / Inclure la police des icônes Material Design
   - file: "https://github.com/Pictogrammers/pictogrammers.github.io/blob/main/%40mdi/font/7.4.47/fonts/materialdesignicons-webfont.ttf"
     id: MDI_120
