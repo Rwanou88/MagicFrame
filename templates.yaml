@@ -33,7 +33,7 @@
       attributes:
         forecast: "{{ daily['weather.forecast_YourCity'].forecast }}" # Entity ID of your weather forecast app. / ID d'entité de votre application de prévisions météo
 
-    #Events / Événements
+    # Events / Événements
     - name: Monthly Events
       unique_id: monthly_events
       state: "{{ now().isoformat() }}"
