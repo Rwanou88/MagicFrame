@@ -287,22 +287,22 @@ sensor:
     entity_id: sensor.salon_humidite # Entity ID of your humidity sensor / ID d'entité de votre capteur d'humidité
     id: room_humidity_2
   - platform: homeassistant
-    entity_id: sensor.bureau_1_temperature # Entity ID of your temperature sensor / ID d'entité de votre capteur de température
+    entity_id: sensor.bureau_temperature # Entity ID of your temperature sensor / ID d'entité de votre capteur de température
     id: room_temperature_3
   - platform: homeassistant
-    entity_id: sensor.bureau_1_humidite # Entity ID of your humidity sensor / ID d'entité de votre capteur d'humidité
+    entity_id: sensor.bureau_humidite # Entity ID of your humidity sensor / ID d'entité de votre capteur d'humidité
     id: room_humidity_3
   - platform: homeassistant
-    entity_id: sensor.bureau_2_temperature # Entity ID of your temperature sensor / ID d'entité de votre capteur de température
+    entity_id: sensor.chambre_enfant_temperature # Entity ID of your temperature sensor / ID d'entité de votre capteur de température
     id: room_temperature_4
   - platform: homeassistant
-    entity_id: sensor.bureau_2_humidite # Entity ID of your humidity sensor / ID d'entité de votre capteur d'humidité
+    entity_id: sensor.chambre_enfant_humidite # Entity ID of your humidity sensor / ID d'entité de votre capteur d'humidité
     id: room_humidity_4
   - platform: homeassistant
-    entity_id: sensor.chambre_temperature # Entity ID of your temperature sensor / ID d'entité de votre capteur de température
+    entity_id: sensor.chambre_parents_temperature # Entity ID of your temperature sensor / ID d'entité de votre capteur de température
     id: room_temperature_5
   - platform: homeassistant
-    entity_id: sensor.chambre_humidite # Entity ID of your humidity sensor / ID d'entité de votre capteur d'humidité
+    entity_id: sensor.chambre_parents_humidite # Entity ID of your humidity sensor / ID d'entité de votre capteur d'humidité
     id: room_humidity_5
 
 text_sensor: 
