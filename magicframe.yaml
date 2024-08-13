@@ -84,13 +84,13 @@ qr_code:
     value: !secret MF_qr_value
 
 # INCLUDE CUSTOM FONTS / INCLURE DES POLICES PERSONNALISÉES
-font: # --> https://fonts.google.com/noto/specimen/Noto+Sans/tester
+font:
   ################# REGULAR #################
   - file:
       type: gfonts
       family: Noto+Sans
-      weight: 400
-    id: NotoReg_20
+      weight: 500
+    id: Noto_1
     size: 20
     glyphs: &font-glyphs [ # --> https://codepoints.net/
       0,1,2,3,4,5,6,7,8,9,
@@ -117,54 +117,41 @@ font: # --> https://fonts.google.com/noto/specimen/Noto+Sans/tester
       "\u005F", #_
       "\u00B0", #°
       ]
-  ################## BOLD ##################
+    
+  ################## BOLD ################## 
   - file:
       type: gfonts
       family: Noto+Sans
-      weight: 700
-    id: NotoBold_55
+      weight: 800
+    id: Noto_2
     size: 55
     glyphs: *font-glyphs
   - file:
       type: gfonts
       family: Noto+Sans
-      weight: 700
-    id: NotoBold_40
-    size: 40
-    glyphs: *font-glyphs
-  - file:
-      type: gfonts
-      family: Noto+Sans
-      weight: 700
-    id: NotoBold_35
+      weight: 800
+    id: Noto_3
     size: 35
     glyphs: *font-glyphs
   - file:
       type: gfonts
       family: Noto+Sans
-      weight: 700
-    id: NotoBold_30
-    size: 30
-    glyphs: *font-glyphs
-  - file:
-      type: gfonts
-      family: Noto+Sans
-      weight: 700
-    id: NotoBold_25
+      weight: 800
+    id: Noto_4
     size: 25
     glyphs: *font-glyphs
   - file:
       type: gfonts
       family: Noto+Sans
-      weight: 700
-    id: NotoBold_20
+      weight: 800
+    id: Noto_5
     size: 20
     glyphs: *font-glyphs
   - file:
       type: gfonts
       family: Noto+Sans
       weight: 700
-    id: NotoBold_15
+    id: Noto_6
     size: 15
     glyphs: *font-glyphs
     extras: # Enables emoji support / Active la prise en charge des emojis
