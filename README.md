@@ -42,6 +42,20 @@ En-dessous, on a la prévision et les températures min. et max, pour la journé
 
 #### Température et humidité de la maison
 Utilisation de l'intégration [Tado°](https://www.home-assistant.io/integrations/tado), car j'ai des têtes thermostatiques de cette marque sur mes radiateurs.
+Les ID d'entité température et humlidité sont à intégrer directement dans le fichier `magicframe.yaml`.
+Il est possible d'afficher les infos de 5 pièces.
+
+#### Calendrier
+Utilisation de l'intégration [CalDAV](https://www.home-assistant.io/integrations/caldav) pour récupérer l'agenda souhaité (iCloud).
+L'ID d'entité est à intégrer dans le fichier `templates.yaml`.
+Il est possible d'afficher les 5 prochains événements du calendrier (sur les 90 prochains jours).
+Les emojis peuvent être pris en compte, il faudra les ajouter, au fur et à mesure des besoin, dans le fichier `magicframe.yaml`.
+
+#### Wifi invité
+
+
+#### Date et heure de mise à jour
+
 
 ## English
 
