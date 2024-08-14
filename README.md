@@ -35,6 +35,12 @@ EN - You can find more by searching for "waveshare", "esp32".
 - Studio Code Server
 
 ## Installation - FR
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/22bbd79e-67af-4a39-8ac2-9701a0a2f3db" width="400"/>
+</p>
+
+
 1. Connectez l'écran à l'ESP32, en vérifiant bien que les 2 petits interrupteurs "1" et "2" de l'ESP32 soient bien sur "A" et "ON". Dans le cas contraire, vous aurez des problèmes d'affichage sur l'écran.
 2. À l'aide de Studio Code Server, dans votre dossier `/.config/esphome` (cf. image `Screenshot.png`) :
 - copiez les fichiers `magicframe.yaml` et `secrets.yaml`
