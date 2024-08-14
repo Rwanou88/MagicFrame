@@ -1,11 +1,9 @@
 # MagicFrame - FR/EN
-
 Inspiré par ces deux projets / Inspired by these two projects :
 - GammaTroniques (FR) : [GitHub](https://github.com/NoahJst/HomeAssistant-Config/blob/main/esphome/README.md) / [Youtube](https://www.youtube.com/watch?v=XyooZe_9hc0)
 - Madalena (EN) : [GitHub](https://github.com/Madelena/esphome-weatherman-dashboard)
 
 ## Materiel - Hardware
-
 Amazon FR
 - [ESP32 + écran](https://www.amazon.fr/Waveshare-Electronic-Interface-Bluetooth-Raspberry/dp/B07MB7SVHQ)
 - [Cadre RIBBA IKEA](https://www.amazon.fr/Ikea-Cadre-RIBBA-13-noir/dp/B0BW8SLP9C/ref=sr_1_4)
@@ -21,14 +19,11 @@ Amazon US
 Vous pouvez en trouver d'autre en cherchant "waveshare", "esp32" / you can find more by searching for "waveshare", "esp32".
 
 ## Logiciels - Software
-
 - Home Assistant
 - ESPHome
 - Studio Code Server
 
-## Installation
-
-### FR
+## Installation - FR
 1. Connectez l'écran à l'ESP32, en vérifiant bien que les 2 petits interrupteurs "1" et "2" de l'ESP32 soient bien sur "A" et "ON". Dans le cas contraire, vous aurez des problèmes d'affichage sur l'écran.
 2. À l'aide de Studio Code Server, dans votre dossier `/.config/esphome` (cf. image `Screenshot.png`) :
 - copiez les fichiers `magicframe.yaml` et `secrets.yaml`
@@ -38,7 +33,7 @@ Vous pouvez en trouver d'autre en cherchant "waveshare", "esp32" / you can find 
 6. Branchez l'ESP32 à votre ordinateur, lancez ESPHome et suivez les instructions pour installer `magicframe.yaml` sur votre ESP32.
 7. Enjoy!
 
-### EN
+## Installation - EN
 1. Connect the screen to the ESP32, making sure that the 2 small switches "1" and "2" on the ESP32 are on "A" and "ON". Otherwise, you will have display problems on the screen.
 2. Using Studio Code Server, in your folder `/.config/esphome` (cf. picture `Screenshot.png`):
 - copy the files `magicframe.yaml` and `secrets.yaml`
