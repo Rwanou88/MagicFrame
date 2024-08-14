@@ -32,8 +32,8 @@ EN - You can find more by searching for "waveshare", "esp32".
 
 ## Logiciels - Software
 - Home Assistant
-  - [EN - Home Assistant : Installation](https://www.home-assistant.io/installation/)
-  - [FR - Abrège : Fabriquer la box domotique parfaite !](https://www.youtube.com/watch?v=XyooZe_9hc0)
+ - [EN - Home Assistant : Installation](https://www.home-assistant.io/installation/)
+ - [FR - Abrège : Fabriquer la box domotique parfaite !](https://www.youtube.com/watch?v=XyooZe_9hc0)
 - ESPHome
 [FR - Abrège : Tuto ESPHome 2022](https://youtu.be/3GbyYQHQvV8)
 - Studio Code Server
