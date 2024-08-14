@@ -20,7 +20,6 @@ Amazon US
 - [e-Paper ESP32 Driver Board](https://www.amazon.com/gp/product/B07M5CNP3B)
 - [Waveshare 7.5inch E-Ink Display](https://www.amazon.com/waveshare-7-5inch-HAT-Raspberry-Consumption/dp/B075R4QY3L)
 - [IKEA RIBBA Picture Frame](https://www.amazon.com/Ikea-Ribba-Picture-Frame-White/dp/B01JEFG1B8)
-- [3D print](https://www.thingiverse.com/thing:6427159): 
 
 3D printer
 - [Thingiverse](https://www.thingiverse.com/thing:6427159)
