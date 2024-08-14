@@ -60,12 +60,12 @@ Utilisation du [Composant Code QR](https://esphome.io/components/qr_code.html) d
 
 Voici comment est configuré le code QR : `WIFI:T:WPA;S:NomDuRéseau;P:MonMotDePasse;H:false;`
 
-| Options   | Exemple         | Description   |
-| :-------: | :-------:       | :-------      |
+| Options   | Exemple         | Description                                                                     |
+| :-------: | :-------:       | :-------                                                                        |
 | T         | WPA             |  Type d’authentification : WEP, WPA ou aucun en cas d’absence de mot de passe.  |
-| S         | NomDeMonRéseau	|  Nom de réseau SSID.  |
-| P         | MonMotDePasse   |  Mot de passe, à ignorer si « T » est vide.  |
-| H         | true            |  (Facultatif) "true" si le réseau SSID est caché.  |
+| S         | NomDeMonRéseau	|  Nom de réseau SSID.                                                            |
+| P         | MonMotDePasse   |  Mot de passe, à ignorer si « T » est vide.                                     |
+| H         | true            |  "true" si le réseau SSID est caché (Facultatif)                                |
 
 #### * Date et heure de mise à jour *
 Affiche la date et l'heure de la dernière mise à jour de l'écran.
