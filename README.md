@@ -100,6 +100,7 @@ Emojis can be taken into account, they will have to be added, as and when needed
 ESPHome : [QR Code](https://esphome.io/components/qr_code.html).
 
 FR - Utilisation du composant d'ESPHome.
+Le paramétrage est présent dans le fichier `magicframe.yaml`.
 
 Voici comment est configuré le code QR : `WIFI:T:WPA;S:NomDeMonRéseau;P:MonMotDePasse;H:false;`
 | Options   | Exemple         | Description                                                                     |
@@ -110,6 +111,7 @@ Voici comment est configuré le code QR : `WIFI:T:WPA;S:NomDeMonRéseau;P:MonMot
 | H         | true            |  "true" si le réseau SSID est caché (Facultatif)                                |
 
 EN - I'm using the ESPHome component.
+The setting is present in the file `magicframe.yaml`.
 
 This is how the QR code is configured : `WIFI:T:WPA;S:MyNetworkName;P:MyPassword;H:false;`
 | Options   | Exemple         | Description                                             |
