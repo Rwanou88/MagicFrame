@@ -1,6 +1,6 @@
 # MagicFrame - FR/EN
 
-Inspiré par ces deux projets :
+Inspiré par ces deux projets / Inspired by these two projects :
 - GammaTroniques : [GitHub](https://github.com/NoahJst/HomeAssistant-Config/blob/main/esphome/README.md) / [Youtube](https://www.youtube.com/watch?v=XyooZe_9hc0)
 - Madalena : [GitHub](https://github.com/Madelena/esphome-weatherman-dashboard)
 
