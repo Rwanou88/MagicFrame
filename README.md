@@ -5,12 +5,13 @@
 <img src="https://github.com/user-attachments/assets/b979119b-fafe-4016-985f-2d873fd0a38e" width="400"/>
 </p>
 
-FR - Inspiré par ces deux projets
+FR - Inspiré par ces projets
 
-EN - Inspired by these two projects
+EN - Inspired by these projects
 
 - GammaTroniques (FR) : [GitHub](https://github.com/NoahJst/HomeAssistant-Config/blob/main/esphome/README.md) / [Youtube](https://www.youtube.com/watch?v=XyooZe_9hc0)
 - Madalena (EN) : [GitHub](https://github.com/Madelena/esphome-weatherman-dashboard)
+- Tech Dregs (EN) : [Youtube](https://www.youtube.com/watch?v=qJuF58CjwIA)
 
 ## Materiel - Hardware
 Amazon FR
@@ -30,8 +31,8 @@ FR- Vous pouvez en trouver d'autre en cherchant "waveshare", "esp32".
 EN - You can find more by searching for "waveshare", "esp32".
 
 ## Logiciels - Software
-- Home Assistant
-- ESPHome
+- Home Assistant - [EN - Home Assistant : Installation](https://www.home-assistant.io/installation/) - [FR - Abrège : Fabriquer la box domotique parfaite !](https://www.youtube.com/watch?v=XyooZe_9hc0)
+- ESPHome - [FR - Abrège : Tuto ESPHome 2022](https://youtu.be/3GbyYQHQvV8)
 - Studio Code Server
 
 ## Installation - FR
