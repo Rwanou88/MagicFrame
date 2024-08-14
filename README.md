@@ -6,6 +6,7 @@ EN - Inspired by these two projects
 - GammaTroniques (FR) : [GitHub](https://github.com/NoahJst/HomeAssistant-Config/blob/main/esphome/README.md) / [Youtube](https://www.youtube.com/watch?v=XyooZe_9hc0)
 - Madalena (EN) : [GitHub](https://github.com/Madelena/esphome-weatherman-dashboard)
 
+<img src="https://github.com/user-attachments/assets/a6f44f41-5818-4442-afc4-017f5addda86" width="128"/>
 ![MagicFrame_Front](https://github.com/user-attachments/assets/a6f44f41-5818-4442-afc4-017f5addda86)
 ![MagicFrame_Back](https://github.com/user-attachments/assets/b979119b-fafe-4016-985f-2d873fd0a38e)
 
