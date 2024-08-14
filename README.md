@@ -32,6 +32,11 @@ Inspiré par ces deux projets / Inspired by these two projects :
 ### Fonctionnalités
 
 #### Mise à jour automatique de l'écran
+Réglé pour une mise à jour toutes les 4h.
+
+#### Prévision météo
+Utilisation de l'intégration [Meteorologisk institutt (Met.no)](https://www.home-assistant.io/integrations/met).
+Il faudra paramétrer votre ville et récupérer l'ID d'entité 'weather.forecast_VotreVille'
 
 ## English
 
