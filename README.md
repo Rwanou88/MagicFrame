@@ -48,9 +48,9 @@ Vous pouvez en trouver d'autre en cherchant "waveshare", "esp32" / you can find 
 6. Connect the ESP32 to your computer, launch ESPHome and follow the instructions to install `magicframe.yaml` on your ESP32.
 7. Enjoy!
 
-## Fonctionnalités / Features
+## Fonctionnalités - Features
 
-### * Mise à jour automatique de l'écran / Automatic screen update *
+### * Mise à jour automatique de l'écran - Automatic screen update *
 
 FR - Réglé pour une mise à jour toutes les 4h.
 Le paramétrage est présent dans le fichier `magicframe.yaml`.
@@ -58,8 +58,8 @@ Le paramétrage est présent dans le fichier `magicframe.yaml`.
 EN - Set to update every 4 hours.
 The setting is present in the file `magicframe.yaml`.
 
-### * Prévision météo / Weather forecast *
-Utilisation de l'intégration / Using the integration [Meteorologisk institutt (Met.no)](https://www.home-assistant.io/integrations/met).
+### * Prévision météo - Weather forecast *
+Utilisation de l'intégration / using the integration [Meteorologisk institutt (Met.no)](https://www.home-assistant.io/integrations/met).
 
 FR - Il faudra paramétrer votre ville et récupérer l'ID d'entité `weather.forecast_VotreVille` pour l'intégrer au fichier `templates.yaml`.
 La prévision et la température principales sont celles au moment de la mise à jour de l'écran.
@@ -69,23 +69,31 @@ EN - You will need to set up your city and retrieve the entity ID `weather.forec
 The main forecast and temperature are those at the time of the screen update.
 Below, we have the forecast and the min. and max. temperatures, for the current day and the following 4 days.
 
-### * Température et humidité de la maison *
-Utilisation de l'intégration [Tado°](https://www.home-assistant.io/integrations/tado), car j'ai des têtes thermostatiques de cette marque sur mes radiateurs.
+### * Température et humidité de la maison - Home temperature and humidity *
+Utilisation de l'intégration / using the integration [Tado°](https://www.home-assistant.io/integrations/tado), because I have thermostatic heads of this brand on my radiators / car j'ai des têtes thermostatiques de cette marque sur mes radiateurs.
 
-Les ID d'entité température et humidité sont à intégrer directement dans le fichier `magicframe.yaml`.
+FR - Les ID d'entité température et humidité sont à intégrer directement dans le fichier `magicframe.yaml`.
 Il est possible d'afficher les infos de 5 pièces.
 
-### * Calendrier *
-Utilisation de l'intégration [CalDAV](https://www.home-assistant.io/integrations/caldav) pour récupérer l'agenda souhaité (iCloud).
+EN - The temperature and humidity entity IDs are to be integrated directly into the file `magicframe.yaml`.
+It is possible to display information for 5 rooms.
 
-L'ID d'entité est à intégrer dans le fichier `templates.yaml`.
+### * Calendrier - Calendar *
+Utilisation de l'intégration / Using the integration [CalDAV](https://www.home-assistant.io/integrations/caldav) to retrieve the desired calendar (iCloud) / pour récupérer l'agenda souhaité (iCloud).
+
+FR - L'ID d'entité est à intégrer dans le fichier `templates.yaml`.
 Il est possible d'afficher les 5 prochains événements du calendrier (sur les 90 prochains jours).
 Les emojis peuvent être pris en compte, il faudra les ajouter, au fur et à mesure des besoin, dans le fichier `magicframe.yaml`.
 
+EN - The entity ID is to be included in the file `templates.yaml`.
+It is possible to display the next 5 calendar events (over the next 90 days).
+Emojis can be taken into account, they will have to be added, as and when needed, in the file `magicframe.yaml`.
+
 ### * Wifi invité *
-Utilisation du [Composant Code QR](https://esphome.io/components/qr_code.html) d'ESPHome.
+Utilisation du composant d'ESPHome / using the ESPHome component [QR Code](https://esphome.io/components/qr_code.html).
 
 Voici comment est configuré le code QR : `WIFI:T:WPA;S:NomDeMonRéseau;P:MonMotDePasse;H:false;`
+This is how the QR code is configured : `WIFI:T:WPA;S:MyNetworkName;P:MyPassword;H:false;`
 
 | Options   | Exemple         | Description                                                                     |
 | :-------: | :-------:       | :-------                                                                        |
@@ -94,36 +102,6 @@ Voici comment est configuré le code QR : `WIFI:T:WPA;S:NomDeMonRéseau;P:MonMot
 | P         | MonMotDePasse   |  Mot de passe, à ignorer si « T » est vide.                                     |
 | H         | true            |  "true" si le réseau SSID est caché (Facultatif)                                |
 
-### * Date et heure de mise à jour *
-Affiche la date et l'heure de la dernière mise à jour de l'écran.
-
-
-
-
-
-#### *  *
-
-
-#### *  *
-
-
-#### * Home temperature and humidity *
-Using the integration [Tado°](https://www.home-assistant.io/integrations/tado), because I have thermostatic heads of this brand on my radiators.
-
-The temperature and humidity entity IDs are to be integrated directly into the file `magicframe.yaml`.
-It is possible to display information for 5 rooms.
-
-#### * Calendar *
-Using the integration [CalDAV](https://www.home-assistant.io/integrations/caldav) to retrieve the desired calendar (iCloud).
-
-The entity ID is to be included in the file `templates.yaml`.
-It is possible to display the next 5 calendar events (over the next 90 days).
-Emojis can be taken into account, they will have to be added, as and when needed, in the file `magicframe.yaml`.
-
-#### * Guest Wifi *
-Using the ESPHome [QR Code Component](https://esphome.io/components/qr_code.html).
-
-This is how the QR code is configured : `WIFI:T:WPA;S:MyNetworkName;P:MyPassword;H:false;`
 
 | Options   | Exemple         | Description                                             |
 | :-------: | :-------:       | :-------                                                |
@@ -132,5 +110,7 @@ This is how the QR code is configured : `WIFI:T:WPA;S:MyNetworkName;P:MyPassword
 | P         | MyPassword      |  Password, ignore if "T" is empty                       |
 | H         | true            |  "true" if the network SSID is hidden (Optional)        |
 
-#### * Date and time of update *
-Displays the date and time the screen was last updated.
+### * Date et heure de mise à jour - Date and time of update *
+FR - Affiche la date et l'heure de la dernière mise à jour de l'écran.
+
+EN - Displays the date and time the screen was last updated.
