@@ -11,13 +11,13 @@ Inspiré par ces deux projets :
 ## Logiciel
 - Home Assistant
 - ESPHome
+- Studio Code Server
 
 ## Installation
 
-1. No soldering is required since the e-Paper driver board was integrated into the ESP32 board. All I needed to do was to connect the e-Paper screen to the driver board, and then connect the driver board to the USB socket on my light switch.
-2. Copy `/fonts`, `/images`, and `weatherman.yaml` to your /.config/esphome folder.
-3. Integrate the content of `sensor.yaml` to your Home Assistant template configuration YAML file.
-4. Install HA-GTFS-RT to your Home Assistant using HACS.
+1. Connectez l'écran à l'ESP32, en vérifiant bien que les 2 petits interrupteurs "1" et "2" de l'ESP32 soient bien sur "A" et "ON". Dans le cas contraire, vous aurez des problèmes d'affichage sur l'écran.
+2. Copiez le contenu du dossier `/fonts` et `magicframe.yaml` dans votre dossier '/.config/esphome'.
+3. Intégrez le contenu du fichier `sensors.yaml` et `templates.yaml` dans vos fichiers YAML de configuration Home Assistant.
 5. Once booted, flash `weatherman.yaml` the ESP32 board using ESPHome.
 6. Enjoy!
 
