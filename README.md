@@ -16,7 +16,8 @@ Amazon US
 
 3D printer
 - [Thingiverse](https://www.thingiverse.com/thing:6427159)
-Vous pouvez en trouver d'autre en cherchant "waveshare", "esp32" / you can find more by searching for "waveshare", "esp32".
+Vous pouvez en trouver d'autre en cherchant "waveshare", "esp32".
+You can find more by searching for "waveshare", "esp32".
 
 ## Logiciels - Software
 - Home Assistant
