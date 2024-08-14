@@ -4,22 +4,31 @@ Inspiré par ces deux projets / Inspired by these two projects :
 - GammaTroniques (FR) : [GitHub](https://github.com/NoahJst/HomeAssistant-Config/blob/main/esphome/README.md) / [Youtube](https://www.youtube.com/watch?v=XyooZe_9hc0)
 - Madalena (EN) : [GitHub](https://github.com/Madelena/esphome-weatherman-dashboard)
 
-## Français
+## Materiel - Hardware
 
-### Materiel
-
+Amazon FR
 - [ESP32 + écran](https://www.amazon.fr/Waveshare-Electronic-Interface-Bluetooth-Raspberry/dp/B07MB7SVHQ)
 - [Cadre RIBBA IKEA](https://www.amazon.fr/Ikea-Cadre-RIBBA-13-noir/dp/B0BW8SLP9C/ref=sr_1_4)
-- [Impression 3D](https://www.thingiverse.com/thing:6427159) : vous pouvez en trouver d'autre en cherchant "waveshare", "esp32".
 
-### Logiciels
+Amazon US
+- [e-Paper ESP32 Driver Board](https://www.amazon.com/gp/product/B07M5CNP3B)
+- [Waveshare 7.5inch E-Ink Display](https://www.amazon.com/waveshare-7-5inch-HAT-Raspberry-Consumption/dp/B075R4QY3L)
+- [IKEA RIBBA Picture Frame](https://www.amazon.com/Ikea-Ribba-Picture-Frame-White/dp/B01JEFG1B8)
+- [3D print](https://www.thingiverse.com/thing:6427159): 
+
+3D printer
+- [Thingiverse](https://www.thingiverse.com/thing:6427159)
+Vous pouvez en trouver d'autre en cherchant "waveshare", "esp32" / you can find more by searching for "waveshare", "esp32".
+
+## Logiciels - Software
 
 - Home Assistant
 - ESPHome
 - Studio Code Server
 
-### Installation
+## Installation
 
+### FR
 1. Connectez l'écran à l'ESP32, en vérifiant bien que les 2 petits interrupteurs "1" et "2" de l'ESP32 soient bien sur "A" et "ON". Dans le cas contraire, vous aurez des problèmes d'affichage sur l'écran.
 2. À l'aide de Studio Code Server, dans votre dossier `/.config/esphome` (cf. image `Screenshot.png`) :
 - copiez les fichiers `magicframe.yaml` et `secrets.yaml`
@@ -29,33 +38,51 @@ Inspiré par ces deux projets / Inspired by these two projects :
 6. Branchez l'ESP32 à votre ordinateur, lancez ESPHome et suivez les instructions pour installer `magicframe.yaml` sur votre ESP32.
 7. Enjoy!
 
-### Fonctionnalités
+### EN
+1. Connect the screen to the ESP32, making sure that the 2 small switches "1" and "2" on the ESP32 are on "A" and "ON". Otherwise, you will have display problems on the screen.
+2. Using Studio Code Server, in your folder `/.config/esphome` (cf. picture `Screenshot.png`):
+- copy the files `magicframe.yaml` and `secrets.yaml`
+- add the contents of the folder `/fonts` in your folder `/fonts`
+4. Still using Studio Code Server, integrate the contents of the files `sensors.yaml` and `templates.yaml`in your Home Assistant configuration YAML files (cf. picture `Screenshot.png`)
+5. Update the commented parts of the files `magicframe.yaml`, `secrets.yaml` and `templates.yaml` with your own information (entity ID, identifiers, passwords, API key...)
+6. Connect the ESP32 to your computer, launch ESPHome and follow the instructions to install `magicframe.yaml` on your ESP32.
+7. Enjoy!
 
-#### * Mise à jour automatique de l'écran *
-Réglé pour une mise à jour toutes les 4h.
+## Fonctionnalités / Features
+
+### * Mise à jour automatique de l'écran / Automatic screen update *
+
+FR - Réglé pour une mise à jour toutes les 4h.
 Le paramétrage est présent dans le fichier `magicframe.yaml`.
 
-#### * Prévision météo *
-Utilisation de l'intégration [Meteorologisk institutt (Met.no)](https://www.home-assistant.io/integrations/met).
+EN - Set to update every 4 hours.
+The setting is present in the file `magicframe.yaml`.
 
-Il faudra paramétrer votre ville et récupérer l'ID d'entité `weather.forecast_VotreVille` pour l'intégrer au fichier `templates.yaml`.
+### * Prévision météo / Weather forecast *
+Utilisation de l'intégration / Using the integration [Meteorologisk institutt (Met.no)](https://www.home-assistant.io/integrations/met).
+
+FR - Il faudra paramétrer votre ville et récupérer l'ID d'entité `weather.forecast_VotreVille` pour l'intégrer au fichier `templates.yaml`.
 La prévision et la température principales sont celles au moment de la mise à jour de l'écran.
 En-dessous, on a la prévision et les températures min. et max, pour la journée en cours et les 4 jours suivants.
 
-#### * Température et humidité de la maison *
+EN - You will need to set up your city and retrieve the entity ID `weather.forecast_YourCity` to integrate it into the file `templates.yaml`.
+The main forecast and temperature are those at the time of the screen update.
+Below, we have the forecast and the min. and max. temperatures, for the current day and the following 4 days.
+
+### * Température et humidité de la maison *
 Utilisation de l'intégration [Tado°](https://www.home-assistant.io/integrations/tado), car j'ai des têtes thermostatiques de cette marque sur mes radiateurs.
 
 Les ID d'entité température et humidité sont à intégrer directement dans le fichier `magicframe.yaml`.
 Il est possible d'afficher les infos de 5 pièces.
 
-#### * Calendrier *
+### * Calendrier *
 Utilisation de l'intégration [CalDAV](https://www.home-assistant.io/integrations/caldav) pour récupérer l'agenda souhaité (iCloud).
 
 L'ID d'entité est à intégrer dans le fichier `templates.yaml`.
 Il est possible d'afficher les 5 prochains événements du calendrier (sur les 90 prochains jours).
 Les emojis peuvent être pris en compte, il faudra les ajouter, au fur et à mesure des besoin, dans le fichier `magicframe.yaml`.
 
-#### * Wifi invité *
+### * Wifi invité *
 Utilisation du [Composant Code QR](https://esphome.io/components/qr_code.html) d'ESPHome.
 
 Voici comment est configuré le code QR : `WIFI:T:WPA;S:NomDeMonRéseau;P:MonMotDePasse;H:false;`
@@ -67,47 +94,18 @@ Voici comment est configuré le code QR : `WIFI:T:WPA;S:NomDeMonRéseau;P:MonMot
 | P         | MonMotDePasse   |  Mot de passe, à ignorer si « T » est vide.                                     |
 | H         | true            |  "true" si le réseau SSID est caché (Facultatif)                                |
 
-#### * Date et heure de mise à jour *
+### * Date et heure de mise à jour *
 Affiche la date et l'heure de la dernière mise à jour de l'écran.
 
-## English
 
-### Hardware
 
-- [e-Paper ESP32 Driver Board](https://www.amazon.com/gp/product/B07M5CNP3B)
-- [Waveshare 7.5inch E-Ink Display](https://www.amazon.com/waveshare-7-5inch-HAT-Raspberry-Consumption/dp/B075R4QY3L)
-- [IKEA RIBBA Picture Frame](https://www.amazon.com/Ikea-Ribba-Picture-Frame-White/dp/B01JEFG1B8)
-- [3D print](https://www.thingiverse.com/thing:6427159): you can find more by searching for "waveshare", "esp32".
 
-### Software
 
-- Home Assistant
-- ESPHome
-- Studio Code Server
+#### *  *
 
-### Installation
 
-1. Connect the screen to the ESP32, making sure that the 2 small switches "1" and "2" on the ESP32 are on "A" and "ON". Otherwise, you will have display problems on the screen.
-2. Using Studio Code Server, in your folder `/.config/esphome` (cf. picture `Screenshot.png`):
-- copy the files `magicframe.yaml` and `secrets.yaml`
-- add the contents of the folder `/fonts` in your folder `/fonts`
-4. Still using Studio Code Server, integrate the contents of the files `sensors.yaml` and `templates.yaml`in your Home Assistant configuration YAML files (cf. picture `Screenshot.png`)
-5. Update the commented parts of the files `magicframe.yaml`, `secrets.yaml` and `templates.yaml` with your own information (entity ID, identifiers, passwords, API key...)
-6. Connect the ESP32 to your computer, launch ESPHome and follow the instructions to install `magicframe.yaml` on your ESP32.
-7. Enjoy!
+#### *  *
 
-### Features
-
-#### * Automatic screen update *
-Set to update every 4 hours.
-The setting is present in the file `magicframe.yaml`.
-
-#### * Weather forecast *
-Using the integration [Meteorologisk institutt (Met.no)](https://www.home-assistant.io/integrations/met).
-
-You will need to set up your city and retrieve the entity ID `weather.forecast_YourCity` to integrate it into the file `templates.yaml`.
-The main forecast and temperature are those at the time of the screen update.
-Below, we have the forecast and the min. and max. temperatures, for the current day and the following 4 days.
 
 #### * Home temperature and humidity *
 Using the integration [Tado°](https://www.home-assistant.io/integrations/tado), because I have thermostatic heads of this brand on my radiators.
