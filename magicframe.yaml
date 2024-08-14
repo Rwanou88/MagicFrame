@@ -85,13 +85,15 @@ qr_code:
 
 # INCLUDE CUSTOM FONTS / INCLURE DES POLICES PERSONNALISÉES
 font:
-  ################# REGULAR #################
+  # Nunito      --> https://fonts.google.com/specimen/Nunito/tester
+  # Noto Sans   --> https://fonts.google.com/noto/specimen/Noto+Sans/tester
+  # Noto Emoji  --> https://fonts.google.com/noto/specimen/Noto+Emoji/tester
   - file:
       type: gfonts
-      family: Noto+Sans
-      weight: 500
-    id: Noto_1
-    size: 20
+      family: Nunito
+      weight: 800 # ExtraBold
+    id: NunitoEB55
+    size: 55
     glyphs: &font-glyphs [ # --> https://codepoints.net/
       0,1,2,3,4,5,6,7,8,9,
       A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,
@@ -117,48 +119,53 @@ font:
       "\u005F", #_
       "\u00B0", #°
       ]
-    
-  ################## BOLD ################## 
   - file:
       type: gfonts
-      family: Noto+Sans
-      weight: 800
-    id: Noto_2
-    size: 55
-    glyphs: *font-glyphs
-  - file:
-      type: gfonts
-      family: Noto+Sans
-      weight: 800
-    id: Noto_3
+      family: Nunito
+      weight: 800 # ExtraBold
+    id: NunitoEB35
     size: 35
     glyphs: *font-glyphs
   - file:
       type: gfonts
-      family: Noto+Sans
-      weight: 800
-    id: Noto_4
+      family: Nunito
+      weight: 800 # ExtraBold
+    id: NunitoEB25
     size: 25
     glyphs: *font-glyphs
   - file:
       type: gfonts
-      family: Noto+Sans
-      weight: 800
-    id: Noto_5
+      family: Nunito
+      weight: 500 # Medium
+    id: NunitoM20
     size: 20
     glyphs: *font-glyphs
   - file:
       type: gfonts
+      family: Nunito
+      weight: 800 # ExtraBold
+    id: NunitoEB20
+    size: 20
+    glyphs: *font-glyphs
+  - file:
+      type: gfonts
+      family: Nunito
+      weight: 700 # Bold
+    id: NunitoB16
+    size: 16
+    glyphs: *font-glyphs
+  - file:
+      type: gfonts
       family: Noto+Sans
-      weight: 700
-    id: Noto_6
+      weight: 700 # Bold
+    id: Noto15
     size: 15
     glyphs: *font-glyphs
     extras: # Enables emoji support / Active la prise en charge des emojis
-      - file: # --> https://fonts.google.com/noto/specimen/Noto+Emoji/tester
+      - file:
           type: gfonts
           family: Noto+Emoji
-          weight: 700
+          weight: 700 # Bold
         glyphs: [ # --> https://www.unicode.org/emoji/charts/full-emoji-list.html
           "\u2665", #heart suit
           "\u2764", #red heart
@@ -460,42 +467,42 @@ display:
         };
         
      // Date
-     it.printf(240, 35, id(NotoBold_35), TextAlign::TOP_CENTER, "%s", id(date_fr).state.c_str());
+     it.printf(240, 35, id(NunitoEB35), TextAlign::TOP_CENTER, "%s", id(date_fr).state.c_str());
 
 
      it.filled_rectangle(50, 85, 380, 2);
-
      
+
      // Weather when the screen was last updated / Météo lors de la dernière mise à jour de l'écran
      it.printf(140, 100, id(MDI_120), TextAlign::TOP_CENTER, "%s", icon_map[id(weather_name).state].c_str());
-     it.printf(220, 110, id(NotoBold_35), TextAlign::TOP_LEFT, "%s", traduction[id(weather_name).state].c_str());
-     it.printf(220, 150, id(NotoBold_55), TextAlign::TOP_LEFT, "%2.1f°C", id(weather_temperature).state);
+     it.printf(220, 110, id(NunitoEB35), TextAlign::TOP_LEFT, "%s", traduction[id(weather_name).state].c_str());
+     it.printf(220, 150, id(NunitoEB55), TextAlign::TOP_LEFT, "%2.1f°C", id(weather_temperature).state);
 
      // 5-day weather forecast (day 1 = today) / Prévisions météo à 5 jours (day 1 = aujourd'hui)
-     it.printf(85, 235, id(NotoBold_25), TextAlign::TOP_CENTER, "%s", traduction[id(weather_day_1).state].c_str());
+     it.printf(85, 235, id(NunitoEB25), TextAlign::TOP_CENTER, "%s", traduction[id(weather_day_1).state].c_str());
      it.printf(85, 265, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map[id(weather_condition_1).state].c_str());
-     it.printf(85, 305, id(NotoBold_20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_temperature_1).state);
-     it.printf(85, 325, id(NotoReg_20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_templow_1).state);
+     it.printf(85, 305, id(NunitoEB20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_temperature_1).state);
+     it.printf(85, 325, id(NunitoM20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_templow_1).state);
 
-     it.printf(162, 235, id(NotoBold_25), TextAlign::TOP_CENTER, "%s", traduction[id(weather_day_2).state].c_str());
+     it.printf(162, 235, id(NunitoEB25), TextAlign::TOP_CENTER, "%s", traduction[id(weather_day_2).state].c_str());
      it.printf(162, 265, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map[id(weather_condition_2).state].c_str());
-     it.printf(162, 305, id(NotoBold_20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_temperature_2).state);
-     it.printf(162, 325, id(NotoReg_20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_templow_2).state);
+     it.printf(162, 305, id(NunitoEB20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_temperature_2).state);
+     it.printf(162, 325, id(NunitoM20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_templow_2).state);
 
-     it.printf(240, 235, id(NotoBold_25), TextAlign::TOP_CENTER, "%s", traduction[id(weather_day_3).state].c_str());
+     it.printf(240, 235, id(NunitoEB25), TextAlign::TOP_CENTER, "%s", traduction[id(weather_day_3).state].c_str());
      it.printf(240, 265, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map[id(weather_condition_3).state].c_str());
-     it.printf(240, 305, id(NotoBold_20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_temperature_3).state);
-     it.printf(240, 325, id(NotoReg_20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_templow_3).state);
+     it.printf(240, 305, id(NunitoEB20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_temperature_3).state);
+     it.printf(240, 325, id(NunitoM20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_templow_3).state);
 
-     it.printf(318, 235, id(NotoBold_25), TextAlign::TOP_CENTER, "%s", traduction[id(weather_day_4).state].c_str());
+     it.printf(318, 235, id(NunitoEB25), TextAlign::TOP_CENTER, "%s", traduction[id(weather_day_4).state].c_str());
      it.printf(318, 265, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map[id(weather_condition_4).state].c_str());
-     it.printf(318, 305, id(NotoBold_20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_temperature_4).state);
-     it.printf(318, 325, id(NotoReg_20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_templow_4).state);
+     it.printf(318, 305, id(NunitoEB20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_temperature_4).state);
+     it.printf(318, 325, id(NunitoM20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_templow_4).state);
 
-     it.printf(395, 235, id(NotoBold_25), TextAlign::TOP_CENTER, "%s", traduction[id(weather_day_5).state].c_str());
+     it.printf(395, 235, id(NunitoEB25), TextAlign::TOP_CENTER, "%s", traduction[id(weather_day_5).state].c_str());
      it.printf(395, 265, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map[id(weather_condition_5).state].c_str());
-     it.printf(395, 305, id(NotoBold_20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_temperature_5).state);
-     it.printf(395, 325, id(NotoReg_20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_templow_5).state);
+     it.printf(395, 305, id(NunitoEB20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_temperature_5).state);
+     it.printf(395, 325, id(NunitoM20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_templow_5).state);
 
 
      it.filled_rectangle(50, 360, 380, 2);
@@ -503,44 +510,44 @@ display:
 
      // Temperature and humidity at home / Température et humidité à la maison
      it.printf(85, 370, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map["room_1"].c_str());
-     it.printf(85, 410, id(Noto_5), TextAlign::TOP_CENTER, "%2.1f°C", id(room_temperature_1).state);
-     it.printf(85, 430, id(Noto_1), TextAlign::TOP_CENTER, "%2.1f%%", id(room_humidity_1).state);
+     it.printf(85, 410, id(NunitoEB20), TextAlign::TOP_CENTER, "%2.1f°C", id(room_temperature_1).state);
+     it.printf(85, 430, id(NunitoM20), TextAlign::TOP_CENTER, "%2.1f%%", id(room_humidity_1).state);
 
      it.printf(162, 370, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map["room_2"].c_str());
-     it.printf(162, 410, id(Noto_5), TextAlign::TOP_CENTER, "%2.1f°C", id(room_temperature_2).state);
-     it.printf(162, 430, id(Noto_1), TextAlign::TOP_CENTER, "%2.1f%%", id(room_humidity_2).state);
+     it.printf(162, 410, id(NunitoEB20), TextAlign::TOP_CENTER, "%2.1f°C", id(room_temperature_2).state);
+     it.printf(162, 430, id(NunitoM20), TextAlign::TOP_CENTER, "%2.1f%%", id(room_humidity_2).state);
      
      it.printf(240, 370, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map["room_3"].c_str());
-     it.printf(240, 410, id(Noto_5), TextAlign::TOP_CENTER, "%2.1f°C", id(room_temperature_3).state);
-     it.printf(240, 430, id(Noto_1), TextAlign::TOP_CENTER, "%2.1f%%", id(room_humidity_3).state);
+     it.printf(240, 410, id(NunitoEB20), TextAlign::TOP_CENTER, "%2.1f°C", id(room_temperature_3).state);
+     it.printf(240, 430, id(NunitoM20), TextAlign::TOP_CENTER, "%2.1f%%", id(room_humidity_3).state);
 
      it.printf(318, 370, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map["room_4"].c_str());
-     it.printf(318, 410, id(Noto_5), TextAlign::TOP_CENTER, "%2.1f°C", id(room_temperature_4).state);
-     it.printf(318, 430, id(Noto_1), TextAlign::TOP_CENTER, "%2.1f%%", id(room_humidity_4).state);
+     it.printf(318, 410, id(NunitoEB20), TextAlign::TOP_CENTER, "%2.1f°C", id(room_temperature_4).state);
+     it.printf(318, 430, id(NunitoM20), TextAlign::TOP_CENTER, "%2.1f%%", id(room_humidity_4).state);
 
      it.printf(395, 370, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map["room_5"].c_str());
-     it.printf(395, 410, id(Noto_5), TextAlign::TOP_CENTER, "%2.1f°C", id(room_temperature_5).state);
-     it.printf(395, 430, id(Noto_1), TextAlign::TOP_CENTER, "%2.1f%%", id(room_humidity_5).state);
+     it.printf(395, 410, id(NunitoEB20), TextAlign::TOP_CENTER, "%2.1f°C", id(room_temperature_5).state);
+     it.printf(395, 430, id(NunitoM20), TextAlign::TOP_CENTER, "%2.1f%%", id(room_humidity_5).state);
 
 
      it.filled_rectangle(50, 460, 380, 2);
-     
+
 
      // Next 5 events on the calendar / 5 prochains événements du calendrier
-     it.printf(55, 470, id(NotoBold_20), TextAlign::TOP_LEFT, "%s", id(event_start_1).state.c_str());
-     it.printf(55, 490, id(NotoBold_15), TextAlign::TOP_LEFT, "%s", id(event_summary_1).state.c_str());
+     it.printf(55, 470, id(NunitoEB20), TextAlign::TOP_LEFT, "%s", id(event_start_1).state.c_str());
+     it.printf(55, 490, id(Noto15), TextAlign::TOP_LEFT, "%s", id(event_summary_1).state.c_str());
 
-     it.printf(55, 510, id(NotoBold_20), TextAlign::TOP_LEFT, "%s", id(event_start_2).state.c_str());
-     it.printf(55, 530, id(NotoBold_15), TextAlign::TOP_LEFT, "%s", id(event_summary_2).state.c_str());
+     it.printf(55, 510, id(NunitoEB20), TextAlign::TOP_LEFT, "%s", id(event_start_2).state.c_str());
+     it.printf(55, 530, id(Noto15), TextAlign::TOP_LEFT, "%s", id(event_summary_2).state.c_str());
 
-     it.printf(55, 550, id(NotoBold_20), TextAlign::TOP_LEFT, "%s", id(event_start_3).state.c_str());
-     it.printf(55, 570, id(NotoBold_15), TextAlign::TOP_LEFT, "%s", id(event_summary_3).state.c_str());
+     it.printf(55, 550, id(NunitoEB20), TextAlign::TOP_LEFT, "%s", id(event_start_3).state.c_str());
+     it.printf(55, 570, id(Noto15), TextAlign::TOP_LEFT, "%s", id(event_summary_3).state.c_str());
 
-     it.printf(55, 590, id(NotoBold_20), TextAlign::TOP_LEFT, "%s", id(event_start_4).state.c_str());
-     it.printf(55, 610, id(NotoBold_15), TextAlign::TOP_LEFT, "%s", id(event_summary_4).state.c_str());
+     it.printf(55, 590, id(NunitoEB20), TextAlign::TOP_LEFT, "%s", id(event_start_4).state.c_str());
+     it.printf(55, 610, id(Noto15), TextAlign::TOP_LEFT, "%s", id(event_summary_4).state.c_str());
 
-     it.printf(55, 630, id(NotoBold_20), TextAlign::TOP_LEFT, "%s", id(event_start_5).state.c_str());
-     it.printf(55, 650, id(NotoBold_15), TextAlign::TOP_LEFT, "%s", id(event_summary_5).state.c_str());
+     it.printf(55, 630, id(NunitoEB20), TextAlign::TOP_LEFT, "%s", id(event_start_5).state.c_str());
+     it.printf(55, 650, id(Noto15), TextAlign::TOP_LEFT, "%s", id(event_summary_5).state.c_str());
 
 
      it.filled_rectangle(50, 680, 380, 2);
@@ -548,11 +555,11 @@ display:
      
      // Guest wifi QR code / QR code wifi invité
      it.qr_code(55, 700, id(homepage_qr), Color(255,255,255), 2);
-     it.printf(125, 700, id(NotoBold_15), TextAlign::TOP_LEFT, "Connexion auto à YourGuestWIFI_SSID");               //Wifi connection YourGuestWifi_SSID
+     it.printf(125, 700, id(NunitoB16), TextAlign::TOP_LEFT, "Connexion auto à YourGuestWIFI_SSID");               //Wifi connection YourGuestWifi_SSID
      it.printf(125, 724, id(MDI_36), TextAlign::TOP_LEFT, "%s", icon_map["wifi-signal"].c_str());
 
      // Last screen update date / Date de la dernière mise à jour à l'écran
-     it.printf(320, 740, id(NotoBold_15), TextAlign::TOP_RIGHT, "Mis à jour le :");                                         //Updated on
-     it.strftime(320, 740, id(NotoBold_15), TextAlign::TOP_LEFT, " %d-%m à %H:%M", id(homeassistant_time).now());
+     it.printf(320, 740, id(NunitoB16), TextAlign::TOP_RIGHT, "Mis à jour le :");                                         //Updated on
+     it.strftime(320, 740, id(NunitoB16), TextAlign::TOP_LEFT, " %d-%m à %H:%M", id(homeassistant_time).now());
 
 captive_portal:
