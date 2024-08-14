@@ -28,6 +28,10 @@ Inspiré par ces deux projets / Inspired by these two projects :
 6. Branchez l'ESP32 à votre ordinateur, lancez ESPHome et suivez les instructions pour installer `magicframe.yaml` sur votre ESP32.
 7. Enjoy!
 
+### Fonctionnalités
+
+#### Mise à jour automatique de l'écran
+
 ## English
 
 ### Hardware
@@ -48,3 +52,5 @@ Inspiré par ces deux projets / Inspired by these two projects :
 5. Update the commented parts of the files `magicframe.yaml`, `secrets.yaml` and `templates.yaml` with your own information (entity ID, identifiers, passwords, API key...)
 6. Connect the ESP32 to your computer, launch ESPHome and follow the instructions to install `magicframe.yaml` on your ESP32.
 7. Enjoy!
+
+### Features
