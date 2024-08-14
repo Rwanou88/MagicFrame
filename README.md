@@ -1,4 +1,4 @@
-# MagicFrame
+# MagicFrame - French
 
 Inspiré par ces deux projets :
 - GammaTroniques : [GitHub](https://github.com/NoahJst/HomeAssistant-Config/blob/main/esphome/README.md) / [Youtube](https://www.youtube.com/watch?v=XyooZe_9hc0)
@@ -11,3 +11,14 @@ Inspiré par ces deux projets :
 ## Logiciel
 - Home Assistant
 - ESPHome
+
+## Installation
+
+1. No soldering is required since the e-Paper driver board was integrated into the ESP32 board. All I needed to do was to connect the e-Paper screen to the driver board, and then connect the driver board to the USB socket on my light switch.
+2. Copy `/fonts`, `/images`, and `weatherman.yaml` to your /.config/esphome folder.
+3. Integrate the content of `sensor.yaml` to your Home Assistant template configuration YAML file.
+4. Install HA-GTFS-RT to your Home Assistant using HACS.
+5. Once booted, flash `weatherman.yaml` the ESP32 board using ESPHome.
+6. Enjoy!
+
+# MagicFrame - English
