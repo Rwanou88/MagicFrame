@@ -89,7 +89,7 @@ EN - The entity ID is to be included in the file `templates.yaml`.
 It is possible to display the next 5 calendar events (over the next 90 days).
 Emojis can be taken into account, they will have to be added, as and when needed, in the file `magicframe.yaml`.
 
-### * Wifi invité *
+### * Wifi invité - Guest Wifi *
 Utilisation du composant d'ESPHome / using the ESPHome component [QR Code](https://esphome.io/components/qr_code.html).
 
 Voici comment est configuré le code QR : `WIFI:T:WPA;S:NomDeMonRéseau;P:MonMotDePasse;H:false;`
