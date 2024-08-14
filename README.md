@@ -1,4 +1,4 @@
-# MagicFrame - French
+# MagicFrame - FR/EN
 
 Inspiré par ces deux projets :
 - GammaTroniques : [GitHub](https://github.com/NoahJst/HomeAssistant-Config/blob/main/esphome/README.md) / [Youtube](https://www.youtube.com/watch?v=XyooZe_9hc0)
@@ -21,4 +21,4 @@ Inspiré par ces deux projets :
 5. Once booted, flash `weatherman.yaml` the ESP32 board using ESPHome.
 6. Enjoy!
 
-# MagicFrame - English
+### MagicFrame - English
