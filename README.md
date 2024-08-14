@@ -37,9 +37,9 @@ Inspiré par ces deux projets / Inspired by these two projects :
 
 ### Hardware
 
-- [e-Paper ESP32 Driver Board](https://amzn.to/3nkMRT8)
-- [Waveshare 7.5inch E-Ink Display](https://amzn.to/3a85x5D)
-- [IKEA RIBBA Picture Frame](https://amzn.to/3QM3Zip)
+- [e-Paper ESP32 Driver Board](https://www.amazon.com/gp/product/B07M5CNP3B)
+- [Waveshare 7.5inch E-Ink Display](https://www.amazon.com/waveshare-7-5inch-HAT-Raspberry-Consumption/dp/B075R4QY3L)
+- [IKEA RIBBA Picture Frame](https://www.amazon.com/Ikea-Ribba-Picture-Frame-White/dp/B01JEFG1B8)
 - [3D print](https://www.thingiverse.com/thing:6427159): you can find more by searching for "waveshare", "esp32".
 
 ### Software
