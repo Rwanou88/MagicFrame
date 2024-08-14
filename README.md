@@ -84,7 +84,7 @@ The temperature and humidity entity IDs are to be integrated directly into the f
 It is possible to display information for 5 rooms.
 
 ### * Calendrier - Calendar *
-[CalDAV integration](https://www.home-assistant.io/integrations/caldav)  / 
+[CalDAV integration](https://www.home-assistant.io/integrations/caldav)
 
 FR - Utilisation de cette intégration pour récupérer l'agenda souhaité (iCloud).
 L'ID d'entité est à intégrer dans le fichier `templates.yaml`.
