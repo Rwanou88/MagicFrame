@@ -22,8 +22,8 @@ Inspiré par ces deux projets / Inspired by these two projects :
 - ajoutez le contenu du dossier `/fonts` dans votre dossier `/fonts`
 - copîez les fichiers `magicframe.yaml` et `secrets.yaml`
 4. À l'aide de Studio Code Server, intégrez le contenu des fichiers `sensors.yaml` et `templates.yaml` dans vos fichiers YAML de configuration Home Assistant (cf. image `Screenshot.png`)
-5. Mettez à jours les fichiers `magicframe.yaml`, `secrets.yaml` et `templates.yaml` avec vos propres informations (entity ID, identifiants, mot de passe, API key...)
-6. Once booted, flash `weatherman.yaml` the ESP32 board using ESPHome.
+5. Mettez à jours les parties commentées des fichiers `magicframe.yaml`, `secrets.yaml` et `templates.yaml` avec vos propres informations (entity ID, identifiants, mot de passe, API key...)
+6. Branchez l'ESP32 à votre ordinateur, lancez ESPHome et suivez les instructions pour installer `magicframe.yaml` sur votre ESP32.
 7. Enjoy!
 
 ## English
