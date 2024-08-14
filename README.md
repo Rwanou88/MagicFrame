@@ -36,11 +36,6 @@ EN - You can find more by searching for "waveshare", "esp32".
 
 ## Installation - FR
 
-<p align="center">
-<img src="https://github.com/user-attachments/assets/22bbd79e-67af-4a39-8ac2-9701a0a2f3db" width="400"/>
-</p>
-
-
 1. Connectez l'écran à l'ESP32, en vérifiant bien que les 2 petits interrupteurs "1" et "2" de l'ESP32 soient bien sur "A" et "ON". Dans le cas contraire, vous aurez des problèmes d'affichage sur l'écran.
 2. À l'aide de Studio Code Server, dans votre dossier `/.config/esphome` (cf. image `Screenshot.png`) :
 - copiez les fichiers `magicframe.yaml` et `secrets.yaml`
@@ -49,6 +44,10 @@ EN - You can find more by searching for "waveshare", "esp32".
 5. Mettez à jours les parties commentées des fichiers `magicframe.yaml`, `secrets.yaml` et `templates.yaml` avec vos propres informations (entity ID, identifiants, mots de passe, API key...)
 6. Branchez l'ESP32 à votre ordinateur, lancez ESPHome et suivez les instructions pour installer `magicframe.yaml` sur votre ESP32.
 7. Enjoy!
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/22bbd79e-67af-4a39-8ac2-9701a0a2f3db" width="400"/>
+</p>
 
 ## Installation - EN
 1. Connect the screen to the ESP32, making sure that the 2 small switches "1" and "2" on the ESP32 are on "A" and "ON". Otherwise, you will have display problems on the screen.
