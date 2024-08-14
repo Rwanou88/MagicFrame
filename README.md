@@ -18,10 +18,13 @@ Inspiré par ces deux projets / Inspired by these two projects :
 ### Installation
 
 1. Connectez l'écran à l'ESP32, en vérifiant bien que les 2 petits interrupteurs "1" et "2" de l'ESP32 soient bien sur "A" et "ON". Dans le cas contraire, vous aurez des problèmes d'affichage sur l'écran.
-2. Copiez le contenu du dossier `/fonts` et `magicframe.yaml` dans votre dossier `/.config/esphome` (cf. image `Screenshot.png`)
-3. Intégrez le contenu du fichier `sensors.yaml` et `templates.yaml` dans vos fichiers YAML de configuration Home Assistant.
-5. Once booted, flash `weatherman.yaml` the ESP32 board using ESPHome.
-6. Enjoy!
+2. À l'aide de Studio Code Server, dans votre dossier `/.config/esphome` (cf. image `Screenshot.png`) :
+- ajoutez le contenu du dossier `/fonts` dans votre dossier `/fonts`
+- copîez les fichiers `magicframe.yaml` et `secrets.yaml`
+4. À l'aide de Studio Code Server, intégrez le contenu des fichiers `sensors.yaml` et `templates.yaml` dans vos fichiers YAML de configuration Home Assistant (cf. image `Screenshot.png`)
+5. Mettez à jours les fichiers `magicframe.yaml` et `secrets.yaml` avec vos propres informations (entity ID, identifiants, mot de passe, API key...)
+6. Once booted, flash `weatherman.yaml` the ESP32 board using ESPHome.
+7. Enjoy!
 
 ## English
 
