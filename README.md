@@ -89,9 +89,9 @@ Affiche la date et l'heure de la dernière mise à jour de l'écran.
 
 1. Connect the screen to the ESP32, making sure that the 2 small switches "1" and "2" on the ESP32 are on "A" and "ON". Otherwise, you will have display problems on the screen.
 2. Using Studio Code Server, in your folder `/.config/esphome` (cf. picture `Screenshot.png`):
-- copy the files `magicframe.yaml` et `secrets.yaml`
+- copy the files `magicframe.yaml` and `secrets.yaml`
 - add the contents of the folder `/fonts` in your folder `/fonts`
-4. Still using Studio Code Server, integrate the contents of the files `sensors.yaml` et `templates.yaml`in your Home Assistant configuration YAML files (cf. picture `Screenshot.png`)
+4. Still using Studio Code Server, integrate the contents of the files `sensors.yaml` and `templates.yaml`in your Home Assistant configuration YAML files (cf. picture `Screenshot.png`)
 5. Update the commented parts of the files `magicframe.yaml`, `secrets.yaml` and `templates.yaml` with your own information (entity ID, identifiers, passwords, API key...)
 6. Connect the ESP32 to your computer, launch ESPHome and follow the instructions to install `magicframe.yaml` on your ESP32.
 7. Enjoy!
