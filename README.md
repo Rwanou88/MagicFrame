@@ -60,7 +60,7 @@ EN - Set to update every 4 hours.
 The setting is present in the file `magicframe.yaml`.
 
 ### * Prévision météo - Weather forecast *
-[Meteorologisk institutt (Met.no) integration](https://www.home-assistant.io/integrations/met).
+Integration : [Meteorologisk institutt (Met.no)](https://www.home-assistant.io/integrations/met).
 
 FR - Utilisation de cette intégration.
 Il faudra paramétrer votre ville et récupérer l'ID d'entité `weather.forecast_VotreVille` pour l'intégrer au fichier `templates.yaml`.
@@ -73,7 +73,7 @@ The main forecast and temperature are those at the time of the screen update.
 Below, we have the forecast and the min. and max. temperatures, for the current day and the following 4 days.
 
 ### * Température et humidité de la maison - Home temperature and humidity *
-[Tado° integration](https://www.home-assistant.io/integrations/tado)
+Integration : [Tado°](https://www.home-assistant.io/integrations/tado)
 
 FR - Utilisation de cette intégration car j'ai des têtes thermostatiques de cette marque sur mes radiateurs.
 Les ID d'entité température et humidité sont à intégrer directement dans le fichier `magicframe.yaml`.
@@ -84,7 +84,7 @@ The temperature and humidity entity IDs are to be integrated directly into the f
 It is possible to display information for 5 rooms.
 
 ### * Calendrier - Calendar *
-[CalDAV integration](https://www.home-assistant.io/integrations/caldav)
+Integration : [CalDAV](https://www.home-assistant.io/integrations/caldav)
 
 FR - Utilisation de cette intégration pour récupérer l'agenda souhaité (iCloud).
 L'ID d'entité est à intégrer dans le fichier `templates.yaml`.
@@ -97,7 +97,7 @@ It is possible to display the next 5 calendar events (over the next 90 days).
 Emojis can be taken into account, they will have to be added, as and when needed, in the file `magicframe.yaml`.
 
 ### * Wifi invité - Guest Wifi *
-[QR Code](https://esphome.io/components/qr_code.html).
+ESPHome : [QR Code](https://esphome.io/components/qr_code.html).
 
 FR - Utilisation du composant d'ESPHome.
 
