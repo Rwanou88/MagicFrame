@@ -44,7 +44,7 @@ Inspiré par ces deux projets / Inspired by these two projects :
 2. Using Studio Code Server, in your folder `/.config/esphome` (cf. picture `Screenshot.png`) :
 - copy the files `magicframe.yaml` et `secrets.yaml`
 - add the contents of the folder `/fonts` in your folder `/fonts`
-4.Still using Studio Code Server, integrate the contents of the files `sensors.yaml` et `templates.yaml`in your Home Assistant configuration YAML files (cf. picture `Screenshot.png`)
+4. Still using Studio Code Server, integrate the contents of the files `sensors.yaml` et `templates.yaml`in your Home Assistant configuration YAML files (cf. picture `Screenshot.png`)
 5. Update the commented parts of the files `magicframe.yaml`, `secrets.yaml` and `templates.yaml` with your own information (entity ID, identifiers, passwords, API key...)
 6. Connect the ESP32 to your computer, launch ESPHome and follow the instructions to install `magicframe.yaml` on your ESP32.
 7. Enjoy!
