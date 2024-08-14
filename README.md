@@ -1,5 +1,8 @@
 # MagicFrame - FR/EN
-Inspiré par ces deux projets / Inspired by these two projects :
+FR - Inspiré par ces deux projets
+
+EN - Inspired by these two projects
+
 - GammaTroniques (FR) : [GitHub](https://github.com/NoahJst/HomeAssistant-Config/blob/main/esphome/README.md) / [Youtube](https://www.youtube.com/watch?v=XyooZe_9hc0)
 - Madalena (EN) : [GitHub](https://github.com/Madelena/esphome-weatherman-dashboard)
 
@@ -16,8 +19,10 @@ Amazon US
 
 3D printer
 - [Thingiverse](https://www.thingiverse.com/thing:6427159)
-Vous pouvez en trouver d'autre en cherchant "waveshare", "esp32".
-You can find more by searching for "waveshare", "esp32".
+
+FR- Vous pouvez en trouver d'autre en cherchant "waveshare", "esp32".
+
+EN - You can find more by searching for "waveshare", "esp32".
 
 ## Logiciels - Software
 - Home Assistant
@@ -55,38 +60,46 @@ EN - Set to update every 4 hours.
 The setting is present in the file `magicframe.yaml`.
 
 ### * Prévision météo - Weather forecast *
-Utilisation de l'intégration / using the integration [Meteorologisk institutt (Met.no)](https://www.home-assistant.io/integrations/met).
+[Meteorologisk institutt (Met.no) integration](https://www.home-assistant.io/integrations/met).
 
-FR - Il faudra paramétrer votre ville et récupérer l'ID d'entité `weather.forecast_VotreVille` pour l'intégrer au fichier `templates.yaml`.
+FR - Utilisation de cette intégration.
+Il faudra paramétrer votre ville et récupérer l'ID d'entité `weather.forecast_VotreVille` pour l'intégrer au fichier `templates.yaml`.
 La prévision et la température principales sont celles au moment de la mise à jour de l'écran.
 En-dessous, on a la prévision et les températures min. et max, pour la journée en cours et les 4 jours suivants.
 
-EN - You will need to set up your city and retrieve the entity ID `weather.forecast_YourCity` to integrate it into the file `templates.yaml`.
+EN - I'm using this integration.
+You will need to set up your city and retrieve the entity ID `weather.forecast_YourCity` to integrate it into the file `templates.yaml`.
 The main forecast and temperature are those at the time of the screen update.
 Below, we have the forecast and the min. and max. temperatures, for the current day and the following 4 days.
 
 ### * Température et humidité de la maison - Home temperature and humidity *
-Utilisation de l'intégration / using the integration [Tado°](https://www.home-assistant.io/integrations/tado), because I have thermostatic heads of this brand on my radiators / car j'ai des têtes thermostatiques de cette marque sur mes radiateurs.
+[Tado° integration](https://www.home-assistant.io/integrations/tado)
 
-FR - Les ID d'entité température et humidité sont à intégrer directement dans le fichier `magicframe.yaml`.
+FR - Utilisation de cette intégration car j'ai des têtes thermostatiques de cette marque sur mes radiateurs.
+Les ID d'entité température et humidité sont à intégrer directement dans le fichier `magicframe.yaml`.
 Il est possible d'afficher les infos de 5 pièces.
 
-EN - The temperature and humidity entity IDs are to be integrated directly into the file `magicframe.yaml`.
+EN - I'm using this integration because I have thermostatic heads of this brand on my radiators.
+The temperature and humidity entity IDs are to be integrated directly into the file `magicframe.yaml`.
 It is possible to display information for 5 rooms.
 
 ### * Calendrier - Calendar *
-Utilisation de l'intégration / Using the integration [CalDAV](https://www.home-assistant.io/integrations/caldav) to retrieve the desired calendar (iCloud) / pour récupérer l'agenda souhaité (iCloud).
+[CalDAV integration](https://www.home-assistant.io/integrations/caldav)  / 
 
-FR - L'ID d'entité est à intégrer dans le fichier `templates.yaml`.
+FR - Utilisation de cette intégration pour récupérer l'agenda souhaité (iCloud).
+L'ID d'entité est à intégrer dans le fichier `templates.yaml`.
 Il est possible d'afficher les 5 prochains événements du calendrier (sur les 90 prochains jours).
 Les emojis peuvent être pris en compte, il faudra les ajouter, au fur et à mesure des besoin, dans le fichier `magicframe.yaml`.
 
-EN - The entity ID is to be included in the file `templates.yaml`.
+EN - I'm using this integration to retrieve the desired calendar (iCloud).
+The entity ID is to be included in the file `templates.yaml`.
 It is possible to display the next 5 calendar events (over the next 90 days).
 Emojis can be taken into account, they will have to be added, as and when needed, in the file `magicframe.yaml`.
 
 ### * Wifi invité - Guest Wifi *
-Utilisation du composant d'ESPHome / using the ESPHome component [QR Code](https://esphome.io/components/qr_code.html).
+[QR Code](https://esphome.io/components/qr_code.html).
+
+FR - Utilisation du composant d'ESPHome.
 
 Voici comment est configuré le code QR : `WIFI:T:WPA;S:NomDeMonRéseau;P:MonMotDePasse;H:false;`
 | Options   | Exemple         | Description                                                                     |
@@ -95,6 +108,8 @@ Voici comment est configuré le code QR : `WIFI:T:WPA;S:NomDeMonRéseau;P:MonMot
 | S         | NomDeMonRéseau	|  Nom de réseau SSID.                                                            |
 | P         | MonMotDePasse   |  Mot de passe, à ignorer si « T » est vide.                                     |
 | H         | true            |  "true" si le réseau SSID est caché (Facultatif)                                |
+
+EN - I'm using the ESPHome component.
 
 This is how the QR code is configured : `WIFI:T:WPA;S:MyNetworkName;P:MyPassword;H:false;`
 | Options   | Exemple         | Description                                             |
