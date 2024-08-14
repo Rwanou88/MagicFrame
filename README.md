@@ -45,7 +45,7 @@ En-dessous, on a la prévision et les températures min. et max, pour la journé
 #### * Température et humidité de la maison *
 Utilisation de l'intégration [Tado°](https://www.home-assistant.io/integrations/tado), car j'ai des têtes thermostatiques de cette marque sur mes radiateurs.
 
-Les ID d'entité température et humlidité sont à intégrer directement dans le fichier `magicframe.yaml`.
+Les ID d'entité température et humidité sont à intégrer directement dans le fichier `magicframe.yaml`.
 Il est possible d'afficher les infos de 5 pièces.
 
 #### * Calendrier *
@@ -58,7 +58,7 @@ Les emojis peuvent être pris en compte, il faudra les ajouter, au fur et à mes
 #### * Wifi invité *
 Utilisation du [Composant Code QR](https://esphome.io/components/qr_code.html) d'ESPHome.
 
-Voici comment est configuré le code QR : `WIFI:T:WPA;S:NomDuRéseau;P:MonMotDePasse;H:false;`
+Voici comment est configuré le code QR : `WIFI:T:WPA;S:NomDeMonRéseau;P:MonMotDePasse;H:false;`
 
 | Options   | Exemple         | Description                                                                     |
 | :-------: | :-------:       | :-------                                                                        |
@@ -97,3 +97,42 @@ Affiche la date et l'heure de la dernière mise à jour de l'écran.
 7. Enjoy!
 
 ### Features
+
+#### * Automatic screen update *
+Set to update every 4 hours.
+The setting is present in the file `magicframe.yaml`.
+
+#### * Weather forecast *
+Using the integration [Meteorologisk institutt (Met.no)](https://www.home-assistant.io/integrations/met).
+
+You will need to set up your city and retrieve the entity ID `weather.forecast_YourCity` to integrate it into the file `templates.yaml`.
+The main forecast and temperature are those at the time of the screen update.
+Below, we have the forecast and the min. and max. temperatures, for the current day and the following 4 days.
+
+#### * Home temperature and humidity *
+Using the integration [Tado°](https://www.home-assistant.io/integrations/tado), because I have thermostatic heads of this brand on my radiators.
+
+The temperature and humidity entity IDs are to be integrated directly into the file `magicframe.yaml`.
+It is possible to display information for 5 rooms.
+
+#### * Calendar *
+Using the integration [CalDAV](https://www.home-assistant.io/integrations/caldav) to retrieve the desired calendar (iCloud).
+
+The entity ID is to be included in the file `templates.yaml`.
+It is possible to display the next 5 calendar events (over the next 90 days).
+Emojis can be taken into account, they will have to be added, as and when needed, in the file `magicframe.yaml`.
+
+#### * Guest Wifi *
+Using the ESPHome [QR Code Component](https://esphome.io/components/qr_code.html).
+
+This is how the QR code is configured : `WIFI:T:WPA;S:MyNetworkName;P:MyPassword;H:false;`
+
+| Options   | Exemple         | Description                                             |
+| :-------: | :-------:       | :-------                                                |
+| T         | WPA             |  Authentication type: WEP, WPA or none if no password   |
+| S         | MyNetworkName	  |  SSID Network Name                                      |
+| P         | MyPassword      |  Password, ignore if "T" is empty                       |
+| H         | true            |  "true" if the network SSID is hidden (Optional)        |
+
+#### * Date and time of update *
+Displays the date and time the screen was last updated.
