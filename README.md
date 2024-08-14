@@ -76,6 +76,10 @@ You will need to set up your city and retrieve the entity ID `weather.forecast_Y
 The main forecast and temperature are those at the time of the screen update.
 Below, we have the forecast and the min. and max. temperatures, for the current day and the following 4 days.
 
+<p align="center">
+<img src="https://github.com/user-attachments/assets/05af2c0b-8508-4de5-b912-c87673f9b3d2" width="400"/>
+</p>
+
 ### * Température et humidité de la maison - Home temperature and humidity *
 Integration : [Tado°](https://www.home-assistant.io/integrations/tado)
 
