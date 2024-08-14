@@ -31,31 +31,44 @@ Inspiré par ces deux projets / Inspired by these two projects :
 
 ### Fonctionnalités
 
-#### Mise à jour automatique de l'écran
+#### * Mise à jour automatique de l'écran *
 Réglé pour une mise à jour toutes les 4h.
+Le paramétrage est présent dans le fichier `magicframe.yaml`.
 
-#### Prévision météo ###
+#### * Prévision météo *
 Utilisation de l'intégration [Meteorologisk institutt (Met.no)](https://www.home-assistant.io/integrations/met).
+
 Il faudra paramétrer votre ville et récupérer l'ID d'entité `weather.forecast_VotreVille` pour l'intégrer au fichier `templates.yaml`.
 La prévision et la température principales sont celles au moment de la mise à jour de l'écran.
 En-dessous, on a la prévision et les températures min. et max, pour la journée en cours et les 4 jours suivants.
 
-#### Température et humidité de la maison
+#### * Température et humidité de la maison *
 Utilisation de l'intégration [Tado°](https://www.home-assistant.io/integrations/tado), car j'ai des têtes thermostatiques de cette marque sur mes radiateurs.
+
 Les ID d'entité température et humlidité sont à intégrer directement dans le fichier `magicframe.yaml`.
 Il est possible d'afficher les infos de 5 pièces.
 
-#### Calendrier
+#### * Calendrier *
 Utilisation de l'intégration [CalDAV](https://www.home-assistant.io/integrations/caldav) pour récupérer l'agenda souhaité (iCloud).
+
 L'ID d'entité est à intégrer dans le fichier `templates.yaml`.
 Il est possible d'afficher les 5 prochains événements du calendrier (sur les 90 prochains jours).
 Les emojis peuvent être pris en compte, il faudra les ajouter, au fur et à mesure des besoin, dans le fichier `magicframe.yaml`.
 
-#### Wifi invité
+#### * Wifi invité *
+Utilisation du [Composant Code QR](https://esphome.io/components/qr_code.html) d'ESPHome.
 
+Voici comment est configuré le code QR : `WIFI:T:WPA;S:NomDuRéseau;P:MonMotDePasse;H:false;`
 
-#### Date et heure de mise à jour
+| Options   | Exemple         | Description   |
+| :-------: | :-------:       | :-------      |
+| T         | WPA             |  Type d’authentification : WEP, WPA ou aucun en cas d’absence de mot de passe.  |
+| S         | NomDeMonRéseau	|  Nom de réseau SSID.  |
+| P         | MonMotDePasse   |  Mot de passe, à ignorer si « T » est vide.  |
+| H         | true            |  (Facultatif) "true" si le réseau SSID est caché.  |
 
+#### * Date et heure de mise à jour *
+Affiche la date et l'heure de la dernière mise à jour de l'écran.
 
 ## English
 
