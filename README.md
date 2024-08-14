@@ -91,6 +91,10 @@ EN - I'm using this integration because I have thermostatic heads of this brand 
 The temperature and humidity entity IDs are to be integrated directly into the file `magicframe.yaml`.
 It is possible to display information for 5 rooms.
 
+<p align="center">
+<img src="https://github.com/user-attachments/assets/df3f795d-aa0a-4c34-bb1e-b987ff0713d0" width="400"/>
+</p>
+
 ### * Calendrier - Calendar *
 Integration : [CalDAV](https://www.home-assistant.io/integrations/caldav)
 
@@ -103,6 +107,10 @@ EN - I'm using this integration to retrieve the desired calendar (iCloud).
 The entity ID is to be included in the file `templates.yaml`.
 It is possible to display the next 5 calendar events (over the next 90 days).
 Emojis can be taken into account, they will have to be added, as and when needed, in the file `magicframe.yaml`.
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/cec0014b-4b0b-4bde-a56d-cab2923c0b43" width="400"/>
+</p>
 
 ### * Wifi invité - Guest Wifi *
 ESPHome : [QR Code](https://esphome.io/components/qr_code.html).
@@ -129,7 +137,15 @@ This is how the QR code is configured : `WIFI:T:WPA;S:MyNetworkName;P:MyPassword
 | P         | MyPassword      |  Password, ignore if "T" is empty                       |
 | H         | true            |  "true" if the network SSID is hidden (Optional)        |
 
+<p align="center">
+<img src="https://github.com/user-attachments/assets/3e589afc-ce22-4e4c-9052-cb93871b2248" width="400"/>
+</p>
+
 ### * Date et heure de mise à jour - Date and time of update *
 FR - Affiche la date et l'heure de la dernière mise à jour de l'écran.
 
 EN - Displays the date and time the screen was last updated.
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/e047e738-e1e1-4497-93ff-19ff7939ead3" width="400"/>
+</p>
