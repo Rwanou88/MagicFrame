@@ -93,8 +93,6 @@ Emojis can be taken into account, they will have to be added, as and when needed
 Utilisation du composant d'ESPHome / using the ESPHome component [QR Code](https://esphome.io/components/qr_code.html).
 
 Voici comment est configuré le code QR : `WIFI:T:WPA;S:NomDeMonRéseau;P:MonMotDePasse;H:false;`
-This is how the QR code is configured : `WIFI:T:WPA;S:MyNetworkName;P:MyPassword;H:false;`
-
 | Options   | Exemple         | Description                                                                     |
 | :-------: | :-------:       | :-------                                                                        |
 | T         | WPA             |  Type d’authentification : WEP, WPA ou aucun en cas d’absence de mot de passe.  |
@@ -102,7 +100,7 @@ This is how the QR code is configured : `WIFI:T:WPA;S:MyNetworkName;P:MyPassword
 | P         | MonMotDePasse   |  Mot de passe, à ignorer si « T » est vide.                                     |
 | H         | true            |  "true" si le réseau SSID est caché (Facultatif)                                |
 
-
+This is how the QR code is configured : `WIFI:T:WPA;S:MyNetworkName;P:MyPassword;H:false;`
 | Options   | Exemple         | Description                                             |
 | :-------: | :-------:       | :-------                                                |
 | T         | WPA             |  Authentication type: WEP, WPA or none if no password   |
