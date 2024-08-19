@@ -21,8 +21,8 @@ ota:
 
 # WIFI SETTINGS / PARAMÈTRES WIFI
 wifi:
-  ssid: !secret MF_wifi_ssid
-  password: !secret MF_wifi_password
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
   # If you want a static IP (recommended - You will need to perform the first installation from Esphome via USB)
   # Si vous souhaitez une IP statique (recommandé - Vous devrez effectuer la première installation depuis Esphome via USB)
   manual_ip:
