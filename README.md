@@ -41,7 +41,7 @@ EN - You can find more by searching for "waveshare", "esp32".
 ## Installation - FR
 
 1. Connectez l'écran à l'ESP32, en vérifiant bien que les 2 petits interrupteurs "1" et "2" de l'ESP32 soient bien sur "A" et "ON". Dans le cas contraire, vous aurez des problèmes d'affichage sur l'écran.
-2. À l'aide de Studio Code Server, dans votre dossier `/.config/esphome` (cf. image `Screenshot.png`) :
+2. À l'aide de Studio Code Server, dans votre dossier `/.config/esphome` (cf. image [Screenshot.png](https://github.com/Rwanou88/MagicFrame/blob/d5d15970d22fd17562468809398384b56ce35467/pictures/Screenshot.png)) :
 - copiez les fichiers `magicframe.yaml` et `secrets.yaml`
 - ajoutez le contenu du dossier `/fonts` dans votre dossier `/fonts`
 3. Toujours à l'aide de Studio Code Server, intégrez le contenu des fichiers `sensors.yaml` et `templates.yaml` dans vos fichiers YAML de configuration Home Assistant (cf. image `Screenshot.png`)
@@ -58,7 +58,7 @@ EN - You can find more by searching for "waveshare", "esp32".
 2. Using Studio Code Server, in your folder `/.config/esphome` (cf. picture `Screenshot.png`):
 - copy the files `magicframe.yaml` and `secrets.yaml`
 - add the contents of the folder `/fonts` in your folder `/fonts`
-3. Still using Studio Code Server, integrate the contents of the files `sensors.yaml` and `templates.yaml`in your Home Assistant configuration YAML files (cf. picture `Screenshot.png`)
+3. Still using Studio Code Server, integrate the contents of the files `sensors.yaml` and `templates.yaml`in your Home Assistant configuration YAML files (cf. picture [Screenshot.png](https://github.com/Rwanou88/MagicFrame/blob/d5d15970d22fd17562468809398384b56ce35467/pictures/Screenshot.png))
 4. Update the commented parts of the files `magicframe.yaml`, `secrets.yaml` and `templates.yaml` with your own information (entity ID, identifiers, passwords, API key...)
 5. Connect the ESP32 to your computer, launch ESPHome and follow the instructions to install `magicframe.yaml` on your ESP32.
 6. Enjoy!
