@@ -44,7 +44,7 @@ EN - You can find more by searching for "waveshare", "esp32".
 2. À l'aide de Studio Code Server, dans votre dossier `/.config/esphome` (cf. image [Screenshot.png](https://github.com/Rwanou88/MagicFrame/blob/d5d15970d22fd17562468809398384b56ce35467/pictures/Screenshot.png)) :
 - copiez les fichiers `magicframe.yaml` et `secrets.yaml`
 - ajoutez le contenu du dossier `/fonts` dans votre dossier `/fonts`
-3. Toujours à l'aide de Studio Code Server, intégrez le contenu des fichiers `sensors.yaml` et `templates.yaml` dans vos fichiers YAML de configuration Home Assistant (cf. image `Screenshot.png`)
+3. Toujours à l'aide de Studio Code Server, intégrez le contenu des fichiers `sensors.yaml` et `templates.yaml` dans vos fichiers YAML de configuration Home Assistant (cf. image [Screenshot.png](https://github.com/Rwanou88/MagicFrame/blob/d5d15970d22fd17562468809398384b56ce35467/pictures/Screenshot.png))
 4. Mettez à jours les parties commentées des fichiers `magicframe.yaml`, `secrets.yaml` et `templates.yaml` avec vos propres informations (entity ID, identifiants, mots de passe, API key...)
 5. Branchez l'ESP32 à votre ordinateur, lancez ESPHome et suivez les instructions pour installer `magicframe.yaml` sur votre ESP32.
 6. Enjoy!
@@ -55,7 +55,7 @@ EN - You can find more by searching for "waveshare", "esp32".
 
 ## Installation - EN
 1. Connect the screen to the ESP32, making sure that the 2 small switches "1" and "2" on the ESP32 are on "A" and "ON". Otherwise, you will have display problems on the screen.
-2. Using Studio Code Server, in your folder `/.config/esphome` (cf. picture `Screenshot.png`):
+2. Using Studio Code Server, in your folder `/.config/esphome` (cf. picture [Screenshot.png](https://github.com/Rwanou88/MagicFrame/blob/d5d15970d22fd17562468809398384b56ce35467/pictures/Screenshot.png)):
 - copy the files `magicframe.yaml` and `secrets.yaml`
 - add the contents of the folder `/fonts` in your folder `/fonts`
 3. Still using Studio Code Server, integrate the contents of the files `sensors.yaml` and `templates.yaml`in your Home Assistant configuration YAML files (cf. picture [Screenshot.png](https://github.com/Rwanou88/MagicFrame/blob/d5d15970d22fd17562468809398384b56ce35467/pictures/Screenshot.png))
