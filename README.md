@@ -26,7 +26,7 @@ Amazon US
 3D printer
 - [Thingiverse](https://www.thingiverse.com/thing:6427159)
 
-FR- Vous pouvez en trouver d'autre en cherchant "waveshare", "esp32".
+FR- Vous pouvez en trouver d'autres en cherchant "waveshare", "esp32".
 
 EN - You can find more by searching for "waveshare", "esp32".
 
