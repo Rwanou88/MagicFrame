@@ -159,3 +159,8 @@ EN - Displays the date and time the screen was last updated.
 <p align="center">
 <img src="https://github.com/user-attachments/assets/e047e738-e1e1-4497-93ff-19ff7939ead3" width="400"/>
 </p>
+
+## TO DO
+FR - Traduire en français les dates des événements de l'agenda.
+
+EN - Translate the dates of the calendar events into french.
