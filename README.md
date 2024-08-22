@@ -154,7 +154,7 @@ This is how the QR code is configured : `WIFI:T:WPA;S:MyNetworkName;P:MyPassword
 ### * Date et heure de mise à jour - Date and time of update *
 FR - Affiche la date et l'heure de la dernière mise à jour de l'écran.
 
-EN - Displays the date and time the screen was last updated.
+EN - Displays the date and time of the last screen update.
 
 <p align="center">
 <img src="https://github.com/user-attachments/assets/e047e738-e1e1-4497-93ff-19ff7939ead3" width="400"/>
