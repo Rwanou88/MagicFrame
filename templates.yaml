@@ -2,14 +2,14 @@
 
 # Forcast & Events / Prévisions météo et événements
 - trigger:
-    - platform: time_pattern
+    - trigger: time_pattern
       minutes: /1
-    - platform: homeassistant
+    - trigger: homeassistant
       event: start
 
   action:
     # Forcast / Prévisions météo
-    - service: weather.get_forecasts
+    - action: weather.get_forecasts
       target:
         entity_id: weather.forecast_YourCity # Entity ID of your weather forecast app. / ID d'entité de votre application de prévisions météo
       data:
@@ -17,7 +17,7 @@
       response_variable: daily
 
     # Events / Événements
-    - service: calendar.get_events
+    - action: calendar.get_events
       target:
         entity_id: calendar.YourCalendarName # Your calendar entity ID / Votre identifiant d'entité de calendrier
       data:
