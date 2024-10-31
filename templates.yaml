@@ -14,16 +14,16 @@
         entity_id: weather.forecast_YourCity # Entity ID of your weather forecast app. / ID d'entité de votre application de prévisions météo
       data:
         type: daily
-      response_variable: daily
 
     # Events / Événements
     - action: calendar.get_events
-      target:
-        entity_id: calendar.YourCalendarName # Your calendar entity ID / Votre identifiant d'entité de calendrier
       data:
         duration:
-          days: 90
-      response_variable: monthly
+          hours: 2160 # 90 jours
+          minutes: 0
+          seconds: 0
+      target:
+        entity_id: calendar.YourCalendarName # Your calendar entity ID / Votre identifiant d'entité de calendrier
 
   sensor:
     # Forcast / Prévisions météo
