@@ -11,9 +11,6 @@
 - platform: template
   sensors:
     date_fr:
-      friendly_name: "Date FR"
-      icon_template: "mdi:calendar-today"
-      entity_id: sensor.date
       value_template: >
         {% set months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"] %}
         {% set days = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"] %}
