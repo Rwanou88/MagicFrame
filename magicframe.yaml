@@ -94,73 +94,56 @@ font:
       weight: 800 # ExtraBold
     id: NunitoEB55
     size: 55
-    glyphs: &font-glyphs [ # --> https://codepoints.net/
-      0,1,2,3,4,5,6,7,8,9,
-      A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,
-      a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,
-      à,â,ç,é,è,ê,ù,û,À,Â,Ç,É,È,Ê,Ù,Û,
-      "\u0020", #space
-      "\u0021", #!
-      "\u0022", #"
-      "\u0025", #%
-      "\u0026", #&
-      "\u0027", #'
-      "\u0028", #(
-      "\u0029", #)
-      "\u002B", #+
-      "\u002D", #-
-      "\u002E", #.
-      "\u003A", #:
-      "\u003D", #=
-      "\u003F", #?
-      "\u0040", #@
-      "\u005B", #[
-      "\u005D", #]
-      "\u005F", #_
-      "\u00B0", #°
-      ]
+    glyphsets:
+      - GF_Latin_Core
   - file:
       type: gfonts
       family: Nunito
       weight: 800 # ExtraBold
     id: NunitoEB35
     size: 35
-    glyphs: *font-glyphs
+    glyphsets:
+      - GF_Latin_Core
   - file:
       type: gfonts
       family: Nunito
       weight: 800 # ExtraBold
     id: NunitoEB25
     size: 25
-    glyphs: *font-glyphs
+    glyphsets:
+      - GF_Latin_Core
   - file:
       type: gfonts
       family: Nunito
       weight: 500 # Medium
     id: NunitoM20
     size: 20
-    glyphs: *font-glyphs
+    glyphsets:
+      - GF_Latin_Core
   - file:
       type: gfonts
       family: Nunito
       weight: 800 # ExtraBold
     id: NunitoEB20
     size: 20
-    glyphs: *font-glyphs
+    glyphsets:
+      - GF_Latin_Core
   - file:
       type: gfonts
       family: Nunito
       weight: 700 # Bold
     id: NunitoB16
     size: 16
-    glyphs: *font-glyphs
+    glyphsets:
+      - GF_Latin_Core
   - file:
       type: gfonts
       family: Noto+Sans
       weight: 700 # Bold
     id: Noto15
     size: 15
-    glyphs: *font-glyphs
+    glyphsets:
+      - GF_Latin_Core
     extras: # Enables emoji support / Active la prise en charge des emojis
       - file:
           type: gfonts
