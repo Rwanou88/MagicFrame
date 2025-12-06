@@ -75,6 +75,7 @@ The setting is present in the file `magicframe.yaml`.
 
 ### * Prévision météo - Weather forecast *
 Integration : [Meteorologisk institutt (Met.no)](https://www.home-assistant.io/integrations/met).
+Integration : [Time & Date](https://www.home-assistant.io/integrations/time_date).
 
 FR - Utilisation de cette intégration.
 Il faudra paramétrer votre ville et récupérer l'ID d'entité `weather.forecast_VotreVille` pour l'intégrer au fichier `templates.yaml`.
@@ -107,6 +108,7 @@ It is possible to display information for 5 rooms.
 
 ### * Calendrier - Calendar *
 Integration : [CalDAV](https://www.home-assistant.io/integrations/caldav)
+Integration : [Time & Date](https://www.home-assistant.io/integrations/time_date).
 
 FR - Utilisation de cette intégration pour récupérer l'agenda souhaité (iCloud).
 L'ID d'entité est à intégrer dans le fichier `templates.yaml`.
@@ -152,6 +154,8 @@ This is how the QR code is configured : `WIFI:T:WPA;S:MyNetworkName;P:MyPassword
 </p>
 
 ### * Date et heure de mise à jour - Date and time of update *
+Integration : [Time & Date](https://www.home-assistant.io/integrations/time_date).
+
 FR - Affiche la date et l'heure de la dernière mise à jour de l'écran.
 
 EN - Displays the date and time of the last screen update.
