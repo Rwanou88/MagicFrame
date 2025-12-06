@@ -74,8 +74,7 @@ EN - Set to update every 4 hours.
 The setting is present in the file `magicframe.yaml`.
 
 ### * Prévision météo - Weather forecast *
-Integration : [Meteorologisk institutt (Met.no)](https://www.home-assistant.io/integrations/met).
-Integration : [Time & Date](https://www.home-assistant.io/integrations/time_date).
+Integrations : [Meteorologisk institutt (Met.no)](https://www.home-assistant.io/integrations/met) - [Time & Date](https://www.home-assistant.io/integrations/time_date)
 
 FR - Utilisation de cette intégration.
 Il faudra paramétrer votre ville et récupérer l'ID d'entité `weather.forecast_VotreVille` pour l'intégrer au fichier `templates.yaml`.
@@ -107,8 +106,7 @@ It is possible to display information for 5 rooms.
 </p>
 
 ### * Calendrier - Calendar *
-Integration : [CalDAV](https://www.home-assistant.io/integrations/caldav)
-Integration : [Time & Date](https://www.home-assistant.io/integrations/time_date).
+Integrations : [CalDAV](https://www.home-assistant.io/integrations/caldav) - [Time & Date](https://www.home-assistant.io/integrations/time_date)
 
 FR - Utilisation de cette intégration pour récupérer l'agenda souhaité (iCloud).
 L'ID d'entité est à intégrer dans le fichier `templates.yaml`.
@@ -125,7 +123,7 @@ Emojis can be taken into account, they will have to be added, as and when needed
 </p>
 
 ### * Wifi invité - Guest Wifi *
-ESPHome : [QR Code](https://esphome.io/components/qr_code.html).
+ESPHome : [QR Code](https://esphome.io/components/qr_code.html)
 
 FR - Utilisation du composant d'ESPHome.
 Le paramétrage est présent dans le fichier `secrets.yaml`.
@@ -154,7 +152,7 @@ This is how the QR code is configured : `WIFI:T:WPA;S:MyNetworkName;P:MyPassword
 </p>
 
 ### * Date et heure de mise à jour - Date and time of update *
-Integration : [Time & Date](https://www.home-assistant.io/integrations/time_date).
+Integration : [Time & Date](https://www.home-assistant.io/integrations/time_date)
 
 FR - Affiche la date et l'heure de la dernière mise à jour de l'écran.
 
