@@ -28,6 +28,14 @@
       response_variable: monthly
 
   sensor:
+    # Translation FR / Traduction FR
+    - name: date_fr
+      default_entity_id: sensor.date_fr
+      state: >
+        {% set months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"] %}
+        {% set days = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"] %}
+        {{ days[now().weekday()] + '' '' + now().day | string + '' '' + months[now().month-1]}}'
+    
     # Forcast / Prévisions météo
     - name: Weather Forecast Daily
       unique_id: weather_forecast_daily
