@@ -445,8 +445,8 @@ display:
           {"windy-variant", "Venteux"},
           {"exceptional", "Alerte"}
 
-          //Days of week translation EN to FR / Traduction des jours de la semaine EN -> FR
-          {"Mon", "Lun"},{"Tue", "Mar"},{"Wed", "Mer"},{"Thu", "Jeu"},{"Fri", "Ven"},{"Sat", "Sam"},{"Sun", "Dim"},
+          //No events EN to FR / Pas d'événements EN -> FR
+          {"unavailable", "-"}
         };
         
      // Date
@@ -462,27 +462,27 @@ display:
      it.printf(220, 150, id(NunitoEB55), TextAlign::TOP_LEFT, "%2.1f°C", id(weather_temperature).state);
 
      // 5-day weather forecast (day 1 = today) / Prévisions météo à 5 jours (day 1 = aujourd'hui)
-     it.printf(85, 235, id(NunitoEB25), TextAlign::TOP_CENTER, "%s", traduction[id(weather_day_1).state].c_str());
+     it.printf(85, 235, id(NunitoEB25), TextAlign::TOP_CENTER, "%s", id(weather_day_1).state.c_str());
      it.printf(85, 265, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map[id(weather_condition_1).state].c_str());
      it.printf(85, 305, id(NunitoEB20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_temperature_1).state);
      it.printf(85, 325, id(NunitoM20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_templow_1).state);
 
-     it.printf(162, 235, id(NunitoEB25), TextAlign::TOP_CENTER, "%s", traduction[id(weather_day_2).state].c_str());
+     it.printf(162, 235, id(NunitoEB25), TextAlign::TOP_CENTER, "%s", id(weather_day_2).state.c_str());
      it.printf(162, 265, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map[id(weather_condition_2).state].c_str());
      it.printf(162, 305, id(NunitoEB20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_temperature_2).state);
      it.printf(162, 325, id(NunitoM20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_templow_2).state);
 
-     it.printf(240, 235, id(NunitoEB25), TextAlign::TOP_CENTER, "%s", traduction[id(weather_day_3).state].c_str());
+     it.printf(240, 235, id(NunitoEB25), TextAlign::TOP_CENTER, "%s", id(weather_day_3).state.c_str());
      it.printf(240, 265, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map[id(weather_condition_3).state].c_str());
      it.printf(240, 305, id(NunitoEB20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_temperature_3).state);
      it.printf(240, 325, id(NunitoM20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_templow_3).state);
 
-     it.printf(318, 235, id(NunitoEB25), TextAlign::TOP_CENTER, "%s", traduction[id(weather_day_4).state].c_str());
+     it.printf(318, 235, id(NunitoEB25), TextAlign::TOP_CENTER, "%s", id(weather_day_4).state.c_str());
      it.printf(318, 265, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map[id(weather_condition_4).state].c_str());
      it.printf(318, 305, id(NunitoEB20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_temperature_4).state);
      it.printf(318, 325, id(NunitoM20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_templow_4).state);
 
-     it.printf(395, 235, id(NunitoEB25), TextAlign::TOP_CENTER, "%s", traduction[id(weather_day_5).state].c_str());
+     it.printf(395, 235, id(NunitoEB25), TextAlign::TOP_CENTER, "%s", id(weather_day_5).state.c_str());
      it.printf(395, 265, id(MDI_36), TextAlign::TOP_CENTER, "%s", icon_map[id(weather_condition_5).state].c_str());
      it.printf(395, 305, id(NunitoEB20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_temperature_5).state);
      it.printf(395, 325, id(NunitoM20), TextAlign::TOP_CENTER, "%2.1f°C", id(weather_templow_5).state);
