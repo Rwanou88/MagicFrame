@@ -28,13 +28,15 @@
       response_variable: monthly
 
   sensor:
-    # Translation FR / Traduction FR
+    # Date translation FR / Traduction date FR
     - name: date_fr
-      default_entity_id: sensor.date_fr
       state: >
-        {% set months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"] %}
-        {% set days = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"] %}
-        {{ days[now().weekday()] + '' '' + now().day | string + '' '' + months[now().month-1]}}'
+        {% set ts = as_timestamp(states('sensor.date_time_iso')) %}
+        {% set d = ts | timestamp_custom('%A') %}
+        {% set m = ts | timestamp_custom('%B') %}
+        {% set days = {"Monday":"Lundi","Tuesday":"Mardi","Wednesday":"Mercredi","Thursday":"Jeudi","Friday":"Vendredi","Saturday":"Samedi","Sunday":"Dimanche"} %}
+        {% set months = {"January":"Janvier","February":"Février","March":"Mars","April":"Avril","May":"Mai","June":"Juin","July":"Juillet","August":"Août","September":"Septembre","October":"Octobre","November":"Novembre","December":"Décembre"} %}
+        {{ days[d] }} {{ ts | timestamp_custom('%-d') }} {{ months[m] }}
     
     # Forcast / Prévisions météo
     - name: Weather Forecast Daily
@@ -52,7 +54,11 @@
 
     # Weather day 1 / Météo jour 1
     - name: "weather day 1"
-      state: "{{ as_timestamp(state_attr('sensor.weather_forecast_daily', 'forecast')[0].datetime) | timestamp_custom('%a') }}"
+      state: >
+        {% set ts = as_timestamp(state_attr('sensor.weather_forecast_daily', 'forecast')[0].datetime) %}
+        {% set d = ts | timestamp_custom('%a') %}
+        {% set days = {"Mon":"Lun","Tue":"Mar","Wed":"Mer","Thu":"Jeu","Fri":"Ven","Sat":"Sam","Sun":"Dim"} %}
+        {{ days[d] }}
     - name: "weather condition 1"
       state: "{{ state_attr('sensor.weather_forecast_daily', 'forecast')[0].condition }}"
     - name: "weather temperature 1"
@@ -64,7 +70,11 @@
 
     # Weather day 2 / Météo jour 2
     - name: "weather day 2"
-      state: "{{ as_timestamp(state_attr('sensor.weather_forecast_daily', 'forecast')[1].datetime) | timestamp_custom('%a') }}"
+      state: >
+        {% set ts = as_timestamp(state_attr('sensor.weather_forecast_daily', 'forecast')[1].datetime) %}
+        {% set d = ts | timestamp_custom('%a') %}
+        {% set days = {"Mon":"Lun","Tue":"Mar","Wed":"Mer","Thu":"Jeu","Fri":"Ven","Sat":"Sam","Sun":"Dim"} %}
+        {{ days[d] }}
     - name: "weather condition 2"
       state: "{{ state_attr('sensor.weather_forecast_daily', 'forecast')[1].condition }}"
     - name: "weather temperature 2"
@@ -76,7 +86,11 @@
 
     # Weather day 3 / Météo jour 3
     - name: "weather day 3"
-      state: "{{ as_timestamp(state_attr('sensor.weather_forecast_daily', 'forecast')[2].datetime) | timestamp_custom('%a') }}"
+      state: >
+        {% set ts = as_timestamp(state_attr('sensor.weather_forecast_daily', 'forecast')[2].datetime) %}
+        {% set d = ts | timestamp_custom('%a') %}
+        {% set days = {"Mon":"Lun","Tue":"Mar","Wed":"Mer","Thu":"Jeu","Fri":"Ven","Sat":"Sam","Sun":"Dim"} %}
+        {{ days[d] }}
     - name: "weather condition 3"
       state: "{{ state_attr('sensor.weather_forecast_daily', 'forecast')[2].condition }}"
     - name: "weather temperature 3"
@@ -88,7 +102,11 @@
 
     # Weather day 4 / Météo jour 4
     - name: "weather day 4"
-      state: "{{ as_timestamp(state_attr('sensor.weather_forecast_daily', 'forecast')[3].datetime) | timestamp_custom('%a') }}"
+      state: >
+        {% set ts = as_timestamp(state_attr('sensor.weather_forecast_daily', 'forecast')[3].datetime) %}
+        {% set d = ts | timestamp_custom('%a') %}
+        {% set days = {"Mon":"Lun","Tue":"Mar","Wed":"Mer","Thu":"Jeu","Fri":"Ven","Sat":"Sam","Sun":"Dim"} %}
+        {{ days[d] }}
     - name: "weather condition 4"
       state: "{{ state_attr('sensor.weather_forecast_daily', 'forecast')[3].condition }}"
     - name: "weather temperature 4"
@@ -100,7 +118,11 @@
 
     # Weather day 5 / Météo jour 5
     - name: "weather day 5"
-      state: "{{ as_timestamp(state_attr('sensor.weather_forecast_daily', 'forecast')[4].datetime) | timestamp_custom('%a') }}"
+      state: >
+        {% set ts = as_timestamp(state_attr('sensor.weather_forecast_daily', 'forecast')[4].datetime) %}
+        {% set d = ts | timestamp_custom('%a') %}
+        {% set days = {"Mon":"Lun","Tue":"Mar","Wed":"Mer","Thu":"Jeu","Fri":"Ven","Sat":"Sam","Sun":"Dim"} %}
+        {{ days[d] }}
     - name: "weather condition 5"
       state: "{{ state_attr('sensor.weather_forecast_daily', 'forecast')[4].condition }}"
     - name: "weather temperature 5"
@@ -112,36 +134,60 @@
 
     # Event 1 / Événement 1
     - name: "event start 1"
-      state: "{{ as_timestamp(state_attr('sensor.monthly_events', 'events')[0].start) | timestamp_custom('%A %d %B') }}"
+      state: >
+        {% set ts = as_timestamp(state_attr('sensor.monthly_events', 'events')[0].start) %}
+        {% set d = ts | timestamp_custom('%A') %}
+        {% set m = ts | timestamp_custom('%B') %}
+        {% set days = {"Monday":"Lundi","Tuesday":"Mardi","Wednesday":"Mercredi","Thursday":"Jeudi","Friday":"Vendredi","Saturday":"Samedi","Sunday":"Dimanche"} %}
+        {% set months = {"January":"Janvier","February":"Février","March":"Mars","April":"Avril","May":"Mai","June":"Juin","July":"Juillet","August":"Août","September":"Septembre","October":"Octobre","November":"Novembre","December":"Décembre"} %}
+        {{ days[d] }} {{ ts | timestamp_custom('%-d') }} {{ months[m] }}
     - name: "event summary 1"
       state: "{{ state_attr('sensor.monthly_events', 'events')[0].summary }}"
 
     # Event 2 / Événement 2
     - name: "event start 2"
-      state: "{{ as_timestamp(state_attr('sensor.monthly_events', 'events')[1].start) | timestamp_custom('%A %d %B') }}"
+      state: >
+        {% set ts = as_timestamp(state_attr('sensor.monthly_events', 'events')[1].start) %}
+        {% set d = ts | timestamp_custom('%A') %}
+        {% set m = ts | timestamp_custom('%B') %}
+        {% set days = {"Monday":"Lundi","Tuesday":"Mardi","Wednesday":"Mercredi","Thursday":"Jeudi","Friday":"Vendredi","Saturday":"Samedi","Sunday":"Dimanche"} %}
+        {% set months = {"January":"Janvier","February":"Février","March":"Mars","April":"Avril","May":"Mai","June":"Juin","July":"Juillet","August":"Août","September":"Septembre","October":"Octobre","November":"Novembre","December":"Décembre"} %}
+        {{ days[d] }} {{ ts | timestamp_custom('%-d') }} {{ months[m] }}
     - name: "event summary 2"
       state: "{{ state_attr('sensor.monthly_events', 'events')[1].summary }}"
 
     # Event 3 / Événement 3
     - name: "event start 3"
-      state: "{{ as_timestamp(state_attr('sensor.monthly_events', 'events')[2].start) | timestamp_custom('%A %d %B') }}"
+      state: >
+        {% set ts = as_timestamp(state_attr('sensor.monthly_events', 'events')[2].start) %}
+        {% set d = ts | timestamp_custom('%A') %}
+        {% set m = ts | timestamp_custom('%B') %}
+        {% set days = {"Monday":"Lundi","Tuesday":"Mardi","Wednesday":"Mercredi","Thursday":"Jeudi","Friday":"Vendredi","Saturday":"Samedi","Sunday":"Dimanche"} %}
+        {% set months = {"January":"Janvier","February":"Février","March":"Mars","April":"Avril","May":"Mai","June":"Juin","July":"Juillet","August":"Août","September":"Septembre","October":"Octobre","November":"Novembre","December":"Décembre"} %}
+        {{ days[d] }} {{ ts | timestamp_custom('%-d') }} {{ months[m] }}
     - name: "event summary 3"
       state: "{{ state_attr('sensor.monthly_events', 'events')[2].summary }}"
 
     # Event 4 / Événement 4
     - name: "event start 4"
-      state: "{{ as_timestamp(state_attr('sensor.monthly_events', 'events')[3].start) | timestamp_custom('%A %d %B') }}"
+      state: >
+        {% set ts = as_timestamp(state_attr('sensor.monthly_events', 'events')[3].start) %}
+        {% set d = ts | timestamp_custom('%A') %}
+        {% set m = ts | timestamp_custom('%B') %}
+        {% set days = {"Monday":"Lundi","Tuesday":"Mardi","Wednesday":"Mercredi","Thursday":"Jeudi","Friday":"Vendredi","Saturday":"Samedi","Sunday":"Dimanche"} %}
+        {% set months = {"January":"Janvier","February":"Février","March":"Mars","April":"Avril","May":"Mai","June":"Juin","July":"Juillet","August":"Août","September":"Septembre","October":"Octobre","November":"Novembre","December":"Décembre"} %}
+        {{ days[d] }} {{ ts | timestamp_custom('%-d') }} {{ months[m] }}
     - name: "event summary 4"
       state: "{{ state_attr('sensor.monthly_events', 'events')[3].summary }}"
 
     # Event 5 / Événement 5
     - name: "event start 5"
-      state: "{{ as_timestamp(state_attr('sensor.monthly_events', 'events')[4].start) | timestamp_custom('%A %d %B') }}"
+      state: >
+        {% set ts = as_timestamp(state_attr('sensor.monthly_events', 'events')[4].start) %}
+        {% set d = ts | timestamp_custom('%A') %}
+        {% set m = ts | timestamp_custom('%B') %}
+        {% set days = {"Monday":"Lundi","Tuesday":"Mardi","Wednesday":"Mercredi","Thursday":"Jeudi","Friday":"Vendredi","Saturday":"Samedi","Sunday":"Dimanche"} %}
+        {% set months = {"January":"Janvier","February":"Février","March":"Mars","April":"Avril","May":"Mai","June":"Juin","July":"Juillet","August":"Août","September":"Septembre","October":"Octobre","November":"Novembre","December":"Décembre"} %}
+        {{ days[d] }} {{ ts | timestamp_custom('%-d') }} {{ months[m] }}
     - name: "event summary 5"
       state: "{{ state_attr('sensor.monthly_events', 'events')[4].summary }}"
-
-# Date & time / Date et heure
-- sensor:
-    - name: "Date and time"
-      state: "{{ as_timestamp(states('sensor.date_time_iso')) | timestamp_custom('%A %-d %B at %I:%M %p') }}"
-      icon: "mdi:calendar-clock"
