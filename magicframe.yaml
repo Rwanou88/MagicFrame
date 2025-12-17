@@ -300,9 +300,6 @@ text_sensor:
   - platform: homeassistant
     entity_id: sensor.date_fr
     id: date_fr
-  - platform: homeassistant
-    entity_id: sensor.date_time_iso
-    id: date_time_iso
     
   # Weather forecast / Prévisions météo
   - platform: homeassistant
